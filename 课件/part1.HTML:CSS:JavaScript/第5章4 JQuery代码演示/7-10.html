@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery实现自动提示的文本框</title>
+<style>
+  body{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px; padding:0px; margin:5px;
+  }
+  form{padding:0px; margin:0px;}
+  input{
+    /* 用户输入框的样式 */
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px; border:1px solid #000000;
+    width:200px; padding:1px; margin:0px;
+  }
+  #popup{
+    /* 提示框div块的样式 */
+    position:absolute; width:202px;
+    color:#004a7e; font-size:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    left:41px; top:25px;
+  }
+  #popup.show{
+    /* 显示提示框的边框 */  
+    border:1px solid #004a7e;
+  }
+  /* 提示框的样式风格 */
+  /* ul{
+    list-style:none;
+    margin:0px; padding:0px;
+  }
+  li.mouseOver{
+    background-color:#004a7e;
+    color:#FFFFFF;
+  } */
+</style>
+</head>
+<body>
+  <form method="post" name="myForm1">
+		Color: <input type="text" name="colors" id="colors" onkeyup="findColors();" />
+	</form>
+	<div id="popup">
+		<ul id="colors_ul"></ul>
+	</div>
+
+
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    let oInputField;	//考虑到很多函数中都要使用
+    let oPopDiv;		//因此采用全局变量的形式
+    let oColorsUl;
+    function initVars(){
+      //初始化变量
+      oInputField = $("#colors");
+      oPopDiv = $("#popup");
+      oColorsUl = $("#colors_ul");
+    }
+    function findColors(){
+      initVars();   //初始化变量
+      if(oInputField.val().length > 0){
+      //获取异步数据
+      $.get(
+        "http://demo-api.geekfun.website/jquery/7-10.aspx",
+        {sColor:oInputField.val()},
+        function(data){
+          let aResult = new Array();
+          if(data.length > 0){
+            aResult = data.split(",");
+            setColors(aResult); //显示服务器结果
+          }
+          else
+            clearColors();
+      });
+    }
+    else
+      clearColors();  //无输入时清除提示框（例如用户按del键）
+    }
+
+    function clearColors(){
+      //清除提示内容
+      oColorsUl.empty();
+      oPopDiv.removeClass("show");
+    }
+
+    function setColors(the_colors){
+      //显示提示框，传入的参数即为匹配出来的结果组成的数组
+    clearColors();  //每输入一个字母就先清除原先的提示，再继续
+      oPopDiv.addClass("show");
+      for(let i=0;i<the_colors.length;i++)
+        //将匹配的提示结果逐一显示给用户
+        oColorsUl.append($("<li>"+the_colors[i]+"</li>"));
+        oColorsUl.find("li").click(function(){
+        oInputField.val($(this).text());
+        clearColors();
+      }).hover(
+        function(){$(this).addClass("mouseOver");},
+        function(){$(this).removeClass("mouseOver");}
+      );
+    }
+  </script>
+</body>
+</html>
