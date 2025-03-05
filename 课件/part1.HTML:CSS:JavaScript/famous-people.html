@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名人信息展示</title>
+    <style>
+        /* 基础样式设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        /* 页面标题样式 */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            margin-bottom: 10px;
+        }
+
+        /* 导航栏样式 - 使用Flexbox布局 */
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background-color: #2980b9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .nav-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #2c3e50;
+        }
+
+        .nav-button.active {
+            background-color: #2c3e50;
+        }
+
+        /* 主要内容区域 - 使用Grid布局 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* 名人照片区域 */
+        .person-image {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .person-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* 名人信息区域 */
+        .person-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .person-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        /* 成就列表样式 */
+        .achievements {
+            margin-top: 20px;
+        }
+
+        .achievements h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .achievements ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+
+        .achievements li {
+            margin-bottom: 5px;
+        }
+
+        /* 名言区域 - 使用相对定位和绝对定位 */
+        .quote-section {
+            position: relative;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .quote-mark {
+            position: absolute;
+            font-size: 60px;
+            color: rgba(52, 152, 219, 0.2);
+        }
+
+        .quote-mark.left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .quote-mark.right {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .quote-text {
+            text-align: center;
+            font-style: italic;
+            font-size: 18px;
+            margin: 0 40px;
+        }
+
+        /* 页脚样式 - 使用Flexbox布局 */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式设计 - 媒体查询 */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+            }
+
+            .nav-button {
+                margin-bottom: 5px;
+            }
+        }
+
+        /* 隐藏类 */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面标题 -->
+    <header class="header">
+        <h1>名人信息展示</h1>
+        <p>了解历史上的伟大科学家</p>
+    </header>
+
+    <!-- 导航栏 - 使用Flexbox布局 -->
+    <nav class="nav">
+        <button class="nav-button active" data-person="einstein">爱因斯坦</button>
+        <button class="nav-button" data-person="newton">牛顿</button>
+        <button class="nav-button" data-person="curie">居里夫人</button>
+        <button class="nav-button" data-person="turing">图灵</button>
+    </nav>
+
+    <!-- 主要内容区域 - 使用Grid布局 -->
+    <main>
+        <!-- 爱因斯坦信息 -->
+        <div class="person-container" id="einstein">
+            <div class="main-content">
+                <!-- 左侧照片区域 -->
+                <div class="person-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/330px-Albert_Einstein_Head.jpg" alt="阿尔伯特·爱因斯坦">
+                    <p>阿尔伯特·爱因斯坦 (1879-1955)</p>
+                </div>
+                
+                <!-- 右侧信息区域 -->
+                <div class="person-info">
+                    <h2 class="person-name">阿尔伯特·爱因斯坦</h2>
+                    
+                    <div class="info-item">
+                        <span class="info-label">出生日期：</span>
+                        <span>1879年3月14日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">逝世日期：</span>
+                        <span>1955年4月18日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">国籍：</span>
+                        <span>德国（后入籍美国）</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">职业：</span>
+                        <span>理论物理学家</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">简介：</span>
+                        <p>阿尔伯特·爱因斯坦是20世纪最重要的科学家之一，他的相对论彻底改变了人类对时间、空间、质量、能量和引力的认识。他在1921年获得诺贝尔物理学奖，主要是因为他对光电效应的解释和对理论物理学的贡献。</p>
+                    </div>
+                    
+                    <div class="achievements">
+                        <h3>主要成就</h3>
+                        <ul>
+                            <li>提出狭义相对论和广义相对论</li>
+                            <li>发现质能方程 E=mc²</li>
+                            <li>解释光电效应</li>
+                            <li>预测引力波的存在</li>
+                            <li>对量子力学的早期发展做出贡献</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 名言区域 - 使用相对定位和绝对定位 -->
+            <div class="quote-section">
+                <div class="quote-mark left">"</div>
+                <p class="quote-text">想象力比知识更重要，因为知识是有限的，而想象力概括着世界的一切，推动着进步，并且是知识进化的源泉。</p>
+                <div class="quote-mark right">"</div>
+            </div>
+        </div>
+
+        <!-- 牛顿信息 -->
+        <div class="person-container hidden" id="newton">
+            <div class="main-content">
+                <div class="person-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/330px-GodfreyKneller-IsaacNewton-1689.jpg" alt="艾萨克·牛顿">
+                    <p>艾萨克·牛顿 (1643-1727)</p>
+                </div>
+                
+                <div class="person-info">
+                    <h2 class="person-name">艾萨克·牛顿</h2>
+                    
+                    <div class="info-item">
+                        <span class="info-label">出生日期：</span>
+                        <span>1643年1月4日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">逝世日期：</span>
+                        <span>1727年3月31日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">国籍：</span>
+                        <span>英国</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">职业：</span>
+                        <span>物理学家、数学家、天文学家、自然哲学家、炼金术士</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">简介：</span>
+                        <p>艾萨克·牛顿是英国物理学家、数学家、天文学家、自然哲学家和炼金术士。他被广泛认为是历史上最伟大的科学家之一，是科学革命的关键人物。他的著作《自然哲学的数学原理》奠定了经典力学的基础，并成为现代工程学的基础。</p>
+                    </div>
+                    
+                    <div class="achievements">
+                        <h3>主要成就</h3>
+                        <ul>
+                            <li>发现万有引力定律</li>
+                            <li>发展了经典力学三大定律</li>
+                            <li>发明了微积分（与莱布尼茨独立发明）</li>
+                            <li>在光学领域的开创性工作</li>
+                            <li>建立了经典物理学的理论框架</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-section">
+                <div class="quote-mark left">"</div>
+                <p class="quote-text">如果我看得更远，那是因为我站在巨人的肩膀上。</p>
+                <div class="quote-mark right">"</div>
+            </div>
+        </div>
+
+        <!-- 居里夫人信息 -->
+        <div class="person-container hidden" id="curie">
+            <div class="main-content">
+                <div class="person-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Marie_Curie_c1920.jpg/330px-Marie_Curie_c1920.jpg" alt="玛丽·居里">
+                    <p>玛丽·居里 (1867-1934)</p>
+                </div>
+                
+                <div class="person-info">
+                    <h2 class="person-name">玛丽·居里</h2>
+                    
+                    <div class="info-item">
+                        <span class="info-label">出生日期：</span>
+                        <span>1867年11月7日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">逝世日期：</span>
+                        <span>1934年7月4日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">国籍：</span>
+                        <span>波兰（后入籍法国）</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">职业：</span>
+                        <span>物理学家、化学家</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">简介：</span>
+                        <p>玛丽·居里是一位波兰裔法国物理学家和化学家，她是放射性研究的先驱。她是第一位获得诺贝尔奖的女性，也是唯一一位在两个不同科学领域获得诺贝尔奖的人（物理学和化学）。她与丈夫皮埃尔·居里一起发现了钋和镭元素。</p>
+                    </div>
+                    
+                    <div class="achievements">
+                        <h3>主要成就</h3>
+                        <ul>
+                            <li>发现钋和镭元素</li>
+                            <li>发展了放射性理论</li>
+                            <li>1903年获得诺贝尔物理学奖</li>
+                            <li>1911年获得诺贝尔化学奖</li>
+                            <li>创立了居里研究所</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-section">
+                <div class="quote-mark left">"</div>
+                <p class="quote-text">我们不应该害怕任何事情，只要我们理解它。现在是理解更多的时候了，这样我们就能少一些恐惧。</p>
+                <div class="quote-mark right">"</div>
+            </div>
+        </div>
+
+        <!-- 图灵信息 -->
+        <div class="person-container hidden" id="turing">
+            <div class="main-content">
+                <div class="person-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/330px-Alan_Turing_Aged_16.jpg" alt="艾伦·图灵">
+                    <p>艾伦·图灵 (1912-1954)</p>
+                </div>
+                
+                <div class="person-info">
+                    <h2 class="person-name">艾伦·图灵</h2>
+                    
+                    <div class="info-item">
+                        <span class="info-label">出生日期：</span>
+                        <span>1912年6月23日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">逝世日期：</span>
+                        <span>1954年6月7日</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">国籍：</span>
+                        <span>英国</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">职业：</span>
+                        <span>数学家、计算机科学家、密码学家、理论生物学家</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">简介：</span>
+                        <p>艾伦·图灵是英国数学家、计算机科学家、密码分析家和理论生物学家。他被认为是计算机科学和人工智能之父。在第二次世界大战期间，他在破解纳粹德国的密码方面发挥了关键作用，特别是破解了德国的恩尼格玛密码机。</p>
+                    </div>
+                    
+                    <div class="achievements">
+                        <h3>主要成就</h3>
+                        <ul>
+                            <li>提出图灵机概念，奠定了计算理论基础</li>
+                            <li>破解纳粹德国恩尼格玛密码</li>
+                            <li>发展了早期计算机设计</li>
+                            <li>提出图灵测试，为人工智能奠定基础</li>
+                            <li>在数学生物学领域的开创性工作</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-section">
+                <div class="quote-mark left">"</div>
+                <p class="quote-text">有时候正是那些看起来最不可能的事情，最终被证明是可能的。</p>
+                <div class="quote-mark right">"</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 - 使用Flexbox布局 -->
+    <footer class="footer">
+        <div class="copyright">
+            &copy; 2023 名人信息展示页面
+        </div>
+        <div class="footer-links">
+            <a href="#" onclick="showInfo('布局说明'); return false;">布局说明</a>
+            <a href="#" onclick="showInfo('CSS技巧'); return false;">CSS技巧</a>
+            <a href="#" onclick="showInfo('JavaScript功能'); return false;">JavaScript功能</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript代码 -->
+    <script>
+        // 获取所有导航按钮和人物容器
+        const navButtons = document.querySelectorAll('.nav-button');
+        const personContainers = document.querySelectorAll('.person-container');
+
+        // 为每个导航按钮添加点击事件
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 获取要显示的人物ID
+                const personId = button.getAttribute('data-person');
+                
+                // 隐藏所有人物容器
+                personContainers.forEach(container => {
+                    container.classList.add('hidden');
+                });
+                
+                // 显示选中的人物容器
+                document.getElementById(personId).classList.remove('hidden');
+                
+                // 更新按钮激活状态
+                navButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+            });
+        });
+
+        // 显示信息弹窗
+        function showInfo(type) {
+            let message = '';
+            
+            switch(type) {
+                case '布局说明':
+                    message = '本页面使用了多种CSS布局技术:\n\n' +
+                              '1. Flexbox布局: 用于导航栏和页脚，实现水平排列和均匀分布\n' +
+                              '2. Grid布局: 用于主内容区域，创建两列布局\n' +
+                              '3. 相对/绝对定位: 用于名言区域的引号定位\n' +
+                              '4. 响应式设计: 使用媒体查询在小屏幕上调整布局';
+                    break;
+                case 'CSS技巧':
+                    message = '本页面使用的CSS技巧:\n\n' +
+                              '1. 盒模型: 使用box-sizing: border-box统一盒模型计算\n' +
+                              '2. 阴影效果: 使用box-shadow为卡片添加立体感\n' +
+                              '3. 过渡效果: 为按钮添加hover过渡效果\n' +
+                              '4. 颜色管理: 使用一致的颜色方案\n' +
+                              '5. 字体控制: 设置合适的字体大小和行高';
+                    break;
+                case 'JavaScript功能':
+                    message = '本页面的JavaScript功能:\n\n' +
+                              '1. 内容切换: 点击导航按钮切换不同名人的信息\n' +
+                              '2. 状态管理: 更新按钮的激活状态\n' +
+                              '3. 事件处理: 使用事件委托处理按钮点击\n' +
+                              '4. DOM操作: 动态添加/移除CSS类来控制元素显示';
+                    break;
+            }
+            
+            alert(message);
+        }
+    </script>
+</body>
+</html> 

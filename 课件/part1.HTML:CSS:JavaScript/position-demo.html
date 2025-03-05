@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 定位示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding-bottom: 500px; /* 为了演示固定定位和粘性定位 */
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+        
+        .demo-section {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            position: relative; /* 为绝对定位的子元素提供参考 */
+            height: 200px;
+        }
+        
+        .box {
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            font-weight: bold;
+            color: white;
+            margin: 5px;
+        }
+        
+        .box1 { background-color: #FF6B6B; }
+        .box2 { background-color: #4ECDC4; }
+        .box3 { background-color: #45B7D1; }
+        .box4 { background-color: #7D5BA6; }
+        
+        .description {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* 静态定位 */
+        .static {
+            position: static;
+        }
+        
+        /* 相对定位 */
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+        
+        /* 绝对定位 */
+        .absolute {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+        
+        /* 固定定位 */
+        .fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        /* 粘性定位 */
+        .sticky {
+            position: sticky;
+            top: 0;
+        }
+        
+        /* 参考线 */
+        .reference-line {
+            border-top: 2px dashed #999;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 定位（Position）示例</h1>
+    
+    <!-- 静态定位 -->
+    <div class="demo-section">
+        <h2>1. 静态定位（Static）- 默认</h2>
+        <div class="container">
+            <div class="box box1 static">静态</div>
+            <div class="box box2 static">静态</div>
+            <div class="box box3 static">静态</div>
+        </div>
+        <div class="description">
+            <p><strong>position: static</strong> 是默认值，元素按照正常文档流进行布局。</p>
+            <p>top、right、bottom、left 和 z-index 属性<strong>不会</strong>影响静态定位的元素。</p>
+        </div>
+    </div>
+    
+    <!-- 相对定位 -->
+    <div class="demo-section">
+        <h2>2. 相对定位（Relative）</h2>
+        <div class="container">
+            <div class="box box1">静态</div>
+            <div class="box box2 relative">相对</div>
+            <div class="box box3">静态</div>
+        </div>
+        <div class="description">
+            <p><strong>position: relative</strong> 使元素相对于其正常位置进行定位。</p>
+            <p>上面的第二个盒子使用了 <code>top: 20px; left: 20px;</code>，所以它向下和向右移动了 20px。</p>
+            <p>相对定位不会影响其他元素的位置，也不会使元素脱离文档流。</p>
+        </div>
+    </div>
+    
+    <!-- 绝对定位 -->
+    <div class="demo-section">
+        <h2>3. 绝对定位（Absolute）</h2>
+        <div class="container">
+            <div class="box box1">静态</div>
+            <div class="box box2 absolute">绝对</div>
+            <div class="box box3">静态</div>
+        </div>
+        <div class="description">
+            <p><strong>position: absolute</strong> 使元素相对于最近的已定位祖先元素进行定位。</p>
+            <p>如果没有已定位的祖先元素，则相对于文档的 body 元素定位。</p>
+            <p>上面的第二个盒子使用了 <code>top: 40px; right: 40px;</code>，所以它位于容器右上角。</p>
+            <p>绝对定位会使元素脱离文档流，不占据空间，其他元素会忽略它的存在。</p>
+        </div>
+    </div>
+    
+    <!-- 固定定位 -->
+    <div class="demo-section">
+        <h2>4. 固定定位（Fixed）</h2>
+        <div class="container">
+            <div class="box box1">静态</div>
+            <div class="box box3">静态</div>
+            <div class="box box4 fixed">固定</div>
+        </div>
+        <div class="description">
+            <p><strong>position: fixed</strong> 使元素相对于浏览器窗口进行定位。</p>
+            <p>固定定位的元素不会随页面滚动而移动。</p>
+            <p>上面的紫色盒子使用了 <code>bottom: 20px; right: 20px;</code>，所以它固定在浏览器窗口的右下角。</p>
+            <p>固定定位会使元素脱离文档流，不占据空间。</p>
+            <p><strong>向下滚动页面，观察紫色盒子的位置。</strong></p>
+        </div>
+    </div>
+    
+    <!-- 粘性定位 -->
+    <div class="demo-section">
+        <h2>5. 粘性定位（Sticky）</h2>
+        <div class="reference-line"></div>
+        <div class="box box1 sticky">粘性</div>
+        <p>向下滚动页面，观察上面的红色盒子如何"粘"在页面顶部。</p>
+        <div style="height: 200px; background-color: #f9f9f9; padding: 10px;">
+            这是一些额外的内容，用于演示粘性定位的效果。向下滚动页面，观察红色盒子的行为。
+        </div>
+        <div class="description">
+            <p><strong>position: sticky</strong> 是相对定位和固定定位的混合。</p>
+            <p>元素在滚动到特定阈值（如 <code>top: 0</code>）之前表现为相对定位，之后表现为固定定位。</p>
+            <p>粘性定位常用于导航栏或标题，使其在滚动时保持可见。</p>
+        </div>
+    </div>
+    
+    <!-- 定位总结 -->
+    <div class="demo-section">
+        <h2>定位方式总结</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="padding: 8px;">定位方式</th>
+                <th style="padding: 8px;">特点</th>
+                <th style="padding: 8px;">常见用途</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>静态 (static)</strong></td>
+                <td style="padding: 8px;">默认值，按正常文档流布局</td>
+                <td style="padding: 8px;">普通内容布局</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>相对 (relative)</strong></td>
+                <td style="padding: 8px;">相对于正常位置偏移，不脱离文档流</td>
+                <td style="padding: 8px;">微调元素位置，为绝对定位子元素创建参考</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>绝对 (absolute)</strong></td>
+                <td style="padding: 8px;">相对于最近的已定位祖先元素，脱离文档流</td>
+                <td style="padding: 8px;">弹窗、工具提示、徽章、自定义位置的元素</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>固定 (fixed)</strong></td>
+                <td style="padding: 8px;">相对于视口定位，不随页面滚动，脱离文档流</td>
+                <td style="padding: 8px;">固定导航栏、返回顶部按钮、固定广告</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>粘性 (sticky)</strong></td>
+                <td style="padding: 8px;">根据滚动位置在相对和固定之间切换</td>
+                <td style="padding: 8px;">滚动时固定的标题、导航栏</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html> 
