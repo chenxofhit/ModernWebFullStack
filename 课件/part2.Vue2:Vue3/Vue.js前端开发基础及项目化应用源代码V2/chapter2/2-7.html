@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>v-model绑定input和textarea示例</title>
+        <!--引入vue库-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        </head>
+    <body>
+        <!--挂载点-->
+        <div id="app">                    
+            input:<input v-model="inputMessage" placeholder="请输入一行文字">            
+            <p>{{inputMessage}}</p>
+            textarea:<textarea v-model="textMessage" placeholder="请输入多行文字"></textarea>   
+            <p>{{textMessage}}</p>       
+        </div>
+    </body>
+    <script type="text/javascript"> 
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    inputMessage: '你好，这是输入框',
+                    textMessage:'你好，这是多行输入框'
+                }
+            }
+        }        
+        //创建Vue应用实例           
+        const vueApp = Vue.createApp(RootComponent)
+        //挂载vueApp
+        const vm = vueApp.mount("#app")   
+        //输出data函数定义的inputMessage属性值
+        console.log(vm.$data.inputMessage)          
+    </script>     
+</html>

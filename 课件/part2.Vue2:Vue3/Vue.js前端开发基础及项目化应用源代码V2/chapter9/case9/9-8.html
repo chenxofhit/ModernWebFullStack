@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>记录用户浏览历史</title>
+        <!-- 导入 Vue 3 -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+		<script src="https://unpkg.com/vue-router@4"></script>
+		<script src="https://unpkg.com/vuex"></script>
+		<link rel="stylesheet" type="text/css" href="css/all.css" />
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+		<style type="text/css">								
+			.main{
+				width: 100%;
+				background-image: url(img/graybg.jpg);
+			}
+			.wrap{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.left{
+				padding-top:30px;	
+				width:200px;
+			    height: 600px;
+			    float: left;
+			    border-right: #A48652 1px solid;
+			}
+			.right{
+					
+				width:780px;
+				height: 600px;
+				float:right;
+			}
+			/* 左列按钮*/
+			.left h4{
+				line-height: 60px;
+				text-align: center;
+				font-size: 1.2em;
+			}
+			.left ul li a,.left ul li a:link,.left ul li a:visited{
+				display: block;
+				width:200px;
+				height: 50px;				 
+				background-color: #a48652;
+				color: #fff;
+				text-align: center;
+				text-decoration: none;
+				line-height: 50px;
+				font-size: 1.0em;
+			}
+			.left ul li a:hover{
+				background-color: #fff;
+				color:#a48652 ;
+			}
+			
+			.right{
+				width:780px;
+				border: none;
+				height: 500px;
+			}
+			.content{
+				margin: 50px auto;
+				width:720px;				
+				padding: 10px;
+				height: 600px;
+			}	
+			form.login{
+				margin: 50px auto;
+				width:500px ;
+				border:#8E6310 1px solid;
+				height: 250px;
+			}	
+
+			form h3{
+				font-family: "黑体";
+				margin: 20px;
+			}
+			form>dl{
+				width:400px;
+				margin: auto;
+			}
+			form>dl>dt{
+				float: left;
+				padding-right: 20px;
+				width:80px;
+				height: 50px;
+				line-height: 50px;
+				text-align: right;
+				font-size: 0.9em;
+			}
+			form>dl>dd{
+				float:left;
+				width:250px;
+				
+			}
+			form>dl>dd input{		
+				width:230px;
+				height: 40px;
+				border:1px solid #666666;
+				border-radius: 5px;
+			}
+			form ul{
+				width:350px;
+				float: right;
+				margin: auto;
+				padding: 20px 50px ;
+			}
+
+			form.login ul li{
+				float: left;
+				margin:0 5px 0 15px;
+			}
+			form ul button,form ul input[type=button]{
+				width:80px;
+				height: 40px;
+				background-color: #FFFFFF;
+				font-size: 0.9em;
+				outline: none;
+				border:#8E6310 solid 1px;
+				border-radius: 5px;				
+			}
+			
+			form ul button:hover, form ul input[type=button]:hover{
+				background:#A58241;
+				color: #fff;
+			}
+			.trace {
+				font-size: 0.8em;
+				color:#a48652; 
+				cursor:pointer
+			}
+			/* 设置+图标的样式 */
+			.icon{
+            	color:#8e6310;
+            	font-weight: bold;           
+        	}		
+        </style>
+    </head>
+    <body>
+        <div id="container">
+			<div class="top">
+				<div class="wrap">
+					<div>
+						<img class="magintop_20 floatLeft logo" src="img/logo.png" />
+					</div>
+					<div class="login floatRight magintop_20">
+						<div class="floatLeft">
+							<ul>
+							<li><router-link :to="{name:'login'}">登录|注册</router-link></li>	
+							<li @click="getTrace" class="trace">浏览历史</li>												
+							</ul>							
+						</div>						
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>	
+            <div class="top_bar">
+				<div class="wrap">
+					<div class="floatLeft menu ">
+						<div class="nav">	
+							<router-link to="/" class="rlink">首页</router-link>
+							<router-link to="/poetry" class="rlink">名城诗词</router-link>
+							<router-link to="/information" class="rlink">旅游信息</router-link>
+							<router-link to="/account" class="rlink">会员中心</router-link>
+						</div>
+					</div>
+					<div class="search floatRight">
+						<input type="text" placeholder="请输入关键词" /><input type="button" value="检索" />
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+			</div>		
+			<div class="main">
+				<div class="wrap">					
+					<router-view></router-view>									
+				</div>
+				<div class="clear"></div>				
+			</div>
+			<footer>
+				<div class="wrap">
+					<div class="flink">
+						<ul>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+							<li>
+								<a href="#">网站地图</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>								
+							</li>
+						</ul>
+						<div class="clear">
+						</div>
+					</div>
+					<div class="copy">Copyright © 2020 All Right Reserved.</div>
+					<div class="info">
+						<ul>
+							<li>电话：020-12345678</li>							
+						</ul>
+					</div>					
+				</div>
+			</footer>
+		</div>
+		<!--组件模板-->
+        <template id="login">
+			<div class="content">
+				<form class="login">
+					<h3>用户登录</h3>
+					<dl>
+						<dt><label>用户名</label></dt>
+						<dd><input type="text" v-model="loginForm.userName"/></dd>			
+					</dl>
+					<div style="clear: both;"></div>
+					<dl>
+						<dt><label>密码</label></dt>
+						<dd><input type="text" v-model="loginForm.password"/></dd>			
+					</dl>
+					<div style="clear: both;"></div>
+					<ul>
+						<li><input type="button" value="登录" @click="handleLogin"></li>
+						<li><button>取消</button></li>											
+					</ul>
+				</form>
+			</div>                    
+        </template>		
+		<template id="poetryContent"> 
+			<div>
+				<aside class="left">
+					<h4>名城诗词</h4>
+					<ul>
+						<li><a href="#">华东地区</a></li>
+						<li><a href="#">华北地区</a></li>
+						<li><a href="#">华中地区</a></li>
+						<li><a href="#">华南地区</a></li>	
+						<li><a href="#">华西地区</a></li>					
+					</ul>
+				</aside>
+				<article class="right">					
+					名城诗词页面				
+				</article>
+			</div>                    
+        </template> 
+		<template id="infoContent"> 
+			<div>
+				<aside class="left">
+					<h4>旅游信息</h4>
+					<ul>
+						<li><a href="#">华东地区</a></li>
+						<li><a href="#">华北地区</a></li>
+						<li><a href="#">华中地区</a></li>
+						<li><a href="#">华南地区</a></li>	
+						<li><a href="#">华西地区</a></li>					
+					</ul>
+				</aside>
+				<article class="right">					
+					旅游信息页面				
+				</article>
+			</div>                    
+        </template> 
+		<template id="accountContent"> 
+			<div>
+				<aside class="left">
+					<h4>会员中心</h4>
+					<ul>
+						<li><a href="#">我的游记</a></li>
+						<li><a href="#">我的账户</a></li>										
+					</ul>
+				</aside>
+				<article class="right">					
+					会员中心页面				
+				</article>
+			</div>                    
+        </template>
+		<template id="home">
+			<div>
+				<div class="banner ">
+					<div class="wrap">
+						<div class="outer ">
+							<ul>
+								<li>
+									<a href="#"><img src="img/slidepic/1.jpg"></a>
+								</li>						
+							</ul>
+						</div>
+						<div class="mask">
+							<div class="floatLeft">
+								<div class="poet">								
+									<h3>推荐桂林</h3>
+									<p>广西桂林，不仅有秀丽奇绝的风景，还是我国南方繁华灿烂的历史文化名城。漫步桂林街头，总可以见到许多历史遗物。</p>															
+								</div>
+							</div>
+							<div class="floatRight">
+								<ul class="slide_nav">
+									<li style="opacity: 1;" ><a href="#"><img src="img/slidepic/s_1.jpg" style="opacity: 1;"></a></li>
+									<li style="opacity: 0.6;"><a href="#"><img src="img/slidepic/s_2.jpg"></a></li>
+									<li style="opacity: 0.6;"><a href="#"><img src="img/slidepic/s_3.jpg"></a></li>								
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="btn">
+							<div class="lbtn"></div>
+							<div class="rbtn"></div>
+						</div>
+					</div> 
+				</div>			
+				<div class="shangxi">
+					<div class="wrap">
+						<div class="shangxihead">
+							<div class="headleft floatLeft">
+								<img src="img/tit_2.jpg" />
+							</div>
+							<div class="headRight floatRight">
+								<a href="#">更多分类
+									<icon-comp  :iconcolor="pIconColor" :family="fontType" :size="pSize">
+										<i class="ri-add-fill"></i>
+									</icon-comp>								
+								</a>
+							</div>
+							<div class="clear">								
+							</div>
+						</div>
+						<div class="shangxibody">
+							<ul>
+								<li>
+									<div class="floatLeft">
+										<img src="img/scrollpic/1.png">
+									</div>
+									<div class="floatRight">
+										<h3>解读《别苏州》</h3>
+										<h5>白居易曾任苏州刺史，写了关于苏州的诗20余首。《别苏州》是唐代诗人白居易创作的一首五言古诗。</h5>
+									</div>
+								</li>
+								<li>
+									<div class="floatLeft">
+										<img src="img/scrollpic/2.png">
+									</div>
+									<div class="floatRight">
+										<h3>解读《定风波》</h3>
+                                		<h5>此词作于元丰五年(1082年)春天，词中苏轼清晰地表达了身处困境中仍追求心之自由的信念。</h5>
+									</div>
+								</li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template> 
+		 <!--子组件模板结构-->
+		 <template id="iconstyle">        
+            <span :class="iconcolor" :style="{fontFamily:family, fontSize:`${size}px`}">               
+                <slot></slot>
+            </span> 
+        </template>  
+    </body>
+    <script>
+		const HomeComponent = {
+			template:'#home',
+			setup(){
+				const iconData = Vue.reactive({
+					fontType:'宋体',
+                    pIconColor:'icon',
+                    pSize:14 
+				})
+				
+				return {
+					iconData,
+					...Vue.toRefs(iconData)
+				}
+			}
+		}
+		const LoginComponent = {
+			template:'#login',
+			setup(){
+				//在setup函数中访问store实例，需要调用useStore函数
+				const loginStore = Vuex.useStore()				
+				const formData = Vue.reactive({
+					loginForm: {
+						userName:'',
+						password:''
+					}					
+				})				
+				  
+				const handleLogin = () => {
+					//返回登录表单对象loginForm
+					const loginInfo = Object.assign({}, formData.loginForm) 						
+					if(loginInfo.userName != '' && loginInfo.password != ''){
+						alert("登录成功")						
+						formData.loginForm = {
+							userName:'',
+							password:''
+						}
+						//将用户名保存至sessionStorage中的token
+						sessionStorage.setItem('token', loginInfo.userName)	
+						//跳转到路由home
+						router.push({name: 'home'})
+					} else {					
+						alert("请输入登录信息")						
+					}
+				}
+				//获取登录前最近一次浏览页面对应的路由名
+				const handleInit = () => {
+					alert("上一个页面对应的路由名是：" + loginStore.getters.preTrace)					
+				}
+				
+				Vue.onMounted(handleInit)
+
+				return {
+					formData,
+					...Vue.toRefs(formData),					
+					handleLogin,
+					handleInit
+				}
+			}
+		}
+		const PoetryComponent = {
+			template:'#poetryContent'
+		}
+		const InfoComponent = {
+			template:'#infoContent'
+		}
+		const AccountComponent = {
+			template:'#accountContent'
+		}
+		const IconComp = {//创建组件
+            template:'#iconstyle',
+            props:{
+                iconcolor:{
+                    type:String,
+                    default:''
+                },
+                family:{
+                    type:String,
+                    default:'微软雅黑'
+                },
+                size:{
+                    type:[Number,String],
+                    default:16
+                }
+            }
+        }  
+		//路由数组		
+		const routes = [
+			{
+				path:'/',
+				name:'home',
+				component: HomeComponent
+			},
+			{
+				path:'/login',
+				name:'login',
+				component: LoginComponent
+			},
+			{
+				path:'/poetry',
+				name:'poetry',
+				component: PoetryComponent
+			},
+			{
+				path:'/information',
+				name:'information',
+				component: InfoComponent,
+				meta:{//访问控制
+					requiresAuth: true//要求登录
+				}
+			},
+			{
+				path:'/account',
+				name:'account',
+				component: AccountComponent,
+				meta:{
+					requiresAuth: true
+				}
+			}
+		]
+			
+		//创建路由管理器实例
+		const router = VueRouter.createRouter({
+			history: VueRouter.createWebHashHistory(),
+			routes:routes
+		})
+		//全局前置守卫
+		router.beforeEach((to, from, next) => {	
+			//读取sessionStorage中的token	
+			const token = sessionStorage.getItem('token')
+			//当用户未登录时，则跳转到路由login	
+			if(to.meta.requiresAuth && (token === null || token === '')) {
+				next({name: 'login'})
+			}else {
+				next()
+			}			
+		})
+		//全局后置守卫		
+		router.afterEach ((to, from, failure) => {
+			//分发事件触发addPageAction的执行
+			store.dispatch('addPageAction',to.name)			
+		})
+
+		//创建store实例
+		const store = Vuex.createStore({
+			state () {
+				return {
+					pages: []
+				}
+			},
+			getters: {
+				traceList: state => state.pages,
+				preTrace: state => state.pages[state.pages.length - 1]
+			},
+			mutations:{
+				addPage(state, pageName) {
+					state.pages.push(pageName)
+					console.log(state.pages)
+				}
+			},
+			actions: {
+				addPageAction({commit}, pageName) {
+					setTimeout(() => {
+						commit('addPage', pageName)
+					}, 500)
+				}
+			}
+		})
+
+		//创建应用实例
+        const appObj = Vue.createApp({			
+			setup() {
+				const getTrace = () => {
+					if(store.getters.traceList.length > 0){
+						const traces = store.getters.traceList.join(",")
+						alert("已浏览的页面： " + traces)
+					}
+				}
+				
+				return {					
+					getTrace
+				}
+			}
+		})		
+		//注册全局组件router		
+		appObj.use(router)
+		//注册全局组件store
+		appObj.use(store)
+		appObj.component('IconComp', IconComp)
+        appObj.mount('#container')
+    </script>

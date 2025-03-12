@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>动态表单+过渡效果示例</title>
+        <!-- 导入 Vue 3 -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/all.css" />
+		<style type="text/css">								
+			.main{				
+				width: 100%;
+				background-image: url(img/graybg.jpg);
+			}
+			.wrap{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.left{
+				padding-top:30px;		
+				width:200px;
+			    height: 600px;
+			    float: left;
+			    border-right: #A48652 1px solid;
+			}
+			.right{
+				width:780px;
+				height: 600px;
+				float:right;
+			}
+			/* 左列按钮*/
+			.left h4{
+				line-height: 60px;
+				text-align: center;
+				font-size: 1.2em;
+			}
+			.left ul li a,.left ul li a:link,.left ul li a:visited{
+				display: block;
+				width:200px;
+				height: 50px;				 
+				background-color: #a48652;
+				color: #fff;
+				text-align: center;
+				text-decoration: none;
+				line-height: 50px;
+				font-size: 1.0em;
+			}
+			.left ul li a:hover{
+				background-color: #fff;
+				color:#a48652 ;
+			}
+			
+			.right{
+				width:780px;
+				border: none;
+				height: 500px;
+			}
+			.content{
+				margin: 50px auto;
+				width:720px ;
+				border:#8E6310 1px solid;
+				padding: 10px;
+				height: 100px; 
+			}
+			.content h4{				
+				margin: 20px;
+			}			
+			.content ul{
+				width:350px;
+				float: right;
+				margin: auto;
+				padding: 20px 100px ;
+			}
+			.content ul li{
+				float: left;
+				margin:0 15px 0 10px;
+			}
+			.content ul li:hover{
+				float: left;
+				margin:0 15px 0 10px;
+				cursor: pointer;
+				color:#8E6310;
+				font-weight: 600;
+			}
+			.poetry{
+				margin: auto;
+				padding: 20px 20px ;	
+			}
+			
+        /*email列表过渡效果*/
+        .emailFade-enter-from,
+        .emailFade-leave-to{
+            opacity:0; 
+            transform: translateX(520px);           
+        }
+        .emailFade-enter-active,
+        .emailFade-leave-active {
+            transition:opacity 4s;            
+        } 
+        /*组件切换过渡效果*/
+        .accountFade-enter-from,
+        .accountFade-leave-to{
+            opacity:0;                        
+        }
+        .accountFade-enter-active,
+        .accountFade-leave-active {
+            transition:opacity 1s;            
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+			<div class="top">
+				<div class="wrap">
+					<div>
+						<img class="magintop_20 floatLeft logo" src="img/logo.png" />
+					</div>
+					<div class="login floatRight magintop_20">
+						<div class="floatLeft">
+							<ul>
+							<li><a href="#">注册</a><span>/</span>
+							<a href="#">登录</a></li>							
+							</ul>							
+						</div>						
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>	
+            <div class="top_bar">
+				<div class="wrap">
+					<div class="floatLeft menu ">
+						<ul class="nav">
+							<li>
+								<a href="#">名城典故</a>
+							</li>
+							<li>
+								<a href="#">名城诗词</a>
+							</li>
+							<li>
+								<a href="#">旅游信息</a>
+							</li>
+							<li>
+								<a href="#">会员中心</a>
+							</li>
+						</ul>
+					</div>
+					<div class="search floatRight">
+						<input type="text" placeholder="请检索关键词" /><input type="button" value="检索" />
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+			</div>		
+			<div class="main">
+				<div class="wrap">
+				<aside class="left">
+					<h4>名城诗词</h4>
+					<ul>
+						<li><a @click="handleArea(0)">华东地区</a></li>
+						<li><a @click="handleArea(1)">华北地区</a></li>
+						<li><a @click="handleArea(2)">华中地区</a></li>
+						<li><a @click="handleArea(3)">华南地区</a></li>	
+						<li><a @click="handleArea(4)">华西地区</a></li>					
+					</ul>
+				</aside>
+				<article class="right">
+					<poetry-component :citys="cityList"></poetry-component>					
+				</article>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<footer>
+				<div class="wrap">
+					<div class="flink">
+						<ul>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+							<li>
+								<a href="#">网站地图</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+						</ul>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="copy">Copyright © 2020 All Right Reserved.</div>
+					<div class="info">
+						<ul>
+							<li>电话：020-12345678</li>							
+						</ul>
+					</div>					
+				</div>
+			</footer>
+		</div>
+
+        <template id="searchPoetry">
+            <div class="content">
+				<ul>
+					<li v-for="(city, index) in citys" :key="city" @click="handleVerse(city)">{{city}}</li>
+				</ul>
+            </div>   
+			<div class="poetry">
+				<h4 v-if="result.length > 0">{{statistics}}</h4><br/>              
+				<dl v-for="(item, index) in result" :key="index">
+					<dt>{{item.title}} &nbsp;&nbsp;{{item.author}}</dt>
+					<dd v-for ="(stat, index_1) in item.verse" :key="index_1">{{stat.line}}</dd><br/>				
+				</dl>  
+			</div>             
+        </template>     
+    </body>
+    <script>		
+		const PoetryComponent = {
+            template: '#searchPoetry',
+            props:{                
+                citys: Array  //父组件传递过来的诗词列表
+            },
+            data(){
+                return {
+                    cityName:'',                                          
+                    cityInfo:[],
+                    result:[],
+					mockData: [
+                        {
+                            city:'杭州',
+                            title:'饮湖上初晴后雨二首・其二',
+                            author:'苏轼[宋]',
+                            verse:[
+								{line:'水光潋滟晴方好，山色空蒙雨亦奇。'},
+								{line:'欲把西湖比西子，淡妆浓抹总相宜。'}
+							]
+                        },
+                        {
+                            city:'济南',
+                            title:'济南・其一',
+                            author:'顾炎武[清]',
+                            verse:[
+                                {line:'落日天边见二峰，平临湖上出芙蓉。'},
+                                {line:'西来水窦缘王屋，南去山根接岱宗。'},
+								{line:'积气苍茫含斗宿，馀波瀺灂吐鱼龙。'},
+								{line:'还思北海亭中客，胜会良时不可逢。'}
+                            ]
+                        },
+                        {
+                            city:'杭州',
+                            title:'钱塘湖春行',
+                            author:'白居易[唐]',
+                            verse:[
+                                {line:'孤山寺北贾亭西，水面初平云脚低。'},
+                                {line:'几处早莺争暖树，谁家新燕啄春泥。'},
+                                {line:'乱花渐欲迷人眼，浅草才能没马蹄。'},
+                                {line:'最爱湖东行不足，绿杨阴里白沙堤。'}
+                            ]
+                        },
+                        {
+                            city:'广州',
+                            title:'送人游岭南',
+                            author:'司空曙[唐]',
+                            verse:[
+                                {line:'万里南游客，交州见柳条。'},
+                                {line:'逢迎人易合，时日酒能消。'},
+                                {line:'浪晓浮青雀，风温解黑貂。'},
+                                {line:'囊金如未足，莫恨故乡遥。'}]
+                        }
+                    ]
+                }
+            },
+            computed: {
+                statistics: function(){                    
+                    return "关于" + this.cityName + "的诗词共：" + this.result.length + "首"
+                }
+            },
+			watch:{
+				citys:function(nVal, oVal){	//监听props.citys传入新值
+					this.result.splice(0, this.result.length)//清空result数据
+				}
+			},
+            methods:{
+                getDataList(){                    
+                    setTimeout(() => {                                            
+                        this.cityInfo = this.mockData
+                    }, 2000)
+                },
+                handleVerse(name) {
+					this.cityName = name
+                    this.result = this.cityInfo.filter((item) => {                        
+                        return item.city === name
+                    })                      
+                }
+            },
+            mounted(){								
+                this.getDataList()
+            }
+        }
+		//创建应用实例
+        const appObj = Vue.createApp({
+            components:{
+                PoetryComponent
+            },            
+            data(){
+                return {
+					cityData:[
+						['杭州','苏州'],
+						['北京','济南'],
+						['长沙','荆州'],
+						['广州','桂林'],
+						['成都','西安']
+					],
+					cityList:[]                    
+                }
+            },
+			methods:{
+				handleArea(index){					
+					this.cityList = this.cityData[index]	
+				},
+				handleInit() {
+					this.cityList = this.cityData[0]
+				}
+			},
+			mounted(){								
+                this.handleInit()
+            }          
+        })
+        appObj.mount('#container')  			
+    </script>

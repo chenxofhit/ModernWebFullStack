@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>例3-1组件定义</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">  
+        <!--根组件模板结构--> 
+        <div>
+            <h3>{{message}}</h3>
+            <!-- 调用MyComponent -->
+            <My-Component></My-Component>  
+        </div>        
+    </div>     
+    <template id="tp_child">
+        <h2>MyComponent是自定义的一个组件!</h2>
+    </template>     
+</body>
+<script>
+    const MyComponent = {
+        template: '#tp_child'
+    }
+    const RootComponent = {
+        data(){
+            return{
+                message:"我是根组件"
+            }            
+        },        
+        components:{
+            'MyComponent':MyComponent
+        }        
+    }
+    const appObj = Vue.createApp(RootComponent) 
+    appObj.mount("#app")
+</script>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>例3-1组件定义</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">        
+              
+    </div>  
+    <template id="tp_root">
+        <h2>{{message}}</h2>
+        <my-component></my-component>       
+    </template>
+    <template id="tp_child">
+        <h1>MyComponent是自定义的一个组件!</h1>
+    </template>     
+</body>
+<script>
+    const  MyComponent = {
+        template: '#tpl'
+    }
+    //创建一个Vue应用
+    const appObj = Vue.createApp({
+        data(){
+            return{
+                message:"hello!"
+            }            
+        },
+        template:'#t1',
+        components:{
+            'MyComponent':MyComponent
+        }        
+    }) 
+    appObj.mount("#app")
+</script>
+</html> -->

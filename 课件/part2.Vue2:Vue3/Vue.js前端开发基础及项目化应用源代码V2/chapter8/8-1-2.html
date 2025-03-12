@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hash前端路由实现</title>
+    <body>
+        <button id="btn">点击更改路径</button>
+        <ul>
+            <li><a href="#/" id="first">首页</a></li>
+            <li><a href="#/second" id="second">第二页</a></li>
+        </ul>
+        <div id="myDiv"></div>
+        <script>
+            const btn = document.getElementById('btn')
+            window.onhashchange = (e) => {
+                console.log('old: ', e.oldURL);
+                console.log('new: ', e.newURL);    
+                console.log('hash: ', location.hash);
+            }
+            btn.addEventListener('click', () => {                
+                window.location.hash = "home"//location.href = '#/home'
+            })
+            const first = document.getElementById('first')
+            const second = document.getElementById('second')
+            const myDiv = document.getElementById('myDiv')
+            first.addEventListener('click', () => {
+                location.href = '#/'   
+                myDiv.innerHTML = "首页"
+
+            })
+            second.addEventListener('click', () => {
+                location.href = '#/second'
+                myDiv.innerHTML = "第二页"
+            })
+        </script>
+    </body>
+</html>

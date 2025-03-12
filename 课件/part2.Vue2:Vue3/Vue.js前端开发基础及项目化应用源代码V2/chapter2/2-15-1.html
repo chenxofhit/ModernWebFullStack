@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>事件修饰符 应用示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app"> 
+            <!--阻止事件冒泡-->
+            <h4>.stop阻止事件冒泡</h4>            
+            <div class="s_blue" v-on:click.self="blue()">
+                <div class="s_pink" v-on:click="pink()"></div>
+            </div> 
+            <h4>.self只有当前元素事件被触发时，才执行事件处理函数</h4>
+            <div class="s_green" v-on:click="green">
+                <div class="s_blue" v-on:click.self="blue">
+                    <div class="s_pink" v-on:click="pink"></div>
+                </div>    
+            </div>       
+            <h4>.prevent阻止表单默认提交事件</h4>
+            <form v-on:submit.prevent="onSubmit">
+                <input type="text" />
+                <input type="submit" value="提交"/>
+            </form>
+            <h4>.capture使用capture模式添加事件监听器</h4>
+            <div v-on:click.capture="outer"> 
+                <div v-on:click.capture="middle"> 
+                    <div v-on:click.capture="inner">单击DIV</div>
+                </div>
+            </div> 
+            <h4>.once仅接受一次事件触发 </h4>            
+            <button v-on:click.once="doOnce">单击一次</button>
+            <h4>.passive以{passive:true}方式添加事件监听器</h4>
+            <div v-on:scroll.passive="onScroll" class="s_area">
+                使用.passive修饰符，其作用就是告知浏览器监听器不会执行event.preventDefault()，
+                使得当前div区域滚动事件的默认行为 (scrolling) 立即发生，而无需等待onScroll函数执行完成。
+            </div>
+            <h4>修饰语可以使用链式书写</h4>
+            <button v-on:click="doClick" >
+                <a v-on:click.stop.prevent="doHref">单击链接</a>
+            </button>
+            
+              
+        </div>    
+    </body>
+    <script type="text/javascript">
+        //创建根组件
+        const RootComponent = {
+            data:function(){
+                return {  
+                    count: 0,                  
+                    total: 0
+                }
+            },
+            methods:{                  
+                calc: function(x, y, event){ 
+                    this.total = x + y
+                    alert(event.target.tagName + "   "+ event.target.innerHTML)   
+                },
+                blue(){
+                    alert('蓝色区域')
+                },
+                pink(){
+                    alert('粉色区域')
+                },
+                green(){
+                    alert("绿色区域")
+                },
+                onSubmit(){
+                    alert("自定义提交")
+                },
+                inner(){
+                    alert("内层div")
+                },
+                middle(){
+                    alert("中层div")
+                },
+                outer(){
+                    alert("外层div")
+                },                
+                doOnce(){
+                    alert('button单击事件一次')
+                },
+                onScroll(){
+                    for (let i = 0; i < 10; i++) {
+                        console.log(i)
+                    }
+                },
+                doHref(){
+                    alert('链接')
+                },
+                doClick(){
+                    alert('button单击事件')
+                }
+            }
+        }         
+        //创建Vue应用实例    
+        const vueApp = Vue.createApp(RootComponent) 
+        //挂载处理       
+        vueApp.mount("#app")
+    </script>
+    <style>
+        .s_green {
+            width: 300px;height: 300px; background-color: lightgreen;
+        }
+        .s_blue {
+            width: 200px;height: 200px; background-color: lightblue;
+        }
+        .s_pink {
+            width: 100px;height: 100px; background-color: lightpink;
+        }
+        .s_area{
+            width:200px;
+            height:150px;
+            border: 2px solid red;
+            overflow: scroll;
+        }
+        
+    </style>
+</html>

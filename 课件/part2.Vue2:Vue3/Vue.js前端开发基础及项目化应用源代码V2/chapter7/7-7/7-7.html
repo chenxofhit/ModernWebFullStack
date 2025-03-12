@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>拦截器应用示例</title> 
+<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+<script src="./../vue.js"></script>
+<script src="./../axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="handleGet">GET请求</button>
+        <button @click="handlePost">POST请求</button> 
+        <p>{{resMsg}}</p>
+    </div>    
+</body>
+<script> 
+    const appObj = Vue.createApp({
+        setup(){
+            const resMsg = Vue.ref('')
+            //创建axios实例
+            const instance = axios.create({
+                headers: {
+                    'content-type': 'application/json;charset=UTF-8'//设置请求数据格式
+                },
+                //baseURL: 'http://127.0.0.1:5500/basic-example/chapter7/7-7/',//请求IP和端口
+                baseURL: 'http://localhost:8080/examples/7/',//请求IP和端口
+                timeout: 10000//请求超时期限
+                //withCredentials: true                
+            })
+
+            //添加请求拦截器
+            instance.interceptors.request.use((config) => {
+                //发送请求之前的处理                
+                config.headers['token'] = 'token';
+                return config;
+            }, error => {
+                //请求错误时的处理
+                return Promise.reject(error);
+            })
+
+            //添加响应拦截器
+            instance.interceptors.response.use((response) => {
+                //对响应数据进行一些操作
+                if (response.status === 200) {
+                    console.log(response)
+                    if (response.data) {
+                        console.log('响应成功')
+                        //在请求成功之后返回前端之前，对返回的数据进行处理
+                        response.data.users[2].desc = '我是返回的成功信息' 
+                    } else {
+                        console.log('返回到登录...')
+                    }
+                }
+                return response;
+            }, error => {
+                return Promise.reject(error.response.data); //返回响应的错误信息
+            })  
+            
+            const handleGet = () => {                
+                instance.get('data.json',{
+                        params: {
+                            userId: '333'
+                        }
+                    }).then((res) => {                        
+                        resMsg.value = res.data;          
+                    }).catch((error) => {
+                        console.log(error);
+                    })
+                }
+            const handlePost = () => {//POST请求需要TOMCAT测试
+                instance.post('data.json',{
+                    data: {
+                        userId: '111'
+                    },
+                    headers: {
+                        token: 'wangwu'
+                    }
+                }).then((res) => {
+                    resMsg.value = res.data;
+                }).catch((error) => {
+                    console.log('error ' + error);
+                })
+            } 
+            return {
+                resMsg,
+                instance,
+                handleGet,
+                handlePost
+            }
+        }
+    })
+    appObj.mount('#app')
+</script>
+</html>

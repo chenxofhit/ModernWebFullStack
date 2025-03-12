@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>动态表单+过渡效果示例</title>
+        <!-- 导入 Vue 3 -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/all.css" />
+		<style type="text/css">								
+			.main{							
+				width: 100%;
+				background-image: url(img/graybg.jpg);
+			}
+			.wrap{				
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.left{
+				padding-top:30px;	
+				width:200px;
+			    height: 600px;
+			    float: left;
+			    border-right: #A48652 1px solid;
+			}
+			.right{
+				width:780px;
+				height: 600px;
+				float:right;
+			}
+			/* 左列按钮*/
+			.left h4{
+				line-height: 60px;
+				text-align: center;
+				font-size: 1.2em;
+			}
+			.left ul li a,.left ul li a:link,.left ul li a:visited{
+				display: block;
+				width:200px;
+				height: 50px;				 
+				background-color: #a48652;
+				color: #fff;
+				text-align: center;
+				text-decoration: none;
+				line-height: 50px;
+				font-size: 1.0em;
+			}
+			.left ul li a:hover{
+				background-color: #fff;
+				color:#a48652 ;
+			}
+			
+			.right{
+				width:780px;
+				border: none;
+				height: 500px;
+			}
+			.content{
+				margin: 50px auto;
+				width:720px ;
+				border:#8E6310 1px solid;
+				padding: 10px;
+				/* height: 250px; */
+			}
+			.content h4{				
+				margin: 20px;
+			}
+			.account_item{
+				width:400px;
+				margin: auto;
+			}
+			.lab{
+				float: left;
+				padding-right: 20px;
+				width:80px;
+				height: 50px;
+				line-height: 50px;
+				text-align: right;
+				font-size: 0.9em;
+			}
+			.inp{
+				float:left;
+				width:250px;
+				
+			}
+			.inp input{		
+				width:230px;
+				height: 40px;
+				border:1px solid #666666;
+				border-radius: 5px;
+			}
+			.content ul{
+				width:350px;
+				float: right;
+				margin: auto;
+				padding: 20px 100px ;
+			}
+			.content ul li{
+				float: left;
+				margin:0 15px 0 10px;
+			}
+			.btn{
+				width:80px;
+				height: 40px;
+				background-color: #FFFFFF;
+				font-size: 0.9em;
+				outline: none;
+				border:#8E6310 solid 1px;
+				border-radius: 5px;
+				
+			}
+			.btn:hover{
+				background:#A58241;
+				color: #fff;
+			}
+			
+        /*email列表过渡效果*/
+        .emailFade-enter-from,
+        .emailFade-leave-to{
+            opacity:0; 
+            transform: translateX(520px);           
+        }
+        .emailFade-enter-active,
+        .emailFade-leave-active {
+            transition:opacity 4s;            
+        } 
+        /*组件切换过渡效果*/
+        .accountFade-enter-from,
+        .accountFade-leave-to{
+            opacity:0;                        
+        }
+        .accountFade-enter-active,
+        .accountFade-leave-active {
+            transition:opacity 1s;            
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+			<div class="top">
+				<div class="wrap">
+					<div>
+						<img class="magintop_20 floatLeft logo" src="img/logo.png" />
+					</div>
+					<div class="login floatRight magintop_20">
+						<div class="floatLeft">
+							<ul>
+							<li><a href="#">注册</a><span>/</span>
+							<a href="#">登录</a></li>							
+							</ul>							
+						</div>						
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>	
+            <div class="top_bar">
+				<div class="wrap">
+					<div class="floatLeft menu ">
+						<ul class="nav">
+							<li>
+								<a href="#">名城典故</a>
+							</li>
+							<li>
+								<a href="#">名城诗词</a>
+							</li>
+							<li>
+								<a href="#">旅游信息</a>
+							</li>
+							<li>
+								<a href="#">会员中心</a>
+							</li>
+						</ul>
+					</div>
+					<div class="search floatRight">
+						<input type="text" placeholder="请检索关键词" /><input type="button" value="检索" />
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+			</div>		
+			<div class="main">
+				<div class="wrap">
+				<aside class="left">
+					<h4>会员中心</h4>
+					<ul>
+						<li><a @click="handleAccount">我的账户</a></li>
+						<li><a @click="handleArticle">我的游记</a></li>						
+					</ul>
+				</aside>
+				<article class="right">
+					<transition name="accountFade" mode="out-in">
+                        <component :is="comp"></component>
+                    </transition>
+				</article>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<footer>
+				<div class="wrap">
+					<div class="flink">
+						<ul>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+							<li>
+								<a href="#">网站地图</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+						</ul>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="copy">Copyright © 2020 All Right Reserved.</div>
+					<div class="info">
+						<ul>
+							<li>电话：020-12345678</li>							
+						</ul>
+					</div>					
+				</div>
+			</footer>
+		</div>
+
+        <template id="article">
+            <div class="content" :style="{height:s_height+'px'}">
+                <h3>我的游记</h3>
+				<br/>
+                <dl>					
+                    <dt v-for="(item,index) in articles" :key="index" @click="handleArticle(item)">{{item}}</dt>                        
+                </dl>
+            </div>
+        </template>  
+        <template id="account">                            
+            <div id="accountForm" class="content" :style="{height:s_height+'px'}">
+                <h3>我的账户</h3>
+                <dl class="account_item">
+                    <dt class="lab"><label>用户名</label></dt>
+                    <dd class="inp"><input type="text" name="userName" id="userName" v-model="userForm.userName" /></dd>			
+                </dl>
+                <div style="clear: both;"></div>
+                                   
+                <transition-group name="emailFade" > 
+                    <div v-for="(item, index) in userForm.emails" :key="index">
+                        <dl class="account_item"> 
+                            <dt class="lab"><label>邮箱{{index}}</label></dt>                                
+                            <dd class="inp"><input type="text" name="email" id="email" v-model="item.value" /></dd>
+                            
+                            <input type="button" class="btn" @click="removeEmailItem(item)" value="删除"/>
+                        </dl>
+                    </div> 
+                </transition-group>		
+                
+                <div style="clear: both;"></div>
+                <ul>
+                    <li><input type="button" class="btn"  @click="onSubmit" value="提交"/></li>                    
+					<li><input type="button"  class="btn" @click="addEmailItem" value="新增"/></li>
+                </ul>
+            </div> 
+        </template>      
+    </body>
+    <script>
+        //“我的账户”局部组件
+        let AccountComponent = {
+            data(){
+                return {
+                    userForm:{
+                        userName:'',
+                        emails:[{value:'', key:1}]
+                    },
+                    s_height: 270
+                }
+            },
+            template:"#account",
+            methods:{
+                addEmailItem(){
+                    this.userForm.emails.push({
+                        value:'',
+                        key: Date.now()
+                    })
+                    this.s_height = this.s_height + 100
+                },
+                removeEmailItem(item){
+                    const index = this.userForm.emails.indexOf(item)                    
+                    if(index != -1) {
+                        this.userForm.emails.splice(index, 1)
+                        this.s_height = this.s_height - 100
+                    }                    
+                },
+                onSubmit(){
+                    const data = Object.assign({}, this.userForm)//读取表单数据 
+                    console.log(data)
+                }
+            } 
+        }
+        //“我的游记”局部组件
+        let ArticleComponent = {
+            data(){
+                return {                    
+                    articles:['1.金陵枫叶','2.我眼中的千年古都','3.姑苏小镇','4.丝绸之路之嘉峪关'],
+                    s_height:200
+                }
+            },
+            template:"#article"
+        }
+        const appObj = Vue.createApp({
+            data(){
+                return {                   
+                    comp:'account-component'
+                }
+            },  
+            components:{//注册组件 
+                'account-component': AccountComponent,
+                'article-component': ArticleComponent
+            },       
+            methods:{                
+                handleAccount(){
+                    this.comp = 'account-component'
+                },
+                handleArticle(item){
+                    this.comp = 'article-component'                    
+                }
+            }
+        })  
+        appObj.mount("#container")        
+    </script>

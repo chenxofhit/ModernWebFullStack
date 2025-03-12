@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>例3-11 具名插槽+作用域的使用</title>
+    <script type="text/javascript" src="vue.global.js"></script>
+    <style>
+        .nav{
+            background-color: rgb(221, 220, 220);
+            width: 320px;
+            height: 36px;
+            line-height: 36px;  
+        }
+        .left{           
+            margin:0px 10px 0px 5px;
+            float: left;
+            position: relative;           
+        }
+        .right{           
+            margin:0px 10px 0px 5px; 
+            float: right; 
+            position: relative;   
+        }
+        .nav button{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">  
+        <!-- 第一次使用子组件 -->
+        <child-comp></child-comp>
+        <hr>
+        <!-- 第二次使用子组件 --> 
+        <child-comp>
+            <!-- v-slot:left="leftProps"向具名插槽传递props -->
+            <template #left="leftProps"><span class="left">购物车{{leftProps.number}}</span></template>
+            <template #right="rightProps"><span class="right">搜索</span></template>
+        </child-comp>
+        <hr>
+        <!-- 第三次使用子组件 -->
+        <child-comp>
+            <template #middle><span></span></template>
+            <template #right><span class="right">搜索</span></template>
+        </child-comp>
+    </div>
+    <template id="child">
+        <div class="nav"> 
+            <slot name="left" number="10"><button class="left">返回</button></slot>
+            <slot name="middle"><input type="text"></slot>          
+            <slot name="right"><button  class="right">确定</button></slot>
+       </div>
+    </template> 
+</body>
+<script>    
+    //创建一个Vue应用
+    const appObj = Vue.createApp({        
+       data(){
+        return{
+            message:'Hello'
+        }
+       }      
+    })
+    //定义一个名为child-comp全局组件
+    appObj.component('child-comp',{
+        template:'#child'
+    })   
+    appObj.mount("#app")
+</script>
+</html>

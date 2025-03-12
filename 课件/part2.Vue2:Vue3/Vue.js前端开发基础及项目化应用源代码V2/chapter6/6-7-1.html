@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script>
+        <meta charset="utf-8"> 
+        <title>toRef用法 变量值改，但视图不变示例</title>
+    </head>
+    <body>
+        <div id="app">
+            <local-component></local-component>
+        </div>
+        <template id="tmp">
+            <h4>toRef转换示例</h4>
+            <!-- <p>title:{{title.tip}}</p>   -->
+            <p>title_tip:{{title_tip}}</p>   
+            <button @click="toChangeTitle">修改title</button>            
+        </template>        
+    </body>
+    <script>  
+    const LocalComponent= {
+            template: '#tmp',                
+            props:{
+                name: String
+            },
+            setup(props, context){
+                //普通变量
+                const title = {tip:'无标题', type:'html'}                               
+
+                const title_tip = Vue.toRef(title, 'tip')
+
+                const toChangeTitle = function(){                   
+                    title_tip.value = "学生信息" 
+                    console.log(title_tip.value)// "学生信息"，但视图中仍是"无标题
+                }
+
+                return { 
+                    title_tip,                     
+                    toChangeTitle
+                }                                   
+            }
+        } 
+        const appObj = Vue.createApp({
+            components:{
+                LocalComponent
+            }
+        })
+        appObj.mount('#app')          
+        // const LocalComponent= {
+        //     template: '#tmp',                
+        //     props:{
+        //         name: String
+        //     },
+        //     setup(props, context){ 
+        //         const title = Vue.ref("无标题")
+        //         const student = Vue.reactive({
+        //             name:'无姓名',
+        //             major:'无专业'   
+        //         })
+
+        //         // const data = reactive({
+        //         //     product:{
+        //         //         name:'book',
+        //         //         price:0
+        //         //     },
+        //         //     total:0
+        //         // })
+        //         // console.log(data.product.name)
+        //         // console.log(data.total)
+        //         // data.product.name='food'
+        //         // console.log(data.product.name)
+                
+        //         const toChangeTitle = function(){
+        //            title.value = "学生信息"                   
+        //         }
+
+        //         const toChangeStudent = function() {                    
+        //             student.name = "张三"
+        //             student.major = "前端开发"
+        //         } 
+                
+        //         return {
+        //             title,
+        //             student,
+        //             toChangeTitle,
+        //             toChangeStudent
+        //         }                                   
+        //     }
+        // } 
+        // const appObj = Vue.createApp({
+        //     components:{
+        //         localComponent
+        //     }
+        // })
+        // appObj.mount('#app')
+    </script>
+    </html>

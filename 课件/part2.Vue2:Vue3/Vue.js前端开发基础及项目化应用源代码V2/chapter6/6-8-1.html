@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script> -->
+        <script src="./vue.js"></script>
+        <meta charset="utf-8"> 
+        <title>watch用法示例</title>
+    </head>
+    <body>
+        <div id="app">
+            <local-component></local-component>
+        </div>
+        <template id="tmp">                        
+            <button @click="toChangeCount">修改count</button>            
+            <button @click="toChangeNumAndCount">修改num和count</button>          
+            <button @click="toChangeProduct">修改product</button>
+        </template>        
+    </body>
+    <script>  
+    const LocalComponent = {
+            template: '#tmp', 
+            setup(props, context){
+                const count = Vue.ref(1);                
+                Vue.watch(count, (newVal, oldVal) => {
+                    console.log('old count val :>> ', oldVal)
+                    console.log('new count val :>> ', newVal)
+                })
+               
+                // 同时监听多个数据
+                const num = Vue.ref(10)
+                //方式一
+                Vue.watch([count, num], (newValue, oldValue) => {                  
+                    console.log('old [count, num] val :>> ', oldValue)
+                    console.log('new [count, num]  val :>> ', newValue)
+                })
+                // newValue和oldValue各为一个数组，newValue=[新的Count值, 新的Num值]   oldValue=[原Count值, 原Num值]
+                //方式二 此时可以使用es6的数据解构语法
+                Vue.watch([count, num], ([newCount, newNum], [oldCount, oldNum]) => {
+                    console.log("oldCount, oldNum:", oldCount, oldNum)
+                    console.log("newCount, newNum:", newCount, newNum)               
+                                    })
+                const data = Vue.reactive({//reactive定义对象
+                    product:{
+                        name:'教科书',
+                        price:0
+                    },
+                    total: 1
+                }) 
+                const computedData = Vue.computed(() => {                    
+                    return JSON.stringify(data)
+                })
+                //监听对象某个属性
+                Vue.watch(()=>data.product.name, (newVal, oldVal) => {
+                    console.log('old data.product.name val :>> ', oldVal)
+                    console.log('new data.product.name val :>> ', newVal)
+                })
+                
+
+                //监听对象
+                Vue.watch(computedData, (newVal, oldVal) => {                    
+                    console.log('old data val :>> ', JSON.parse(oldVal)) //JSON.parse(oldVal)
+                    console.log('new data val :>> ', newVal)
+                },{deep:true})
+
+                const toChangeCount = () => {
+                    count.value++;
+                }
+                const toChangeNumAndCount = () => {
+                    count.value++;
+                    num.value++;
+                }
+                const toChangeTitle = () =>{
+                    title.name = "产品信息"
+                }
+                const toChangeProduct = () =>{
+                    data.product.name = "技术手册"
+                }
+                return {
+                    count,
+                    num,
+                    data,                   
+                    toChangeCount,
+                    toChangeNumAndCount,
+                    toChangeProduct
+                }                                 
+            }
+        } 
+        const appObj = Vue.createApp({
+            components:{
+                LocalComponent
+            }
+        })
+        appObj.mount('#app')       
+    </script>
+    </html>

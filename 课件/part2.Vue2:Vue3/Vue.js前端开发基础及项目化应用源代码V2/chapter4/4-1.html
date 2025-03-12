@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script type="text/javascript" src="vue.global.js"></script>
+        <title>例4-1 钩子函数：实例创建</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{message}}</h1>
+        </div>   
+    </body> 
+    <script>
+        const RootComp = {//创建根组件
+            data(){
+                return{
+                    message:"hello!"
+                }            
+            },
+            beforeCreate(){
+                console.log('组件事件和钩子函数初始化已完成，但未配置选项')
+                console.log(this.message)              
+                console.log(this.$el)
+            },
+            created(){
+                console.log('组件实例创建完成')
+                console.log(this.message)                
+                console.log(this.$el)
+            }
+        }
+        const appObj = Vue.createApp(RootComp)//创建Vue应用实例
+        appObj.mount("#app")
+    </script>
+</html>

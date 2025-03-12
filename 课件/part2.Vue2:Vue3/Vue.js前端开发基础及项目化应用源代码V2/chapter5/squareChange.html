@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .testBox {
+              overflow: hidden;
+              height: 100vh;
+              padding: 100px 50px;
+              box-sizing: border-box;
+            }
+            .testCon {
+                height: 200px;
+                background: pink;
+                transition: width 2s linear; /*监听这个元素的width属性的变化*/
+            }
+            .testBtn {
+                margin-top: 10px;
+                height: 60px;
+                line-height: 60px;
+                border: 1px solid #35aeff;
+                background: #35aeff;
+                border-radius: 10px;
+            }            
+        </style>        
+    </head>
+    <body>
+        <div id="myDiv"></div>
+    </body>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    width: 0
+                }
+            },
+            methods : {
+                handleClick() {
+                    this.width += 100
+                }
+            },
+            template:`
+                <div class="testBox">
+                    <div class="testCon" :style="{ width: width + 'px' }"></div>
+                    <div class="testBtn" @click="handleClick">点击按钮</div>
+                </div>
+                
+            `
+        });
+        const vm = app.mount("#myDiv");
+    </script>
+</html>

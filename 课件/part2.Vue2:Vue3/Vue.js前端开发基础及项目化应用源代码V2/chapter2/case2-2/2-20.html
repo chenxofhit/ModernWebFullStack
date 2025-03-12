@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>项目2-2</title>
+		<!-- 导入 Vue 3 -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/all.css" />
+		<style type="text/css">								
+			.main{
+				width: 100%;
+				background-image: url(img/graybg.jpg);
+			}
+			.wrap{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.left{
+				padding-top:30px;
+				width:200px;
+			    height: 600px;
+			    float: left;
+			    border-right: #A48652 1px solid;
+			}
+			.right{
+				width:780px;
+				height: 600px;
+				float:right;
+			}
+			/* 左列按钮*/
+			.left h4{
+				line-height: 60px;
+				text-align: center;
+				font-size: 1.2em;
+			}
+			.left ul li,.left ul li:visited{
+				display: block;
+				width:200px;
+				height: 50px;				 
+				background-color: #a48652;
+				color: #fff;
+				text-align: center;
+				text-decoration: none;
+				line-height: 50px;
+				font-size: 1.0em;
+			}
+			.left ul li:hover{
+				background-color: #fff;
+				color:#a48652 ;
+			}
+			
+			.right{
+				width:780px;
+				border: none;
+				height: 500px;
+			}
+			.content{
+				margin: 50px auto;
+				width:500px ;
+				border:#8E6310 1px solid;
+				padding: 10px;
+				height: 300px; 
+			}
+			.content h4{				
+				margin: 20px;
+			}
+			.account_item{
+				width:400px;
+				margin: auto;
+			}
+			.lab{
+				float: left;
+				padding-right: 20px;
+				width:80px;
+				height: 50px;
+				line-height: 50px;
+				text-align: right;
+				font-size: 0.9em;
+			}
+			.inp{
+				float:left;
+				width:250px;
+				
+			}
+			.inp input{		
+				width:230px;
+				height: 40px;
+				border:1px solid #666666;
+				border-radius: 5px;
+			}
+			.content ul{
+				width:350px;
+				float: right;
+				margin: auto;
+				padding: 20px 50px ;
+			}
+			.content ul li{
+				float: left;
+				margin:0 15px 0 52px;
+			}
+			.btn{
+				width:80px;
+				height: 40px;
+				background-color: #FFFFFF;
+				font-size: 0.9em;
+				outline: none;
+				border:#8E6310 solid 1px;
+				border-radius: 5px;
+				
+			}
+			.btn:hover{
+				background:#A58241;
+				color: #fff;
+			}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+			<div class="top">
+				<div class="wrap">
+					<div>
+						<img class="magintop_20 floatLeft logo" src="img/logo.png" />
+					</div>
+					<div class="login floatRight magintop_20">
+						<div class="floatLeft">
+							<ul>
+							<li><a href="#">注册</a><span>/</span>
+							<a href="#">登录</a></li>							
+							</ul>							
+						</div>						
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>	
+            <div class="top_bar">
+				<div class="wrap">
+					<div class="floatLeft menu ">
+						<ul class="nav">
+							<li>
+								<a href="#">名城典故</a>
+							</li>
+							<li>
+								<a href="#">名城诗词</a>
+							</li>
+							<li>
+								<a href="#">旅游信息</a>
+							</li>
+							<li>
+								<a href="#">会员中心</a>
+							</li>
+						</ul>
+					</div>
+					<div class="search floatRight">
+						<input type="text" placeholder="请检索关键词" /><input type="button" value="检索" />
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+			</div>		
+			<div id="app" class="main">
+				<div class="wrap">
+					<aside class="left">
+						<h4>名城典故</h4>
+						<ul>
+							<li v-for="(item, index) in citys" v-bind:key="item" v-text="item" v-on:click="getStory(index)"></li>
+						</ul>
+					</aside>
+					<article class="right">
+						<div id="storyForm" class="content" >
+							{{cityStory}}
+						</div> 
+					</article>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<footer>
+				<div class="wrap">
+					<div class="flink">
+						<ul>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+							<li>
+								<a href="#">网站地图</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+						</ul>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="copy">Copyright © 2020 All Right Reserved.</div>
+					<div class="info">
+						<ul>
+							<li>电话：020-12345678</li>							
+						</ul>
+					</div>					
+				</div>
+			</footer>
+		</div>    
+    </body>
+	<script type="text/javascript">
+        //创建根组件
+        const RootComponent = { 
+            data () {
+                return {
+                    citys:["北京","杭州","武汉","长沙","广州"],
+                    storys: ['【北京的名字】 北京，简称“京”，古称燕京、北平。洪武元年(1368年)朱元璋定都南京，改大都为北平，改大都路为北平府。永乐元年(1403年)，朱棣登上皇帝宝座，改北平为北京，改北平府为顺天府，重新定都北京。1949年1月31日，北平和平解放，9月27日，中国人民政治协商会议第一届全体会议决定中华人民共和国定都北平，北平改名北京。',
+					'【西湖十景】西湖十景题名源于宋代院画的山水题名。比如北宋山水画家宋迪，他用平沙落雁、山市晴岚、远浦归帆等等四字句的名称来标出自己所画的作品内容。后来山水画家竞相仿效。公元13世纪，南宋画家马远、陈清波在撷取西湖风景精华所作的画中，也分别标上柳浪闻莺、两峰插云、平湖秋月、断桥残雪、三潭印月、雷峰夕照、苏堤春晓和南屏晚钟，以后又画了花港观鱼、曲院荷风两幅，于是便有了西湖十景的说法。清朝康熙皇帝南巡游西湖，为十景题名立碑，并改两峰插云为双峰插云，曲院荷风为曲院风荷。',
+					'【陈怀民路】陈怀民路在武汉市江岸区的中山大道上，长约600米，以抗日英雄陈怀民命名。陈怀民，中央航校毕业，曾参加华北、南京、上海等地的保卫战。在1938年的武汉“4.29空战”中，陈怀民驾驶战机在击落一架敌机后受到5架敌机围攻，他在身负重伤、油箱着火的情况下，没有选择跳伞逃生，而是驾机撞向敌机，与日本吹嘘的所谓“红武士”高桥宪一同归于尽，壮烈牺牲。',
+					'【古长沙】在古长沙的史前文化有许多动人的传说。炎帝教耕，“崩葬于长沙”。黄帝 “南至于江，登熊湘”，熊、湘两山即在长沙。舜帝南巡，“葬在沙零陵界中”。禹分九州，长沙在荆州境内。相传大禹治水，到过长沙，至今岳麓山还留有禹碑、禹迹蹊等胜景。',
+					'【六榕寺】北宋元符三年（1100年），苏轼从海南北归，路经广州，时净慧寺僧人慕东坡之名，力邀其为寺题字。苏东坡见寺内有六棵枝叶繁盛的古榕，便欣然提笔写下 “六榕”二字，字为楷体，遒丽奇雅，厚重雍容。后人慕其为人，爱其文才，便将净慧寺改为“六榕寺”，六榕寺之名因此而来，至今寺门仍悬挂着东坡手迹“六榕”二字。'
+					],
+                    cityStory:''
+                }      
+            },
+            methods:{
+                getStory:function(index){                    
+					this.cityStory = this.storys[index]
+                }
+            }           
+        }         
+        //创建Vue应用实例    
+        const vueApp = Vue.createApp(RootComponent) 
+        //挂载处理       
+        vueApp.mount("#app")
+	</script>
+</html>
+    

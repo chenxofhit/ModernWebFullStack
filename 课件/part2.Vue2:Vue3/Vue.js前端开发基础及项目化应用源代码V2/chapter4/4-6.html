@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script type="text/javascript" src="vue.global.js"></script>
+        <title>例4-6 Teleport搭配组件使用</title> 
+        
+    </head>
+    <body>    
+        <div id="app">
+            <div>
+                <button @click="open = true">打开模态框</button>  
+            </div>
+            <!--teleport组件元素-->
+            <teleport to="body">
+                <!--调用子组件ModalComp-->
+                <modal-comp :show="open" @close="open = false">
+                    <!--父组件内容替换子组件slot默认内容-->
+                    <template #header><p>测试标题</p></template>
+                    <template #body><p>测试内容</p></template>
+                </modal-comp>
+            </teleport>         
+        </div> 
+        <!--子组件模板结构-->
+        <template id="modal"> 
+            <div  v-if="show" class="modal-mask">
+                <div class="modal">
+                    <div class="modal-body">
+                        <div class="modal-header">
+                            <slot name="header">默认标题</slot>                        
+                        </div>        
+                        <div class="modal-body">
+                            <slot name="body">默认内容</slot>                       
+                        </div>        
+                        <div class="modal-footer">
+                            <slot name="footer">                                
+                                <button class="modal-button"  @click="$emit('close')">确认</button>
+                            </slot>
+                        </div>
+                    </div>                    
+                </div>
+            </div>             
+        </template> 
+    </body> 
+    <script>
+        const RootComp = {//创建根组件
+            data(){
+                return{
+                    open:false
+                }
+            } 
+        }
+        const ModalComp = {//创建模态框组件
+            props:{
+                show:Boolean
+            },  
+            template:'#modal'                  
+        }               
+        const appObj = Vue.createApp(RootComp)//创建Vue应用实例
+        appObj.component('ModalComp',ModalComp)//注册ModalComp全局组件
+        appObj.mount("#app")
+    </script>
+    <style>
+        .modal-mask {
+            position: fixed;
+            z-index: 9998;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: table;
+            transition: opacity 0.3s ease;
+        }
+        .modal {
+            position: fixed;
+            z-index: 999; 
+            top: 20%;
+            left: 50%;
+            width: 300px;
+            margin-left: -150px;  
+            background-color: #fff;   
+            border-radius: 2px;    
+        }
+        .modal-header{
+            font-weight: bold; 
+            margin: 0 5px;
+        }
+        .modal-body {
+            margin: 10px 5px 0 5px ;
+        }
+        .modal-button{
+            float:right;
+            margin: 0 10px 10px 0;
+        }
+    </style>
+</html>

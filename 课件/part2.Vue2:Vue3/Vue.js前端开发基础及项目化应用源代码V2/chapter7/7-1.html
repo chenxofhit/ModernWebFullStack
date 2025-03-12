@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Promise对象示例</title> 
+</head>
+<body>
+</body>
+<script>
+    setTimeout(function () { //第一层 
+        console.log('第一层嵌套'); 
+        setTimeout(function () { //第二层  
+            console.log('第二层嵌套'); 
+            setTimeout(function () { //第三层 
+                console.log('第三层嵌套'); }, 
+            2000)},
+        2000)},
+    2000)
+        //console.dir(Promise)
+</script>
+</html>

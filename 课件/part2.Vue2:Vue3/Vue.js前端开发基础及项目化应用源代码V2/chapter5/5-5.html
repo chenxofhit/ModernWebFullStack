@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>transition过渡钩子函数实现动画示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background: red;
+            }            
+        </style>
+    </head>
+<body>
+<div id="app">
+    <button @click="toggle">change</button>
+    <!--transition 用v-bind:css="false"阻止Vue查找样式类-->
+    <transition     
+                :css="false"
+                @before-enter="handleBeforeEnter"   
+                @enter="handleEnter"             
+                @after-enter="handleAfterEnter">
+        <div class="box" v-show="isShow"></div>
+    </transition>
+</div>
+</body>
+<script>
+    const appObj = Vue.createApp({
+        data(){
+            return {
+                isShow: false,
+                fadeInDuration: "3s"
+            }            
+        },
+        methods:{
+            toggle(){
+                this.isShow = !this.isShow
+            },
+            handleBeforeEnter(el){
+                // 进入动画开始之前
+                console.log("handleBeforeEnter")
+                //console.log(this.$el.ownerDocument.styleSheets[0])                
+                el.style.opacity = "0"
+                el.style.marginLeft = "0px"
+                
+            },
+            handleEnter(el, done){
+                // 进入动画执行过程中
+                console.log("handleEnter");
+                //利用el.offsetWidth / el.offsetHeight强制动画刷新                  
+                //el.offsetWidth;
+                el.offsetHeight;                
+                el.ownerDocument.styleSheets[0].insertRule(
+                    `@keyframes div_in_frame {
+                        0% {transform :translateX(0px); opacity:0;}
+                        100% {transform :translateX(200px); opacity:1; }`
+                );
+                el.style.animation =  "div_in_frame 3s linear"
+                //动画执行完毕之后一定要调用done回调函数,否则后续的afterEnter钩子函数不会被执行 
+                //done()             
+                setTimeout(function () {
+                    done()
+                }, 3000)             
+            },
+            handleAfterEnter(el){
+                // 进入动画执行完毕之后
+                console.log("handleAfterEnter")
+                el.style.opacity = "1"
+                el.style.marginLeft = "200px"                
+            }
+        }
+    })
+    appObj.mount("#app")
+</script>
+
+</html>
