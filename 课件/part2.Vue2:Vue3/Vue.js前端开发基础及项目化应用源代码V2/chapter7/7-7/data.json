@@ -1,8 +1,0 @@
-{
-    "users":[
-        {"userId":"111","token":"wangwu"},
-        {"userId":"222","token":"zhangsan"},
-        {"userId":"333","token":"lisi"}
-
-    ]
-}
