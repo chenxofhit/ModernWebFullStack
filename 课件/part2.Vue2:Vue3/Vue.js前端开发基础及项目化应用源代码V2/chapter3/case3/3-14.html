@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>第三章 组件应用实践案例</title>    
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>        
+    </head>
+    <body>
+        <div id="app" class="shangxi">              
+            <div class="wrap">
+                <div class="shangxihead">
+                    <div class="headleft floatLeft">
+                        <img src="img/tit_2.jpg" />
+                    </div>
+                    <!--调用子组件-->
+                    <div class="headRight floatRight">
+                        <a href="#">更多分类
+                            <icon-comp  :iconcolor="pIconColor" :family="fontType" :size="pSize">
+                                <i class="ri-add-fill"></i>
+                            </icon-comp>                       
+                        </a>
+                    </div>
+                    <div class="clear">
+
+                    </div>
+                </div>
+                <div class="shangxibody">
+                    <ul> 
+                        <li>
+                            <div class="floatLeft">
+                                <img src="img/1.png">
+                            </div>
+                            <div class="floatRight">                           
+                                <h3>解读《定风波》</h3>
+                                <h5>此词作于元丰五年春天，词中苏轼清晰地表达了身处困境中仍追求心之自由的信念。</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="floatLeft">
+                                <img src="img/2.png">
+                            </div>
+                            <div class="floatRight">
+                                <h3>解读《为陈同甫赋壮词以寄》</h3>
+                                <h5>这首词的前九句，辛弃疾生动地描绘出一位披肝沥胆、忠贞不二、勇往直前的将军形象。</h5>
+                            </div>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--子组件模板结构-->
+        <template id="iconstyle">        
+            <span :class="iconcolor" :style="{fontFamily:family, fontSize:`${size}px`}">               
+                <slot></slot>
+            </span> 
+        </template>
+    </body>
+    <script>
+        const RootComp = {//创建根组件
+            data(){
+                return{
+                    fontType:'宋体',
+                    pIconColor:'icon',
+                    pSize:14           
+                }
+            }
+        }    
+        const IconComp = {//创建组件
+            template:'#iconstyle',
+            props:{
+                iconcolor:{
+                    type:String,
+                    default:''
+                },
+                family:{
+                    type:String,
+                    default:'微软雅黑'
+                },
+                size:{
+                    type:[Number,String],
+                    default:16
+                }
+            }
+        }    
+        const appObj = Vue.createApp(RootComp)//创建一个Vue应用
+        //注册IconComp全局组件
+        appObj.component('IconComp', IconComp)
+        appObj.mount("#app")
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* font-family: "微软雅黑"; */
+        }
+        .clear {
+            clear: both;
+        }
+        .floatRight {
+            float: right;
+        }
+        .floatLeft {
+            float: left;
+        }
+        .wrap {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .shangxi{
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px 0;
+            background-image: url(img/graybg.jpg);
+        }
+        .shangxihead{
+            border-bottom: #A58241 1px solid;
+        }
+        .shangxihead img{
+            display: block;
+            position: relative;
+            top: 3px;
+        }
+        .headRight {
+            padding-top: 20px;
+            color: #666;
+            text-decoration: none;
+            outline: none;
+        }			
+        .headRight a,
+        .headRight a:link,
+        .headRight a:visited {
+            text-decoration: none;
+            color: #666666;
+            font-size: 1.2em;
+        }        
+        .headRight a:hover {
+            text-decoration: underline;
+        }
+        .shangxibody {
+            width: 996px;
+            margin: 20px 0;
+            padding: 20px 0;
+            box-shadow: 0 0 3px #666;
+        }
+        .shangxibody ul{
+            width: 996px;
+            list-style: none;
+        }
+        .shangxibody{
+            padding: 20px 0;
+        }
+            
+        .shangxibody ul li {
+            width: 450px;
+            margin-left: 30px;
+            float: left;
+        }			
+        .shangxibody ul li>div:nth-child(2) {
+            width: 290px;
+            height: 82px;
+            overflow: hidden;
+            line-height: 130%;
+        } 
+        /*标题颜色*/       
+        .shangxibody ul li>div:nth-child(2)>h3 {
+            color: #8e6310;
+            margin: 8px 0;
+        }
+        /* 设置图标样式 */
+        .icon{
+            color:#8e6310;
+            font-weight: bold;           
+        }
+        /* 解释文字颜色 */
+        .shangxibody ul li>div:nth-child(2)>h5 {
+            color: rgb(102, 102, 102);
+            font-size: 0.8px;
+            margin: 8px 0;
+            font-family: "微软雅黑";
+        }
+        /* .content{            
+            color: rgb(102, 102, 102);
+            font-weight: bold;            
+        } */
+        .shangxibody ul li>div:nth-child(1) {
+            width: 142px;
+            height: 82px;
+            overflow: hidden;
+            line-height: 130%;
+        }
+    </style>
+</html>

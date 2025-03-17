@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>嵌套路由使用示例</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue-router@4"></script>
+
+</head>
+<body>
+    <div id="app">       
+        <router-link to="/">主页</router-link>&nbsp;&nbsp; 
+        <router-link to="/account">用户账户</router-link>   
+        <router-view></router-view>
+    </div>
+
+    <template id="tmpl">
+      <div>
+        <h2>用户账户组件</h2>
+        <router-link to="/account/login">登录</router-link>&nbsp;&nbsp;
+        <router-link to="/account/register">注册</router-link>
+        <router-view></router-view>
+      </div>
+    </template>
+</body>
+<script>
+    //局部组件
+    const Home = {
+        template: '<h2>主页信息</h2>'
+    }
+    const Account = {
+        template: '#tmpl'
+    }
+    const Login = {
+        template: '<h2>登录信息</h2>'
+    }
+    const Register = {
+        template: '<h2>注册信息</h2>'
+    }
+    const routes = [
+          {
+              path: '/',              
+              component: Home
+          },
+          {
+              path: '/account',
+              component: Account,
+              // 使用 children 属性，实现子路由，同时，子路由的 path 前面，不要带 / ，否则永远以根路径开始请求，这样不方便我们用户去理解URL地址
+              children: [
+                  { path: 'login', component: Login },
+                  { path: 'register', component: Register }
+              ]
+          }]
+       
+    const router = VueRouter.createRouter({
+        history: VueRouter.createWebHashHistory(),
+        routes
+    })
+
+    // 创建应用实例
+    const appObj = Vue.createApp({})
+    appObj.use(router)
+    appObj.mount('#app')
+    
+</script>
+</html>

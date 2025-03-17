@@ -1,0 +1,352 @@
+			/*第二板块,导航条*/
+			
+			/* .top_bar {
+				width: 100%;
+				height: 82px;
+				background-image: url(../img/orgbg.jpg);
+			}
+			
+			.top_bar .menu {
+				width: 450px;
+				height: 75px;
+			}
+			.top_bar .menu ul{
+				width:1000px;
+			}
+			.top_bar .menu ul.nav {
+				list-style: none;
+			}
+			
+			.top_bar .menu ul.nav>li {
+				float: left;
+				width: 3em;
+				margin: 0 2em;
+				
+			}
+			.top_bar .menu ul.nav>li:hover{
+				
+				background:rgba(255,255,255,0.6);
+			} 
+			
+			.top_bar .menu ul.nav>li>a,
+			.top_bar .menu ul.nav>li>a:link,
+			.top_bar .menu ul.nav>li>a:visited {
+				text-decoration: none;
+				font-weight: bold;
+				color: #a58241;
+				font-size: 1.5em;
+				font-family: 黑体;
+				line-height: 75px;
+			}
+			
+					
+			.top_bar .menu ul.nav>li:hover {
+				border-bottom: #F5F4F2 2px solid;
+			}
+			
+			.search {
+				padding: 20px;
+			}
+			
+			.search input[type=text] {
+				width: 350px;
+				height: 40px;
+				line-height: 45px;
+				border: 0 none;
+				text-indent: 1em;
+			}
+			
+			.search input[type=button] {
+				background-color: #a58241;
+				border: 0 none;
+				color: #fff;
+				text-align: center;
+				line-height: 40px;
+				width: 87px;
+				height: 40px;
+				cursor: pointer;
+			} */
+			/*广告板块*/
+			
+			.banner {
+				width: 100%;
+				background-image: url(../img/graybg.jpg);
+				padding: 30px;
+				height: 339px;
+				overflow: hidden;				
+			}
+			
+			.banner div.outer {
+				width: 1000px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.banner div.outer>ul {
+				width: 6000px;
+			}
+			
+			.banner div.outer>ul>li {
+				padding: 0 1px;
+				float: left;
+			}
+			/*遮罩效果*/
+			
+			.mask {				
+				background-color: rgba(0, 0, 0, 0.4);
+				position: relative;
+				top: -105px;
+			}
+			
+			.mask>.floatLeft {
+				width: 400px;
+				height: 100px;
+			}
+			
+			.mask>.floatRight {
+				width: 600px;
+				height: 100px;
+			}
+			 
+			.mask>.floatLeft .poet h3 {
+				text-indent: 5px;
+				font-size: 20px;
+				font-weight: bold;
+				margin: 10px 0 5px 0;
+				height: 22px;
+				line-height: 22px;
+				color: #FFF;
+			}
+			
+			.mask>.floatLeft .poet p {
+				font-size: 16px;
+				line-height: 25px;
+				margin-top: 10px;
+				color: #fff;
+			}
+			
+			.slide_nav {
+				float: right;
+				height: 95px;
+				width: 420px;
+				bottom: 6px;
+				right: 0;
+				overflow: hidden;
+				z-index: 9;
+				position: absolute
+			}
+			
+			.slide_nav li {
+				float: left;
+				margin: 19px 10px;
+			}
+			
+			.slide_nav li:hover {
+				float: left;
+			}
+			
+			.slide_nav li>a {
+				display: block;
+				width:114px;
+				height:60px ;
+				border: 2px solid #fff;
+				background-color: #fff;
+			}
+			
+			.slide_nav li img {
+				width: 114px;
+				height: 60px;
+				
+			}
+			/*广告图片的左右方向按钮*/
+			.btn{
+				width:1000px;
+				position: relative;
+				top:-350px;
+			}
+			.lbtn,.rbtn{				
+				width:45px;
+				height:100px;
+				/*position: absolute;*/	
+				float: left;
+				background-image: url(../img/silder_btn.gif);
+				/*top:150px;*/	
+				opacity: 0.4;		
+			}
+			 
+			.rbtn{
+				float: right;
+				background-position: 45px 0;				
+			}
+			/*云端效果*/
+			/*云端，赏析，标注和链接的共享效果*/
+			
+			.cloud,
+			.shangxi,
+			.biaozhu,
+			.links {
+				width: 100%;
+				margin: 20px auto;
+				padding: 20px 0;
+				background-image: url(../img/graybg.jpg);
+			}
+			/*云端，赏析，标注和链接标题区域的共享效果*/
+			
+			.cloudhead,
+			.shangxihead,
+			.biaozhuhead,
+			.linkshead {
+				border-bottom: #A58241 1px solid;
+			}
+			
+			.cloudhead img,
+			.shangxihead img,
+			.biaozhuhead img,
+			.linkshead img {
+				display: block;
+				position: relative;
+				top: 3px;
+			}
+			
+			.headRight {
+				padding-top: 20px;
+				color: #666;
+				text-decoration: none;
+				outline: none;
+			}
+			
+			.headRight a,
+			.headRight a:link,
+			.headRight a:visited {
+				text-decoration: none;
+				color: #666666;
+				font-size: 1.2em;
+			}
+			
+			.headRight a:hover {
+				text-decoration: underline;
+			}
+			/*云端，赏析，标注和链接主体区域的共享效果*/
+			
+			.cloudbody,
+			.shangxibody,
+			.biaozhubody,
+			.linksbody {
+				width: 996px;
+				margin: 20px 0;
+				padding: 20px 0;
+				box-shadow: 0 0 3px #666;
+			}
+			/*云端，赏析和链接主体区域的列表共享效果*/
+			
+			.cloudbody ul,
+			.shangxibody ul,
+			.linksbody ul {
+				width: 996px;
+				list-style: none;
+			}
+			
+			.cloudbody ul li,
+			.linksbody ul li {
+				float: left;
+				width: 166px;
+				height: 129px;
+			}
+			/*赏析、标注的主题增加内边距*/
+			
+			.shangxibody .biaozhubody {
+				padding: 20px 0;
+			}
+			
+			.shangxibody ul li {
+				width: 450px;
+				margin-left: 30px;
+				float: left;
+			}
+			
+			.shangxibody ul li>div:nth-child(2) {
+				width: 290px;
+				height: 82px;
+				overflow: hidden;
+				line-height: 130%;
+			}
+			
+			.shangxibody ul li>div:nth-child(2)>h3 {
+				color: #8e6310;
+				margin: 8px 0;
+			}
+			
+			.shangxibody ul li>div:nth-child(2)>h5 {
+				color: #666;
+				font-size: 0.8px;
+				margin: 8px 0;
+				font-family: "微软雅黑";
+			}
+			
+			.shangxibody ul li>div:nth-child(1) {
+				width: 142px;
+				height: 82px;
+				overflow: hidden;
+				line-height: 130%;
+			}
+			/*标注细节*/
+			
+			.biaozhubody>div.floatLeft {
+				width: 205px;
+				height: 40px;
+				margin-left: 20px;
+				padding-top: 45px;
+				line-height: 40px;
+				text-align: center;
+				background-repeat: no-repeat;
+				background-image: url(../img/panel_2.png);
+			}
+			
+			.biaozhubody>div.floatLeft:first {
+				background-image: url(../img/panel_1.png);
+			}
+			
+			.biaozhubody>div.floatRight {
+				width: 500px;
+				padding: 0 20px;
+			}
+			
+			.biaozhubody>div.floatRight>h3 {
+				color: #8E6310;
+				font-size: 1.2em;
+				padding: 5px;
+			}
+			
+			.biaozhubody>div.floatRight>h5 {
+				color: #333;
+				font-size: 1.1em;
+				font-family: 黑体;
+				padding: 3px;
+			}
+			
+			.biaozhubody>div.floatRight>p {
+				color: #aa3a3a;
+				font-size: 0.8em;
+				padding: 3px;
+			}
+			/*链接板块*/
+			
+			.linksbody ul li {
+				height: 30px;
+				padding-left: 25px;
+			}
+			
+			.linksbody ul li>a,
+			.linksbody ul li>a:link,
+			.linksbody ul li>a:visited {
+				color: #8E6310;
+				font-size: 1.1em;
+				line-height: 30px;
+				text-decoration: none;
+				font-family: "微软雅黑";
+			}
+			
+			.linksbody ul li>a:hover {
+				text-decoration: underline;
+			}
+			

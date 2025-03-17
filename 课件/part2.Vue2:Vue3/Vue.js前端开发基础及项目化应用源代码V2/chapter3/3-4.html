@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>例3-4 使用props实现父组件向子组件传递数据</title>
+        <script type="text/javascript" src="vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!--根组件模板结构-->
+            <div>
+                <my-component message-ab="我是父组件数据"></my-component>
+            </div>        
+        </div>
+        <template id="tp_child">
+            <!--子组件模板结构-->
+            <div>
+                <h3>我是子组件。这是从父组件来的数据:{{messageAb}}</h3>
+            </div>        
+        </template>
+    </body>
+    <script>   
+        const RootComponent = {}//创建根组件
+        const MyComponent = {//创建组件        
+            props:['messageAb'],//props:声明待接收的父组件数据      
+            template:'#tp_child'
+        }    
+        const appObj = Vue.createApp(RootComponent)//创建Vue应用实例
+        //注册全局组件
+        appObj.component('MyComponent', MyComponent)   
+        appObj.mount("#app")
+    </script>
+</html>

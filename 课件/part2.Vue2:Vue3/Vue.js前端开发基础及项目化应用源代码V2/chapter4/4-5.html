@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script type="text/javascript" src="vue.global.js"></script>
+        <title>例4-5 Teleport基本使用</title>    
+    </head>
+    <body>    
+        <div id="app">
+            <!--调用子组件ChildComp-->
+            <child-comp></child-comp> 
+        </div>
+        <!--子组件模板结构-->        
+        <template id="modal">
+            <div>
+                <button @click="open = true">打开模态框</button>  
+            </div>
+            <teleport to="body">
+                <div v-if="open" class="modal-mask">
+                    <div class="modal">
+                        <div class="modal-body">
+                            <p>模态框内容</p>
+                            <button @click="open = false">关闭模态框</button>
+                        </div>                    
+                    </div>
+                </div>
+            </teleport>        
+        </template> 
+    </body> 
+    <script>
+        const ChildComp = {//创建组件
+            template:'#modal',
+            data(){
+                return{       
+                    open:false
+                }            
+            }  
+        }        
+        const appObj = Vue.createApp({})//创建Vue应用实例
+        appObj.component('ChildComp',ChildComp)//注册ChildComp全局组件
+        appObj.mount("#app")
+    </script>
+    <style>
+        .modal-mask {
+            position: fixed;
+            z-index: 9998;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: table;
+            transition: opacity 0.3s ease;
+        }
+        .modal {
+            position: fixed;
+            z-index: 999;
+            top: 20%;
+            left: 50%;
+            width: 300px;
+            margin-left: -150px;  
+            background-color: #fff;   
+            border-radius: 2px;    
+        }
+        .modal-body {
+            margin: 20px 10px;
+        }
+    </style>
+</html>

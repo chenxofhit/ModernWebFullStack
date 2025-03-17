@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>例3-3 局部组件注册</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <component-a></component-a>
+        </div>
+        <template id="tp_child">
+            <!--ComponentA模板结构-->
+            <h2>ComponentA是一个局部组件!</h2>
+        </template>
+    </body>
+    <script>
+        //定义组件内容
+        const  ComponentA = {
+            template: '#tp_child'
+        }
+        const RootComponent = {      
+            components:{
+                //注册局部组件
+                'component-a':ComponentA
+            }        
+        }
+        //创建一个Vue应用
+        const appObj = Vue.createApp(RootComponent)  
+        appObj.mount("#app")
+    </script>
+</html>

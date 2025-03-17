@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script>
+        <meta charset="utf-8"> 
+        <title>选项API实现查询功能 （无网页样式）</title>
+        <style>
+            input {
+                width: 250px;
+                height: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">           
+            <search-component :verses="mockData"></search-component>
+        </div>
+        <template id="search">
+            <div>
+                <input type="text" v-model="cityName" placeholder="请输入城市名：杭州、济南或广州" id="keyword" />
+                <button name="search" @click="handleVerse(cityName)">查询</button>  
+                <h4 v-if="result.length > 0">{{statistics}}</h4>              
+                <dl v-for="(item, index) in result" :key="index">
+                    <dt>{{item.title}} &nbsp;&nbsp;{{item.author}}</dt>
+                    <dd v-for ="(stat, index_1) in item.verse" :key="index_1">{{stat.line}}</dd>
+                </dl>
+            </div>                  
+        </template> 
+    </body>
+    <script>    
+        const SearchComponent = {
+            template: '#search',
+            props:{                
+                verses: Array  //父组件传递过来的诗词集合
+            },
+            data(){
+                return {
+                    cityName:'',                                          
+                    info:[],
+                    result:[]
+                }
+            },
+            computed: {
+                statistics: function(){                    
+                    return "关于" + this.cityName + "的诗词共：" + this.result.length + "首"
+                }
+            },
+            methods:{
+                getDataList(){                    
+                    setTimeout(() => {                                            
+                        this.info = this.verses
+                    }, 2000)
+                },
+                handleVerse(name) {
+                    this.result = this.info.filter((item) => {                        
+                        return item.city === name
+                    })                      
+                }
+            },
+            mounted(){
+                this.getDataList()
+            }
+        }
+        const appObj = Vue.createApp({
+            components:{
+                SearchComponent
+            },            
+            data(){
+                return {
+                    mockData: [
+                        {
+                            city:'杭州',
+                            title:'饮湖上初晴后雨二首·其二',
+                            author:'苏轼[宋]',
+                            verse:[{line:'水光潋滟晴方好，山色空蒙雨亦奇。'},{line:'欲把西湖比西子，淡妆浓抹总相宜。'}]
+                        },
+                        {
+                            city:'济南',
+                            title:'济南二首',
+                            author:'顾炎武[清]',
+                            verse:[
+                                {line:'落日天边见二峰，平临湖上出芙蓉。'},
+                                {line:'西来水窦缘王屋，南去山根接岱宗。'}
+                            ]
+                        },
+                        {
+                            city:'杭州',
+                            title:'钱塘湖春行',
+                            author:'白居易[唐]',
+                            verse:[
+                                {line:'孤山寺北贾亭西，水面初平云脚低。'},
+                                {line:'几处早莺争暖树，谁家新燕啄春泥。'},
+                                {line:'乱花渐欲迷人眼，浅草才能没马蹄。'},
+                                {line:'最爱湖东行不足，绿杨阴里白沙堤。'}
+                            ]
+                        },
+                        {
+                            city:'广州',
+                            title:'送人游岭南',
+                            author:'司空曙[唐]',
+                            verse:[
+                                {line:'万里南游客，交州见柳条。'},
+                                {line:'逢迎人易合，时日酒能消。'},
+                                {line:'浪晓浮青雀，风温解黑貂。'},
+                                {line:'囊金如未足，莫恨故乡遥。'}]
+                        }
+                    ]
+                }
+            }            
+        })
+        appObj.mount('#app')    
+    </script>
+</html>
+
+
+

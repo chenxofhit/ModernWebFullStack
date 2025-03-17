@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script> -->
+        <script src="./vue.js"></script>
+        <meta charset="utf-8"> 
+        <title>computed用法示例</title>
+    </head>
+    <body>
+        <div id="app">
+            <local-component></local-component>
+        </div>
+        <template id="tmp">
+            <div>count:{{count}}</div>
+            <div>computedCount:{{computedCount}}</div>
+            <button @click="handleAdd">递增</button>
+        </template>        
+    </body>
+    <script>  
+    const LocalComponent = {
+            template: '#tmp', 
+            setup(props, context){
+                const count = Vue.ref(1)
+                const computedCount = Vue.computed(() => {
+                    return count.value + 1
+                })              
+                const handleAdd = () => {
+                    count.value++
+                }
+                return {
+                    count,
+                    computedCount,
+                    handleAdd
+                }                                
+            }
+        } 
+        const appObj = Vue.createApp({
+            components:{
+                LocalComponent
+            }
+        })
+        appObj.mount('#app')    
+    </script>
+</html>

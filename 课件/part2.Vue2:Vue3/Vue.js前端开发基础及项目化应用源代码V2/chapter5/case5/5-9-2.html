@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>动态表单+过渡效果示例</title>
+        <!-- 导入 Vue 3 -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+        #app{
+            width: 100%;
+            margin:40px;
+            display: flex;
+            justify-content: center;
+        }
+        .menu{
+            width:20%;
+            height: 100%;
+            background-color: #545c64;           
+        }   
+        .menu-item{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .menu-item:hover{
+            color: blue;
+        }       
+        .content{
+            width: 40%;
+            height: 100%;
+            border: 1px solid rgb(203, 199, 199);
+            padding: 10px;
+            margin-left: 20px;
+        }
+        ul {
+            list-style-type: none;
+            list-style-image: none;
+            margin: 0px; 
+            padding:0px;                               
+        }
+        li{
+            margin-top: 20px;
+            padding-left: 20px;            
+        }
+        li:hover{
+            color:blue;            
+            cursor: pointer;
+        }
+        /*email列表过渡效果*/
+        .emailFade-enter-from,
+        .emailFade-leave-to{
+            opacity:0; 
+            transform: translateX(520px);           
+        }
+        .emailFade-enter-active,
+        .emailFade-leave-active {
+            transition:opacity 4s;            
+        } 
+        /*组件切换过渡效果*/
+        .accountFade-enter-from,
+        .accountFade-leave-to{
+            opacity:0;                        
+        }
+        .accountFade-enter-active,
+        .accountFade-leave-active {
+            transition:opacity 1s;            
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="app">            
+            <div class="menu">
+                <h3 class="title">会员中心</h3>                
+                <p  class="menu-item" @click="handleAccount">我的账户</p>
+                <p  class="menu-item" @click="handleArticle">我的游记</p>              
+            </div>
+            <div class="content" >
+                <transition name="accountFade" mode="out-in">
+                    <component :is="comp"></component>
+                </transition>      
+            </div>                                     
+        </div>
+        <template id="article">
+            <div>
+                <h3>我的游记</h3>
+                <ul>
+                    <li v-for="(item,index) in articles" key="index" @click="handleArticle(item)">{{item}}</li>                        
+                </ul>
+            </div>
+        </template>  
+        <template id="account">
+            <div>
+                <h3>我的账户</h3>
+                <div id="accountForm">
+                    <label for="userName">*用户名</label>
+                    <input type="text" name="userName" id="userName" v-model="userForm.userName" /><br/>
+                    <transition-group name="emailFade" > 
+                        <div v-for="(item, index) in userForm.emails" :key="index">
+                            <label for="email">*邮箱{{index}}</label>
+                            <input type="text" name="email" id="email" v-model="item.value" /><br/>
+                            <input type="button" @click="removeEmailItem(item)" value="删除"/>
+                        </div> 
+                    </transition-group>                   
+                    <input type="button"  @click="onSubmit" value="提交"/>
+                    <input type="button"  @click="addEmailItem" value="新增"/>
+                </div>                                   
+            </div>
+        </template>      
+    </body>
+    <script>
+        //“我的账户”局部组件
+        let AccountComponent = {
+            data(){
+                return {
+                    userForm:{
+                        userName:'',
+                        emails:[{value:'', key:1}]
+                    }
+                }
+            },
+            template:"#account",
+            methods:{
+                addEmailItem(){
+                    this.userForm.emails.push({
+                        value:'',
+                        key: Date.now()
+                    })
+                },
+                removeEmailItem(item){
+                    const index = this.userForm.emails.indexOf(item)                    
+                    if(index != -1) {
+                        this.userForm.emails.splice(index, 1)
+                    }                    
+                },
+                onSubmit(){
+                    const data = Object.assign({}, this.userForm)//读取表单数据 
+                    console.log(data)
+                }
+            } 
+        }
+        //“我的游记”局部组件
+        let ArticleComponent = {
+            data(){
+                return {                    
+                    articles:['黄山归来不看岳','云南小镇丽江','独有魅力的江南','我眼中的千年古都']
+                }
+            },
+            template:"#article"
+        }
+        const appObj = Vue.createApp({
+            data(){
+                return {
+                    userForm:{
+                        userName:'',
+                        emails:[{value:'', key:1}]
+                    },
+                    articles:['黄山归来不看岳','云南小镇丽江','独有魅力的江南','我眼中的千年古都'],
+                    comp:'account-component'
+                }
+            },  
+            components:{//注册组件 
+                'account-component': AccountComponent,
+                'article-component': ArticleComponent
+            },       
+            methods:{                
+                handleAccount(){
+                    this.comp = 'account-component'
+                },
+                handleArticle(item){
+                    this.comp = 'article-component'                    
+                }
+            }
+        })  
+        appObj.mount("#app")
+        
+    </script>

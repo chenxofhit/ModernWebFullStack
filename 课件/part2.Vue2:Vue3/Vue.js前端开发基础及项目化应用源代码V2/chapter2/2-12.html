@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>v-for 遍历数组示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div>水果列表一：</div>
+            <!-- 循环遍历 -->
+            <!-- 使用v-text进行展示，可以避免闪动现象发生 -->
+            <ul> 
+                <li v-for="(item, i_key, index) in fruit" v-bind:key="item.id" v-text="item.id + item.name"></li>  
+            </ul>            
+            <div>水果列表二：</div>
+            <!-- 展示的索引和元素，使用空格隔开 -->
+            <ul>
+                <li v-for="(item, i_key, index) in fruit" v-bind:key="i_key">{{i_key + " " + item.name}}</li>
+            </ul>            
+        </div>    
+    </body>
+    <script type="text/javascript">   
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    fruit: [{id:1,name:'苹果'}, {id:2, name:'橙子'}, {id:3, name: '香蕉'}]           
+                }
+            }
+        }      
+        const vueApp = Vue.createApp(RootComponent)
+        vueApp.mount("#app")
+    </script>
+</html>

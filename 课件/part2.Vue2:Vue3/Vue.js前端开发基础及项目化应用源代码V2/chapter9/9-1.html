@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>计数器示例</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <count-view></count-view> 
+    </div>
+    <!--视图-->
+    <template id="tmp">        
+        <p>{{count}}</p>    
+        <button @click="increment()">加一</button>  
+    </template>
+</body>
+<script>
+    const CountView = {
+        data () {//状态
+            return {
+                count: 0
+            }
+        },
+        template: '#tmp',//视图                
+        methods: {//操作
+            increment(){
+                this.count++
+            }
+        }        
+    }
+    const appObj = Vue.createApp({        
+        components:{
+            CountView
+        }
+    })    
+    appObj.mount('#app')
+</script>
+</html>

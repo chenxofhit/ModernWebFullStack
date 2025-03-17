@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>例3-5 使用props向组件动态传递数据</title>
+    <script type="text/javascript" src="vue.global.js"></script>
+</head>
+    <body>
+        <div id="app">
+            <h3>父组件内容：</h3>
+            <h3>{{name}} , {{message}} </h3>
+            请输入名字：<input type="text" v-model="name"/><br/> 
+            请输入信息：<input type="text" v-model="message"/><br/>            
+            <!--调用子组件MyComponent-->
+            <my-component :from="name" :msg="message" ></my-component>
+        </div>
+        <template id="tp_child">
+            <div>
+                <h4>子组件内容：</h4>
+                <span>{{msg}}</span>
+                <h4>来自：{{from}}</h4>
+            </div>
+        </template>
+    </body>
+    <script>
+        const RootComponent = {//创建根组件
+            data(){ 
+                return{
+                    name:'RootComponent',
+                    message:'父组件的信息'                    
+                }            
+            }       
+        }
+        const MyComponent = {//创建组件
+            props:['msg','from'],
+            template:'#tp_child'
+        }  
+        const appObj = Vue.createApp(RootComponent)//创建Vue应用实例
+        //注册MyComponent为全局组件
+        appObj.component('MyComponent', MyComponent)   
+        appObj.mount("#app")
+    </script>
+</html>

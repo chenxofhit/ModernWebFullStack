@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>transition不同类型的多元素过渡效果示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>        
+        .fade-enter-from,
+        .fade-leave-to{
+            opacity:0;
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+            transition:opacity 3s;
+        }        
+        </style>        
+    </head>
+<body>
+<div id="app">  
+    <button @click="show('一')">显示第一个阶段</button>
+    <button @click="show('二')">显示第二个阶段</button> 
+    <button @click="show('三')">显示第三个阶段</button><br/>   
+    <transition name="fade">        
+        <p :key="index">第{{index}}个阶段</p>        
+    </transition>
+</div>
+</body>
+<script>
+    const appObj = Vue.createApp({
+        data(){
+            return {
+                index: "一",                
+            }           
+        },
+        methods: {
+            show(i) {
+                this.index = i               
+            }
+        }
+    })
+    appObj.mount("#app")
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>编程式导航示例</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue-router@4"></script>
+</head>
+<body>
+    <div id="app">        
+        <router-link to="/">主页</router-link>&nbsp;&nbsp; 
+        <span @click="handleToRoute(pid)">产品详情</span>&nbsp;&nbsp; 
+        <button @click="goBack()">返回前一个页面内容</button>        
+        <router-view></router-view>
+    </div>
+</body>
+<script>
+    //局部组件
+    const Home = {
+        template: '<h2>主页信息</h2>'
+    }
+    const Product = {
+        template: '<h2>产品详细情况</h2>'+
+        '<h3>产品编号：{{$router.currentRoute.value.params.id}}</h3>'
+    }
+    const routes = [
+          {
+              path: '/',  
+              name: 'home',            
+              component: Home
+          }] 
+    //创建路由管理器实例   
+    const router = VueRouter.createRouter({
+        history: VueRouter.createWebHashHistory(),
+        routes:routes    //routes
+    })    
+     
+    //创建应用实例
+    const appObj = Vue.createApp({
+        setup(){  
+            //定义路由
+            const route = { path: '/product/:id', name: 'product', component: Product }
+            //添加路由
+            const handleAddRoute = () => {                
+                router.addRoute(route)             
+            }
+            //挂载时执行路由添加操作
+            Vue.onMounted(handleAddRoute)
+            //切换到Product组件内容
+            const handleToRoute = () => {
+                const id = 'P001' 
+                //方式一                
+                //router.push({path:`product/${id}`}) 
+                //方式二
+                router.push({name: 'product', params:{id: id}}) 
+            }
+            //返回前一条记录
+            const goBack = () => {
+                router.go(-1)
+            }
+            return {              
+                handleAddRoute,
+                handleToRoute,
+                goBack
+            }        
+        }
+    })
+    appObj.use(router)
+    appObj.mount('#app')
+</script>
+</html>

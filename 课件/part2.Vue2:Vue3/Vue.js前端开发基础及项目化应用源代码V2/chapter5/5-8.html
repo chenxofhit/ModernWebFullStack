@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>transition-group针对列表过渡效果示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+        .options-item {
+            margin-left: 10px ;
+            display: inline-block;  
+        }
+        .fade-enter-from,
+        .fade-leave-to{
+            opacity:0;
+            transform: translateY(20px);
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+            transition:opacity 2s;
+        } 
+        .fade-move{
+            transition: all 2s;
+        }       
+        </style>        
+    </head>
+<body>
+<div id="app">  
+    <button @click="add">新增</button>
+    <button @click="remove">移除</button> <br/>
+    <transition-group name="fade" tag="ul">        
+        <li v-for="(item, index) in options" :key="index" class="options-item">{{item}}</li>        
+    </transition-group>
+</div>
+</body>
+<script>
+    const appObj = Vue.createApp({
+        data(){
+            return {
+                options: [
+                    1,
+                    2,
+                    3
+                ]     
+            }           
+        },
+        methods: {
+            randomIndex() {
+                return Math.floor(Math.random() * this.options.length)
+            },
+            add() {
+                const position = this.randomIndex()                
+                const number = this.options.length + 1                
+                //splice(index, len, [item])
+                this.options.splice(position, 0, number)                           
+            },
+            remove() {
+                const position = this.randomIndex()               
+                this.options.splice(position, 1) 
+                console.log(position)                 
+            }
+        }
+    })
+    appObj.mount("#app")
+</script>
+</html>

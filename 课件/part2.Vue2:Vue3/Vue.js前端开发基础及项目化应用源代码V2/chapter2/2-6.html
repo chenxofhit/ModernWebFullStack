@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>v-bind绑定样式属性的四种方式</title>
+        <!--引入vue库-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <!--挂载点-->
+        <div id="app">
+            <h4 class="gray thin">未采用v-bind绑定样式</h4>          
+            <h4 v-bind:class="{gray:true, thin:isActive}">1.使用对象进行v-bind绑定样式</h4> 
+            <h4 v-bind:class="['gray', 'thin']">2.使用数组进行v-bind绑定样式</h4> 
+            <h4 v-bind:class="['gray', {'thin': isActive}]">3.在数组中嵌入对象进行v-bind绑定样式</h4>       
+            <h4 v-bind:class="['gray', isActive?'thin':'']">4.在数组中使用三元表达式进行v-bind绑定样式</h4>             
+        </div>
+    </body>
+    <script type="text/javascript"> 
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    isActive: false
+                }
+            }
+        }
+        //创建Vue应用实例           
+        const vueApp = Vue.createApp(RootComponent)
+        //挂载vueApp
+        vueApp.mount("#app")        
+    </script> 
+    <style>
+        .gray {
+            background: rgb(209, 206, 206);
+        }
+
+        .thin {
+            font-weight: 200;
+        }
+    </style>   
+</html>

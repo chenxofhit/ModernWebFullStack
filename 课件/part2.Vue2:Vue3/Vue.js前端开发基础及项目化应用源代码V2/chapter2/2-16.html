@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>computed 应用示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app"> 
+            <h4>人民币兑换港币</h4>
+            兑换率：<input type="text" v-model="rate"/><br/>
+            输入人民币金额：<input type="text" v-model="money"/><br/>
+            兑换后港币金额：<span>{{ex_money}}</span>           
+        </div>    
+    </body>
+    <script type="text/javascript">
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    money:0,
+                    rate: 0.878
+
+                }      
+            },
+            computed:{
+                ex_money: function(){
+                    return this.money/this.rate
+                }
+            }            
+        }         
+        //创建Vue应用实例    
+        const vueApp = Vue.createApp(RootComponent) 
+        //挂载处理       
+        vueApp.mount("#app")
+    </script>    
+</html>

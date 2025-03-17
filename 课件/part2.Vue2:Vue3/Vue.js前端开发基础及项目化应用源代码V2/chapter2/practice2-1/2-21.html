@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>computed 应用示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app"> 
+            <h4>学情调查问卷</h4>            
+            姓名<input type="text" v-model="name"/><br/>
+            性别<input type="radio" id="male" value="男" v-model="gender"/>男
+                <input type="radio" id="female" value="女" v-model="gender"/>女<br/>
+            你已学习的语言<input type="checkbox" id="Java" value="Java语言" v-model="language"/>Java
+            <input type="checkbox" id="Php" value="PHP语言" v-model="language"/>PHP
+            <input type="checkbox" id="Python" value="Python语言" v-model="language"/>Python<br/>
+            你感兴趣的框架<select  v-model="framework">
+                <option value="Vue">Vue</option>
+                <option value="jQuery">jQuery</option>
+                <option value="Angular">Angular</option>
+                <option value="SSM">SSM</option>
+            </select><br/>
+            你的建议<input type="textarea" id="sug" v-model="suggest" /><br/>
+            <button v-on:click="doSubmit">提交</button>
+            <div v-if="isSeen">
+                <h4>调查结果</h4>
+                <div>姓名: {{name}}</div>
+                <div>性别: {{gender}}</div>
+                <div>你已学习的语言: {{language}}</div>
+                <div>你感兴趣的框架: {{framework}}</div>
+                <div>你的建议: {{suggest}}</div>
+            </div>           
+        </div>    
+    </body>
+    <script type="text/javascript">
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    name:'',
+                    gender: '',
+                    language:[],
+                    framework:'',
+                    suggest:'',
+                    isSeen: false
+                }      
+            },
+            methods:{
+                doSubmit: function(){
+                    this.isSeen = true
+                }
+            }            
+        }         
+        //创建Vue应用实例    
+        const vueApp = Vue.createApp(RootComponent) 
+        //挂载处理       
+        vueApp.mount("#app")
+    </script>    
+</html>

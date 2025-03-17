@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Promise对象示例</title> 
+</head>
+<body>
+</body>
+<script>
+    function fn(info){
+        let promise = new Promise((resolve, reject) => {            
+            setTimeout(function(){                
+                let flag = true //处理异步任务
+                if(flag){
+                    resolve(info); 
+                }else{
+                    reject('失败'); 
+                }
+            },2000)
+        })
+        return promise
+    }
+    fn('第一层嵌套')
+    .then(function(value){
+        console.log(value)
+        return fn('第二层嵌套')
+    })
+    .then(function(value){
+        console.log(value)
+        return fn('第三层嵌套')
+    })
+    .then(function(value){
+        console.log(value)        
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+    
+   
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>例3-12 作用域插槽的使用</title>
+    <script type="text/javascript" src="vue.global.js"></script>   
+</head>
+<body>
+    <div id="app">  
+        <child-comp v-slot:default="poemProp">        
+            <h3>诗歌：</h3>
+            <h3>{{poemProp.poem}}</h3>
+            <span>{{poemProp.text}}</span>
+        </child-comp>
+        <!--  v-slot 中使用解构 -->
+        <child-comp v-slot="{poem,text}">        
+            <h3>诗歌：</h3>
+            <h3>{{poem}}</h3>
+            <span>{{text}}</span>
+        </child-comp>
+    </div>
+    <template id="child">       
+        <slot :poem="poemName" :text="poemText"></slot>
+    </template> 
+</body>
+<script>    
+    const RootComp = {}
+    const ChildComp = {
+        template:'#child',
+        data(){
+            return{
+                poemName:'春晓',
+                poemText:'春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。'                
+            }
+        }
+    }
+    const appObj = Vue.createApp(RootComp)//创建Vue应用实例
+    //注册ChildComp全局组件
+    appObj.component('ChildComp', ChildComp)   
+    appObj.mount("#app")
+</script>
+</html>

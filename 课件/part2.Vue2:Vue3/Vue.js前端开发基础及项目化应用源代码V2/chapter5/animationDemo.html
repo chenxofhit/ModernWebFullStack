@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            /* 动画 */
+            @keyframes leftRight {
+                0% {
+                    transform: translateX(0px);
+                }
+                33% {
+                    transform: translateX(-100px);
+                }
+                66% {
+                    transform: translateX(100px);
+                }
+                100% {
+                    transform: translateX(0px);
+                }
+            }     
+            .animation_leftRight {
+                animation : leftRight 4s;  
+            }
+            .center {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="myDiv"></div>
+    </body>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    animate : {
+                        animation_leftRight : false
+                    }
+                }
+            },
+            methods : {
+                handleClick() {
+                    this.animate.animation_leftRight = !this.animate.animation_leftRight;
+                }
+            },
+            template:`
+                <div class="center">
+                    <div :class="animate">hello world</div>
+                    <button @click="handleClick">左右移动</button>
+                </div>
+                
+            `
+        });
+        const vm = app.mount("#myDiv");
+    </script>
+</html>

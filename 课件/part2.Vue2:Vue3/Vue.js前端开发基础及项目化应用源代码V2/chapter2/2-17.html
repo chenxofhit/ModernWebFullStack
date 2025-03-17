@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>watch 应用示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app"> 
+            <h4>观察以下数据的变化</h4>            
+            字符串：<input type="text" v-model="str"/>
+            对象：<input type="text" v-model="obj.name" />
+            数组：<input type="text" v-model="arr[0]" />                       
+        </div>    
+    </body>
+    <script type="text/javascript">
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    str: 'string',//字符串
+                    obj:{name: '张三', age:'20'},//对象
+                    arr:['广州','佛山']//数组
+                }      
+            },
+            watch:{
+                str:function(newValue, oldValue){
+                    this.str = newValue
+                    console.log("字符串str被改变了!" + newValue)
+                },
+                obj:{//包含处理方法和属性设置
+                    //要做的事情handler选项
+                    handler:function(newValue, oldValue){
+                        console.log("对象name属性被改变了!" + newValue['name'])
+                    },
+                    // 是否深度监听，影响handler中对象的属性变化
+                    deep:true
+                },
+                arr:{
+                    handler:function(newValue, oldValue){
+                        console.log("数组arr被改变了!" + newValue[0])
+                    },						
+                    deep:true,// 是否深度监听，影响handler中数组元素变化
+                    //immediate:true//强制立即执行handler
+                }
+            }            
+        }         
+        //创建Vue应用实例    
+        const vueApp = Vue.createApp(RootComponent) 
+        //挂载处理       
+        vueApp.mount("#app")
+    </script>    
+</html>

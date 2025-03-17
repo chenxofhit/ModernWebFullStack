@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>CSS3过渡示例</title>
+<style> 
+div{
+	width:100px;
+	height:100px;
+	background-color:red;
+	transition:background-color 5s ease-in; /*background-color属性改变时的过渡效果，时长为5s*/
+	-webkit-transition:background-color 5s ease-in; /*Safari 和 Chrome */
+}
+div:hover{
+	background-color:blue;
+}
+</style>
+</head>
+<body>
+<p>请将鼠标指针移动到红色区域</p>
+<div></div>
+</body>
+</html>

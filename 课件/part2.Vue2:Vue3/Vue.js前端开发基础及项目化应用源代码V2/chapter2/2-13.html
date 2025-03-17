@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>v-for 遍历对象属性示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div>水果信息：</div>            
+            <!-- 展示的索引和元素，使用空格隔开 -->
+            <ul>
+                <li v-for="item in fruit" v-bind:key='item' >
+                    <!-- 通过点来获取数组对象的属性值 -->
+                    <span>{{item}}</span>
+                </li>
+            </ul>            
+        </div>    
+    </body>
+    <script type="text/javascript">
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    fruit: {
+                        id: 1,
+                        ename: 'apple',
+                        cname: '苹果',
+                        price: 10,
+                        area: '山东',
+                        privder: '大东水果公司'
+                    }          
+                }
+            }
+        }        
+        const vueApp = Vue.createApp(RootComponent)
+        vueApp.mount("#app")
+    </script>
+</html>

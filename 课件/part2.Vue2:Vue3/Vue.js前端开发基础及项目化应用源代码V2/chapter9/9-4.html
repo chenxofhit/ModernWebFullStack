@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>getters应用示例</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vuex"></script>	
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div> 
+            <p>标题：{{pageTitle}}</p> 
+            <p>书名：{{bookName}}</p>
+            <p>价格：{{bookPrice}}</p>
+            <p>数量：{{bookCount}}</p>
+        </div>
+    </div>    
+</body>
+<script>
+    //创建状态管理器实例
+    const store = Vuex.createStore({
+        state () {
+            return {
+                book:{
+                    name:'Vue入门教材',
+                    price:30
+                },            
+                count: 100,
+                title: '教材信息'
+            }            
+        },
+        getters: {
+            bookCount: state => "共计" + state.count + "本"
+        }
+    })
+    //创建应用实例
+    const appObj = Vue.createApp({
+        computed:{
+            bookName(){
+                return this.$store.state.book.name
+            },
+            bookCount(){
+                return this.$store.getters.bookCount 
+            },
+            ...Vuex.mapState({                
+                bookPrice: state => state.book.price,
+                pageTitle:'title'//state => state.title 
+            }),
+            ...Vuex.mapGetters({
+                bookCount: 'bookCount'  
+            }),
+            ...Vuex.mapGetters([                
+                'bookCount'
+            ])         
+            
+        }
+    })
+    appObj.use(store)
+    appObj.mount('#app')
+    
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script type="text/javascript" src="vue.global.js"></script>
+        <title>例4-2 钩子函数：页面挂载</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{message}}</h1>
+        </div>    
+        <script>
+            const RootComp = {//创建根组件
+                data(){
+                    return{
+                        message:"hello!"
+                    }            
+                },
+                beforeMount(){
+                    console.log('生成虚拟DOM结构已完成，但未替换挂载点')
+                    console.log(this.message)              
+                    console.log(this.$el)
+                },
+                mounted(){
+                    console.log('组件挂载完成')
+                    console.log(this.message)                
+                    console.log(this.$el)
+                }
+            }
+            const appObj = Vue.createApp(RootComp)//创建Vue应用实例
+            appObj.mount("#app")
+        </script>
+    </body>
+</html>

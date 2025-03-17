@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Vuex状态管理示例</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vuex"></script>	
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>                
+            数据列表:
+            <ul>
+                <li v-for="item in this.$store.state.users">{{item}}</li>
+            </ul>
+            <input type="text" name="search" v-model="id" placeholder="请输入编号"/>
+            <button v-on:click="searchMutations">查询(mutations)</button>
+            <button v-on:click="searchActions">查询(actions)</button>
+        </div>
+        <div>
+            查询结果:
+            <ul>
+                <li v-for="item in this.$store.getters.userlist">{{item}}</li>
+            </ul>           
+        </div>
+    </div>    
+</body>
+<script>
+    //创建状态管理器实例
+    const store = Vuex.createStore({
+        state () {
+            return {
+                users: [
+                    {id:1, name:'zhangsan',email:'11@qq.com'},
+                    {id:2,name:'lisi',email:'22@qq.com'}
+                ],
+                id: 0
+            }           
+        },
+        // state: {
+             
+        //         users: [
+        //             {id:1, name:'zhangsan',email:'11@qq.com'},
+        //             {id:2,name:'lisi',email:'22@qq.com'}
+        //         ],
+        //         id: 0
+                       
+        // },       
+        getters:{
+            userlist: state => {return state.users.filter(u => u.id == state.id)}
+        },
+        mutations:{//支持同步处理
+            getUserInfo:function(state, id){        
+                state.id = id;
+                console.log(state.id)
+            }
+        },
+        actions:{ //支持异步处理
+            searchUserInfo:function({state, commit}, id){
+                commit('getUserInfo', id)
+            }
+        }
+    })
+    const appObj = Vue.createApp({
+        data(){
+            return {
+                id:''
+            }
+        },
+        methods:{
+            searchMutations:function(){
+                this.$store.commit('getUserInfo', this.id)      
+            },
+            searchActions:function(){
+                this.$store.dispatch('searchUserInfo', this.id)
+            }
+        }
+    })
+    appObj.use(store)
+    appObj.mount('#app')
+</script>
+</html>

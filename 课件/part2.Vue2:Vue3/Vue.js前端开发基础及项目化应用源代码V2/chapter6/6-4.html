@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script src="./vue.js"></script>
+        <meta charset="utf-8"> 
+        <title>setup函数访问生命周期钩子示例</title>
+    </head>
+        <body>
+            <div id="app">                
+                <local-component name="局部组件名称"></local-component>
+            </div>
+            <template id="tmp">
+                <div>
+                    <p>{{message}}</p>
+                </div>
+            </template>
+        </body>
+        <script>            
+            const LocalComponent= {
+                template: '#tmp',                
+                props:{
+                    name: String
+                },
+                setup(props, context){ 
+                    const message = "这是一个局部组件"                   
+                    Vue.onMounted(() => {
+                        console.log("mounted is invoked")
+                        console.log(message)
+                    })
+                    return {
+                        message
+                    }                                   
+                }
+            } 
+            const appObj = Vue.createApp({
+                components:{
+                    LocalComponent
+                }
+            })
+            appObj.mount('#app')
+        </script>
+</html>
