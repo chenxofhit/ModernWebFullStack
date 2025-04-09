@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<style>
+			li {
+				display: inline-block;
+				margin: 0 30px 30px 0;
+			}
+		</style>
+		<title>hash实现前端路由示例</title>
+	</head>
+	<body>
+		<ul>
+			<li><a href="#/" class="">turn white</a></li>
+			<li><a href="#/orange" class="">turn orange</a></li>
+			<li><a href="#/purple=123" class="">turn purple</a></li>
+		</ul>
+	</body>
+	<script>
+		function Router() {   //这是一个对象  对象格式{/: , /orange: , /purple=123: }
+			this.routes = {}; 
+			this.currentUrl = '';
+		}
+		
+		//在Router.prototype原型上设置方法,第一个设置路由,第二个路由跳转,第三个页面初始化
+		Router.prototype.route = function(path, callback) {
+			this.routes[path] = callback || function() {};
+			console.log(this.routes)
+		};
+		Router.prototype.refresh = function() {
+			//console.log(location) //Location 对象Location 对象包含有关当前 URL 的信息。Location 对象是 Window 对象的一个部分，可通过 window.location 属性来访问。
+			//console.log(location.hash);   #/purple=123
+			this.currentUrl = location.hash.slice(1) || '/';  //截取#后面的内容
+			this.routes[this.currentUrl](); //根据属性名 执行对应的函数
+		};
+		Router.prototype.init = function() {
+			window.addEventListener('load', this.refresh.bind(this), false); //加载首页
+			window.addEventListener('hashchange', this.refresh.bind(this), false);  //当URL的片段标识符更改时，将触发hashchange事件
+		}
+		
+		//自定义封装一个路由
+		window.Router = new Router();
+		window.Router.init();
+		var content = document.querySelector('body');
+		// change Page anything
+		function changeBgColor(color) {
+			content.style.backgroundColor = color;
+		}
+		Router.route('/', function() {
+			changeBgColor('white');
+		});
+		Router.route('/orange', function() {
+			changeBgColor('orange');
+		});
+		Router.route('/purple=123', function() {
+			changeBgColor('purple');
+		});
+	</script></html>

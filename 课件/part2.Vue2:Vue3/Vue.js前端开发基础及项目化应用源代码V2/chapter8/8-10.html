@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>全局导航守卫示例</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue-router@4"></script>
+</head>
+<body>
+    <div id="app">        
+        <router-link to="/">主页</router-link>&nbsp;&nbsp; 
+        <router-link to="/account">用户账户</router-link>&nbsp;&nbsp; 
+        <router-link to="/about">关于网站</router-link> 
+            
+        <router-view></router-view>
+    </div>
+</body>
+<script>
+    //局部组件
+    const Home = {
+        template: '<h2>主页信息</h2>'
+    }
+    const Account = {
+        template: '<h2>用户账户信息</h2>'
+    }
+    const About = {
+        template: '<h2>关于网站信息</h2>'
+    }
+    const routes = [
+        {
+            path: '/',  
+            name: 'home',            
+            component: Home
+        },
+        {
+            path: '/account',  
+            name: 'account',            
+            component: Account,
+            meta: {title: 'accountPage'},
+            beforeEnter: (to, from, next) => {
+                const rand = Math.random()*10
+                console.log(rand)
+                if(rand > 5.0) {
+                    alert("请先登录")
+                } else {
+                    if(to.meta.title) {
+                        //设置网页标题为路由对象的meta.title
+                        document.title = "aaaaaaaa"
+                    }
+                    next()
+                }
+            }
+        },
+        {
+            path: '/about',  
+            name: 'about',            
+            component: About
+        }] 
+          
+    //创建路由管理器实例   
+    const router = VueRouter.createRouter({
+        history: VueRouter.createWebHashHistory(),
+        routes:routes    //routes
+    })  
+    //全局前置守卫
+    router.beforeEach((to, from, next) => {
+        //if(from.name != undefined) {
+            console.log('from:') 
+            console.log(from) 
+            console.log('to:')       
+            console.log(to) 
+        //}
+        //清空页面标题
+        document.title = ''
+        //目标路由为about，且非account时，跳转至account     
+        if(to.name != 'account' && to.name === 'about') {            
+            next('/account')
+        } else {
+            next()
+        }
+    })
+    //全局后置守卫
+    router.afterEach((to, from) => {
+        if(to.meta.title) {
+            //设置网页标题为路由对象的meta.title
+            document.title = to.meta.title
+        }
+    })
+     
+    //创建应用实例
+    const appObj = Vue.createApp({})
+    appObj.use(router)
+    appObj.mount('#app')
+</script>
+</html>

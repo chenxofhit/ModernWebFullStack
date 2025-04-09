@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>例3-11 具名插槽的使用</title>
+    <script type="text/javascript" src="vue.global.js"></script>    
+</head>
+    <body>
+        <div id="app">
+            {{message}}
+            <!--父组件三次调用子组件-->  
+            <!-- 第一次使用子组件 -->
+            <child-comp></child-comp>
+            <hr>
+            <!-- 第二次使用子组件 -->
+            <child-comp>
+                <template #left><span class="left">购物车</span></template>
+                <template #right><span class="right">搜索</span></template>
+            </child-comp>
+            <hr>
+            <!-- 第三次使用子组件 -->
+            <child-comp>
+                <template #middle><span></span></template>
+                <template #right><span class="right">搜索</span></template>
+            </child-comp>
+        </div>
+        <template id="tp_child">
+            <div class="nav"> 
+                <slot name="left"><button class="left">返回</button></slot>
+                <slot name="middle"><input type="text"></slot>          
+                <slot name="right"><button  class="right">确定</button></slot>
+        </div>
+        </template> 
+    </body>
+    <script>    
+        const RootComp = {        
+            data(){
+                return{
+                    message:'父组件信息'
+                }
+            }      
+        }
+        const ChildComp = {
+            template:'#tp_child'
+        }
+        //创建一个Vue应用
+        const appObj = Vue.createApp(RootComp)
+        //注册ChildComp全局组件
+        appObj.component('ChildComp', ChildComp)   
+        appObj.mount("#app")
+    </script>
+    <style>
+        .nav{
+            background-color: rgb(221, 220, 220);
+            width: 300px;
+            height: 36px;
+            line-height: 36px;  
+        }
+        .left{           
+            margin:0px 10px 0px 5px;
+            float: left;
+            position: relative;           
+        }
+        .right{           
+            margin:0px 10px 0px 5px; 
+            float: right; 
+            position: relative;   
+        }
+        .nav button{
+            margin-top: 5px;
+        }
+    </style>
+</html>

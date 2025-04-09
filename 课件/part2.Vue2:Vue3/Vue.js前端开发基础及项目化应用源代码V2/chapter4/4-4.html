@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script type="text/javascript" src="vue.global.js"></script>
+        <title>例4-4 钩子函数：实例销毁</title>
+    </head>
+    <body>
+        <div id="app">
+            <sub-comp v-if="show"></sub-comp>
+            <button @click="change">切换</button>
+        </div>
+        <template id="tp_child">
+            <h1 ref="sub">Hello</h1>
+        </template>
+    </body>
+    <script>
+        const RootComp = {//创建根组件
+            data(){
+                return{       
+                    message:'hello vue!',             
+                    show:true
+                }            
+            },
+            methods:{
+                change(){
+                   this.show = !this.show 
+                }
+            }            
+        }
+        const SubComp = {//创建组件
+            template:'#tp_child',           
+            beforeMount(){
+                console.log('生成虚拟DOM结构已完成，但未替换挂载点')                         
+                console.log(this.$refs.sub)
+            },
+            mounted(){
+                console.log('组件挂载完成')      
+                console.log(this.$refs.sub)          
+            },
+            beforeUnmount(){
+                console.log('组件即将卸载') 
+                console.log(this.$refs.sub)                
+            },
+            unmounted(){
+                console.log('组件卸载完成') 
+                console.log(this.$refs.sub)               
+            }            
+        }
+        const appObj = Vue.createApp(RootComp)
+        appObj.component('SubComp',SubComp)//注册SubComp全局组件
+        appObj.mount("#app")
+    </script>
+</html>

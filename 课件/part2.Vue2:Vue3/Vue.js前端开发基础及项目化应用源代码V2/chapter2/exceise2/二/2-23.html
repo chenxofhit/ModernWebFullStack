@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>注册表单</title>
+</head>
+<body>
+  <div id="app">
+    <form >
+      用户名：<input type="text" name="username" v-model="username"/><br/>
+      性别：<input type="radio" name="gender" value="male" v-model="gender"/>男
+      <input type="radio" name="gender" value="female" v-model="gender"/>女<br/>
+      密码：<input type="text" name="password" v-model="password" v-on:change="checkPwd"/><br/>
+      邮箱：<input type="text" name="email" /><br/>
+      喜好：
+      <input type="checkbox" value="playBall" name="hobby" v-model="hobby"/>打球
+      <input type="checkbox" value="swing" name="hobby" v-model="hobby"/>游泳
+      <input type="checkbox" value="reading" name="hobby" v-model="hobby"/>阅读
+      <input type="checkbox" value="music" name="hobby" v-model="hobby"/>音乐<br/>
+      <select name="area" v-model="area">
+        <option value="">请选择</option>
+        <option value="guangzhou">广州</option>
+        <option value="shenzhen">深圳</option>
+        <option value="fuoshan">佛山</option>
+      </select><br/>
+      <button v-on:click="toSubmit">提交</button>
+      <button v-on:click="toReset">重置</button>
+    </form>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script type="text/javascript">
+    Vue.createApp({
+        data() {
+          return {
+            username:'',
+            gender:'',
+            password:'',
+            email:'',
+            hobby:[],
+            area:''
+          } 
+      },
+      methods: {
+        checkPwd: function() {
+          if (this.password.length> 10 || this.password.length<6) {
+            alert('要求密码长度为6-10位')
+            return
+          }
+        },
+        toSubmit: function() {
+          alert(this.username + ' ' + this.gender + ' ' + this.password + ' ' + this.email + ' ' + this.hobby + ' ' + this.area)
+        },
+        toReset:function() {
+          this.username =''
+          this.gender ='',
+          this.password =''
+          this.email = ''
+          this.hobby = []
+          this.area = ''
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
+
+
+

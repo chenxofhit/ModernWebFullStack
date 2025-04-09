@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>CSS3 动画示例</title> 
+<style> 
+div {
+	width:100px;
+	height:100px;
+	background-color:red;
+	animation:div_frame 5s ease-in;
+	-webkit-animation:div_frame 5s ease-in; /*Safari 和 Chrome */
+}
+
+/*在非Safari 和 Chrome 浏览器上的颜色变化设置*/
+@keyframes div_frame {
+	0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: green;}
+    100% {background-color: blue;}
+}
+
+/*在Safari 和 Chrome 浏览器上的颜色变化*/
+@-webkit-keyframes div_frame { /* Safari 和 Chrome */
+
+	0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: green;}
+    100% {background-color: blue;}
+}
+</style>
+</head>
+<body>
+
+<p>div区域颜色由红->蓝->红</p>
+
+<div></div>
+
+</body>
+</html>

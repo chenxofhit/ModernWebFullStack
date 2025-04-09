@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>例3-8 emits选项验证组件事件</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2>这是父组件</h2>
+            <child-comp @child-click="showInfo"></child-comp>
+        </div>
+        <template id="temp">
+            <div>
+                <h3>这是子组件</h3>
+                <button @click="handleClick(1)">按钮1</button>
+                <button @click="handleClick(2)">按钮2</button>
+            </div>
+        </template>
+    </body>
+    <script> 
+        const RootComponent = {//创建根组件     
+            methods:{
+                showInfo(num){
+                    console.log("单击按钮"+num)
+                }
+            }       
+        }
+        const ChildComp = {//创建组件
+            template:'#temp',
+            emits:{
+                //原生事件click未做验证处理
+                click:null,
+                //声明自定义事件childClick并进行验证处理
+                childClick: function(value){
+                    if(value == 1)
+                        return true//验证通过
+                    else
+                        return false//验证失败，控制台报警告信息
+                }
+            },       
+            methods:{
+                handleClick(value){
+                    this.$emit('childClick',value)
+                }
+            }
+        }    
+        const appObj = Vue.createApp(RootComponent)//创建Vue应用实例
+        //注册ChildComp为全局组件
+        appObj.component('ChildComp', ChildComp)   
+        appObj.mount("#app")
+    </script>
+</html>

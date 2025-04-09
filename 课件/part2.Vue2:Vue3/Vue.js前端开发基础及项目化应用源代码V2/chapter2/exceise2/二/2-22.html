@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>         
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(n, index in posts" :key="index">
+                    <p>{{n.title}}</p><p>{{n.content}}</p><button @click="toLike(index)" >点赞</button>
+                  </li>
+            </ul>  
+        </div>       
+    </body>
+    <script>
+        const RootComponent = {            
+            data(){
+                return {
+                    posts: [
+                        {
+                            title:'first post',
+                            content:'this is first post'
+                        },{
+                            title:'second post',
+                            content:'this is second post'
+                        },{
+                            title:'third post',
+                            content:'this is third post'
+                        },{
+                            title:'fourth post',
+                            content:'this is fourth post'
+                        }]
+                }
+            },
+            methods:{
+                toLike(index){
+                    alert(this.posts[index].title  + ' is liked')
+                }
+            }
+        }
+        const vueApp = Vue.createApp(RootComponent)
+        vueApp.mount('#app')
+    </script>
+</html>

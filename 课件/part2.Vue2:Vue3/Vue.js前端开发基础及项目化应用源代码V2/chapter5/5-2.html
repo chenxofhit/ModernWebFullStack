@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="./vue.js"></script>
+<meta charset="utf-8"> 
+<title>transition过渡示例</title>
+<style> 
+/* 进入和离开动画可以使用不同 持续时间和速度曲线。 */
+.fade-enter-from,
+.fade-leave-to {
+    transform: translateX(80px);  /*在x轴上移动80px*/
+    opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {  
+    color:red;
+}
+.fade-enter-active {
+    transition: all 4s ease-out; /*以慢速结束*/
+}
+.fade-leave-active {
+    transition: all 2s cubic-bezier(0.1, 0.7, 1.0, 0.1); /*所有属性使用贝塞尔曲线函数定义的速度曲线，过渡效果时长为2s*/
+}
+
+</style>
+</head>
+<body>
+    <div id="app">
+        <transition name="fade">              
+            <slot><p v-if="show">Hello World</p></slot>
+            <!-- <test-comp></test-comp> -->
+        </transition>
+        <button id="btn" @click="toChange">change</button>
+    </div>
+    <template id = "tmp">
+        <p>this is a test message</p>
+    </template>
+</body>
+<script>
+    const TestComp = {
+        template:'#tmp'
+    }
+    const appObj = Vue.createApp({
+        data() {
+            return {
+                show: false
+            }
+        },
+        components:{
+            TestComp
+        },
+        methods: {
+            toChange() {
+                this.show = !this.show
+            }
+        }
+    })
+    appObj.mount("#app")
+</script>
+</html>

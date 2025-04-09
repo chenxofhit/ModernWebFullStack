@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>transition过渡纯钩子函数实现过渡示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background: red;
+            }           
+        </style>
+    </head>
+<body>
+<div id="app">
+    <button @click="toggle">change</button>
+    <!--transition 用v-bind:css="false"阻止Vue查找样式类-->
+    <!-- <transition appear -->
+    <transition     
+                :css="false"
+                @before-enter="handleBeforeEnter"
+                @enter="handleEnter"
+                @after-enter="handleAfterEnter">
+        <div class="box" v-show="isShow"></div>
+    </transition>
+</div>
+</body>
+<script>
+    const appObj = Vue.createApp({
+        data(){
+            return {
+                isShow: true,
+                fadeInDuration: ""
+            }            
+        },
+        methods:{
+            toggle(){
+                this.fadeInDuration = "3s"                                             
+                this.isShow = !this.isShow
+            },
+            handleBeforeEnter(el){
+                // 进入动画开始之前
+                console.log("handleBeforeEnter")
+                el.style.opacity = "0"
+                el.style.marginLeft = "0px"
+            },
+            handleEnter(el, done){
+                // 进入动画执行过程中
+                console.log("handleEnter");
+                //利用el.offsetWidth / el.offsetHeight强制动画刷新                  
+                // el.offsetWidth;
+                el.offsetHeight;
+                //el.style.transition = "all 3s"
+                el.style.transitionProperty = "all"   
+                el.style.transitionDuration = this.fadeInDuration //data属性定义时长          
+                //动画执行完毕之后一定要调用done回调函数,否则后续的afterEnter钩子函数不会被执行              
+                done();
+                //如果想让元素一进来就有动画, 那么最好延迟以下再调用done方法                
+                // setTimeout(function () {
+                //     done();
+                // }, 1000);
+            },
+            handleAfterEnter(el){
+                // 进入动画执行完毕之后
+                console.log("handleAfterEnter")
+                el.style.opacity = "1"
+                el.style.marginLeft = "200px"
+            }
+        }
+    })
+    appObj.mount("#app")
+    //https://blog.csdn.net/lihui61357457/article/details/121715934
+    //https://blog.csdn.net/hzkang/article/details/78287113
+    //https://blog.csdn.net/weiguang102/article/details/121753133
+</script>
+
+</html>

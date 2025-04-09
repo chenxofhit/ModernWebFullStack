@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>项目2-1</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app"> 
+            <h4>简易计算器</h4>            
+            操作数一 <input type="number" v-model="oper_1"/>
+            运算符 <select  v-model="selected">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>                        
+                        <option value="**">**</option>
+                    </select>
+            <span v-show="isSeen">操作数二 <input type="number" v-model="oper_2" /></span>
+            <div>
+                <button v-on:click="calculate">计算</button>
+                <div >结果：{{result}}</div>  
+            </div>                                 
+        </div>    
+    </body>
+    <script type="text/javascript">
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    isSeen: true,
+                    selected: '',
+                    oper_1:0,
+                    oper_2:0,
+                    result:0
+                }      
+            },
+            methods:{
+                calculate:function(){
+                    if(this.selected === ''){
+                        alert("请选择运算符")
+                        return
+                    }
+                    switch(this.selected){
+                        case "+":
+                            this.result = this.oper_1 + this.oper_2
+                            break
+                        case "-":
+                            this.result = this.oper_1 - this.oper_2
+                            break
+                        case "*":
+                            this.result = this.oper_1 * this.oper_2
+                            break
+                        case "/":
+                            this.result = this.oper_1 / this.oper_2
+                            break
+                        case "**":
+                            this.result = this.oper_1 * this.oper_1
+                            break                        
+                    }
+                }
+            },
+            watch:{
+                selected(newValue, oldValue){
+                    if(newValue === "**"){
+                        this.isSeen = false
+                    } else {
+                        this.isSeen = true
+                    }
+                }
+            }            
+        }         
+        //创建Vue应用实例    
+        const vueApp = Vue.createApp(RootComponent) 
+        //挂载处理       
+        vueApp.mount("#app")
+    </script>    
+</html>

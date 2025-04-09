@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Promise对象示例</title> 
+</head>
+<body>
+</body>
+<script>
+    let promise = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            const num = Math.random()*10 - 5 //异步任务
+            if(num > 0){
+                resolve(num + " :number is more than zero")
+            }else {
+                reject("number is less than zero")
+            }
+        }, 2000)
+        
+    })
+    promise.then(function(value){
+        console.log(value)
+    })
+    promise.catch(function(error){
+        console.log(error)
+    })
+</script>
+</html>

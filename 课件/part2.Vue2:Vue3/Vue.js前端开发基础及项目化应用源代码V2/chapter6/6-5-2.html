@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script>
+        <meta charset="utf-8"> 
+        <title>响应式数据实现示例（优化）</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        
+        // 存储副作用的容器
+        const bucket = new WeakMap()
+            let activeEffect // 存储被注册的副作用函数
+            // 用来注册副作用函数
+            function effect(fn) {
+                activeEffect = fn
+                fn()
+            }
+
+            // 原始数据
+            const data = { text: 'hello world' }
+            // 代理原始数据
+            const obj = new Proxy(data, {
+                get(target, key) {
+                    track(target, key)
+                    return target[key]
+                },
+                set(target, key, newVal) {
+                    target[key] = newVal
+                       trigger(target, key)
+
+                }
+            })
+            
+            function track(target, key) {
+                if (!activeEffect) return
+                let depsMap = bucket.get(target) // key --> effects
+                if (!depsMap) {
+                    bucket.set(target, (depsMap = new Map())) // 新建Map与target相连
+                }
+                let deps = depsMap.get(key)
+                if (!deps) {
+                    depsMap.set(key, (deps = new Set())) // 新建Set与key相连
+                }
+
+                deps.add(activeEffect)
+            }
+
+            function trigger(target, key) {
+                const depsMap = bucket.get(target)
+                if (!depsMap) return
+                // 根据key取得所有辅助用函数
+                const effects = depsMap.get(key)
+                effects && effects.forEach(fn => fn())
+                }
+
+            effect(() => {
+                console.log('effect run');
+                document.body.innerText = obj.text
+            })
+            setTimeout(() => {
+                obj.text = 'hello Vue.js'                             
+            }, 1000);
+
+    </script>
+    </html>

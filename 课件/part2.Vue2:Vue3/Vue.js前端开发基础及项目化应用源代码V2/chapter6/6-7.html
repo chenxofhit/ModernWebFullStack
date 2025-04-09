@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script> -->
+        <script src="./vue.js"></script>
+        <meta charset="utf-8"> 
+        <title>toRef和toRefs用法示例</title>
+    </head>
+    <body>
+        <div id="app">
+            <local-component></local-component>
+        </div>
+        <template id="tmp">
+            <h4>toRef转换示例</h4>
+            <p>title:{{title.tip}}, {{title.type}}</p>
+            <p>title_tip:{{title_tip}}</p> 
+            <button @click="toChangeTitle">修改title</button>
+            
+            <h4>toRefs转换示例</h4>
+            <p>student:{{student.name}}, {{student.major}}</p>            
+            <p>student_1:{{student_1.name}}</p>            
+            <button @click="toChangeStudent">修改student</button>
+            
+            <h4>...toRefs保持析构后响应性示例</h4>
+            <!--直接使用析构后的product.属性名访问--->
+            <p>product:{{product.name}}, {{product.price}}</p>
+            <p>total:{{total}}</p>            
+            <button @click="toChangeProduct">修改product</button>
+        </template>        
+    </body>
+    <script>  
+    const LocalComponent= {
+            template: '#tmp',   
+            setup(props, context){
+                const title = Vue.reactive({//reactive以对象方式定义基本类型数据
+                    tip:'无标题',
+                    type:'html'  
+                })
+
+                const student = Vue.reactive({//reactive以对象方式定义基本类型数据
+                    name:'无姓名',
+                    major:'无专业'   
+                })
+
+                //利用toRef抽离响应式对象的某个属性，并返回其ref对象                
+                const title_tip = Vue.toRef(title, 'tip')
+                const student_1 = Vue.toRefs(student)
+                
+
+                const data = Vue.reactive({//reactive定义对象
+                    product:{
+                        name:'教科书',
+                        price:0
+                    },
+                    total: 1
+                })                           
+                
+                const toChangeTitle = () => {                   
+                    title_tip.value = "学生信息"                                    
+                }
+
+                //改变toRef之后的属性值
+                const toChangeStudent = () => {    
+                    student_1.name.value = "李四" 
+                    student_1.major.value = "计算机"                                     
+                } 
+                //改变toRefs之后的属性值
+                const toChangeProduct =  () => {                    
+                    data.product.name="技术手册"
+                    data.product.price=20
+                    console.log(data.product)
+                }
+                
+                return {                        
+                    ...Vue.toRefs(data),//利用toRefs抽离响应式对象的所有属性，并逐个返回其ref对象
+                    title, 
+                    title_tip,                   
+                    student, 
+                    student_1,   
+                    toChangeTitle,
+                    toChangeStudent,
+                    toChangeProduct
+                }                                   
+            }
+        } 
+        const appObj = Vue.createApp({
+            components:{
+                LocalComponent
+            }
+        })
+        appObj.mount('#app')          
+    </script>
+    </html>

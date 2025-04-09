@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0946c8b5-ebb0-4ceb-91a0-9bee3368ee8b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../exp1-ReflectionExample/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp1-ReflectionExample/src/com/example/ReflectionDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp1-ReflectionExample/src/com/example/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/BetterUserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/DaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/FactoryApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/NoIoCApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/UserDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/UserDaoMongoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp2-NoSpringIoCExample/src/com/example/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/controller/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/mapper/TaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/model/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/model/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/service/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/java/com/example/demo/util/FileUploadUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/backend/src/main/resources/db/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/api/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/api/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/api/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/assets/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/components/ui/button.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/components/ui/input.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/components/ui/toast-container.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/components/ui/toast.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/store/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/store/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/utils/toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/views/Dashboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/views/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/views/NotFound.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/views/Profile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/views/Register.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/src/views/Tasks.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../exp3-vue-springboot-demo/frontend/vite.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/CSS布局总结.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/famous-people.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/flex-tutorial.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/float-demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/position-demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/weather-app.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第0章-高级Web编程.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第0章续-Web应用基础设施.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第1章 计算机网络基础（稍提）.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第2章 Java基础(不讲).pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第3章 Java的多线程机制及其网络程序设计（不讲）.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第4章 静态Web文档(HTML+CSS).pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第4章2 CSS页面布局设计.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章  JavaScript脚本语言.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章 2 jQuery选择器与管理结果集（自学）.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章3 jQuery控制Dom（自学）.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-1.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-10.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-3.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-5.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-9.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/7-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 JQuery代码演示/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part1.HTML:CSS:JavaScript/第5章4 jQuery与Ajax (自学).pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter1/1/case1/1-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter1/1/exceise1/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter1/1/practice1-1/1_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/components/HeaderComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/execise10/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/components/TodoFooter.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/components/TodoHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/components/TodoList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/assets/vue.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/vite.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter11/icon-bs-master.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter11/myapp.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter11/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-15-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-5/2-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-5/vueIcon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-1/2-19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/2-20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/img/graybg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/img/orgbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/exceise2/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/exceise2/二/2-22.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/exceise2/二/2-23.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/firstDemo_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/practice2-1/2-21.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-11-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-3-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-6-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/3-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/css/remixicon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/graybg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/tit_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/execise/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/vue.global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/4-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/vue.global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/execise4/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/vue.global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-1-animation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-1-transition.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-2 - 微课.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-4-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/animationDemo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/img/graybg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/img/orgbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/execise/一.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/helloword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/squareChange.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-1-1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-1-2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-1-3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-5-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-5-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-7-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-8-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/img/graybg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/img/orgbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/execise/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/setupRun.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-5/7-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-5/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-6/7-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-6/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-7/7-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-7/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/7-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/img/graybg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/img/orgbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/execise7/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/8-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/graybg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/orgbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/scrollpic/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/scrollpic/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/silder_btn.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/s_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/s_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/s_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/tit_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/execise8/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/vueRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/9-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/graybg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/orgbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/scrollpic/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/scrollpic/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/silder_btn.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/s_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/s_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/s_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/tit_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/execise9/一/答案.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/practice9/新建文本文档.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/vuex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/Vue.js设计与实现 (霍春阳) .pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元一 Vue.js 3入门基础.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元七 与后端交互——axios.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元三 组件基础.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元九 状态管理——Vuex.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元二 基础语法.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元五 过渡和动画.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元八 路由管理——Vue Router.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元六 组合式API.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元十 构建工程化的Vue项目.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元十一工程化项目实战——图片素材库网站.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/单元四 组件进阶.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part2.Vue2:Vue3/第6章 Vue2入门.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第10:11章源代码.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第10章  SpringMVC框架.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第10章 模式1：JSP+JavaBean开发模式(过).pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第10章 续 Spring MVC的高级功能.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第11章  MyBatis技术.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第11章 续MyBatis扩展/第5章-初识MyBatis框架.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第11章 续MyBatis扩展/第6章-MyBatis的核心配置.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第11章 续MyBatis扩展/第7章-动态SQL.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第11章 续MyBatis扩展/第8章-MyBatis的关联映射和缓存机制.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第11章 续MyBatis扩展/第9章-MyBatis的注解开发.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第12章 JSP+Servlet+JavaBean开发模式.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第13章 Spring、MyBatis、SpringMVC框架整合（过）.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第14章 SSM框架整合.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第15章 整合实例-云借阅图书管理系统.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第16章 课程总结.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第4章  Java EE 开发环境.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第5章  走进JSP.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第6章  Servlet技术.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第7章  数据库技术.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第7章 JSP技术基础(过).pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第8章  程序日志组件.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第8章 JSP内置对象(不讲).pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第9章  Spring框架.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../part3.JSP:Servlet:SSM/第9章 数据库访问技术JDBC(讲).pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/CSS布局总结.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/famous-people.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/flex-tutorial.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/float-demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/position-demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/weather-app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第0章-高级Web编程.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第0章续-Web应用基础设施.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第1章 计算机网络基础（稍提）.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第2章 Java基础(不讲).pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第3章 Java的多线程机制及其网络程序设计（不讲）.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第4章 静态Web文档(HTML+CSS).pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第4章2 CSS页面布局设计.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章  JavaScript脚本语言.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章 2 jQuery选择器与管理结果集（自学）.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章3 jQuery控制Dom（自学）.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-1.aspx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-10.aspx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-3.aspx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-5.aspx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-9.aspx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/7-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 JQuery代码演示/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part1.HTML_CSS_JavaScript/第5章4 jQuery与Ajax (自学).pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter1/1/case1/1-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter1/1/exceise1/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter1/1/practice1-1/1_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/components/HeaderComp.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/10-1-app/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/execise10/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/first-app/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/components/TodoFooter.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/components/TodoHeader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/components/TodoList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/todomvc/vue.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/assets/vue.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter10/vite-project/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter11/icon-bs-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter11/myapp.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter11/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-15-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-17.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-5/2-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-5/vueIcon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/2-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-1/2-19.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/2-20.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/img/graybg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/case2-2/img/orgbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/exceise2/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/exceise2/二/2-22.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/exceise2/二/2-23.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/firstDemo_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter2/practice2-1/2-21.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-11-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-3-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-6-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/3-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/3-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/css/remixicon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/graybg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/case3/img/tit_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/execise/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter3/vue.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/4-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/4-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/case4/vue.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/execise4/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter4/vue.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-1-animation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-1-transition.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-2 - 微课.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-4-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/5-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/animationDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/5-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/img/graybg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/case5/img/orgbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/execise/一.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/helloword.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/squareChange.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter5/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-1-1.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-1-2.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-1-3.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-5-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-5-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-7-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-8-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/6-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/6-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/img/graybg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/case6/img/orgbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/execise/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/setupRun.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter6/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-5/7-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-5/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-6/7-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-6/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-7/7-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/7-7/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/7-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/img/graybg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/case7/img/orgbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/execise7/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter7/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/8-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/8-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/graybg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/orgbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/scrollpic/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/scrollpic/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/silder_btn.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/s_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/s_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/slidepic/s_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/case8/img/tit_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/execise8/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter8/vueRouter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/9-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/9-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/graybg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/orgbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/scrollpic/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/scrollpic/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/silder_btn.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/s_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/s_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/slidepic/s_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/case9/img/tit_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/execise9/一/答案.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/practice9/新建文本文档.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js前端开发基础及项目化应用源代码V2/chapter9/vuex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/Vue.js设计与实现 (霍春阳) .pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元一 Vue.js 3入门基础.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元七 与后端交互——axios.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元三 组件基础.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元九 状态管理——Vuex.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元二 基础语法.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元五 过渡和动画.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元八 路由管理——Vue Router.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元六 组合式API.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元十 构建工程化的Vue项目.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元十一工程化项目实战——图片素材库网站.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/单元四 组件进阶.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../part2.Vue2_Vue3/第6章 Vue2入门.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/BetterUserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/DaoFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/FactoryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/NoIoCApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/UserDaoMongoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NoSpringIoCExample/src/com/example/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ReflectionExample/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ReflectionExample/src/com/example/ReflectionDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ReflectionExample/src/com/example/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/TaskController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/mapper/TaskMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/TaskService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/util/FileUploadUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/api/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/api/task.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/api/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/ui/button.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/ui/input.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/ui/toast-container.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/ui/toast.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/store/task.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/store/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/utils/toast.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/views/Dashboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/views/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/views/NotFound.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/views/Profile.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/views/Register.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/views/Tasks.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第10:11章源代码.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第10章  SpringMVC框架.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第10章 模式1：JSP+JavaBean开发模式(过).pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第10章 续 Spring MVC的高级功能.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第11章  MyBatis技术.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第11章 续MyBatis扩展/第5章-初识MyBatis框架.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第11章 续MyBatis扩展/第6章-MyBatis的核心配置.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第11章 续MyBatis扩展/第7章-动态SQL.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第11章 续MyBatis扩展/第8章-MyBatis的关联映射和缓存机制.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第11章 续MyBatis扩展/第9章-MyBatis的注解开发.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第12章 JSP+Servlet+JavaBean开发模式.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第13章 Spring、MyBatis、SpringMVC框架整合（过）.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第14章 SSM框架整合.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第15章 整合实例-云借阅图书管理系统.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第16章 课程总结.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第4章  Java EE 开发环境.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第5章  走进JSP.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第6章  Servlet技术.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第7章  数据库技术.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第7章 JSP技术基础(过).pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第8章  程序日志组件.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第8章 JSP内置对象(不讲).pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第9章  Spring框架.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第9章 数据库访问技术JDBC(讲).pptx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="/Applications/apache-maven-3.9.6" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2vTJWDrW0zIZCSOuANypFTQwIn3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [test].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DemoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zhouxihe/Courses/ModernWebFullStack/课件/part3.JSP_Servlet_SSM/vue-springboot-demo/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;应用程序.DemoApplication.executor&quot;: &quot;Run&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="backend" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="0946c8b5-ebb0-4ceb-91a0-9bee3368ee8b" name="更改" comment="" />
+      <created>1731932393002</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731932393002</updated>
+      <workItem from="1744163160628" duration="476000" />
+      <workItem from="1744166786128" duration="3923000" />
+      <workItem from="1744177126083" duration="753000" />
+      <workItem from="1744180462835" duration="1000" />
+      <workItem from="1744186189608" duration="532000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>例3-13 动态组件</title>
+        <script type="text/javascript" src="vue.global.js"></script>        
+    </head>
+    <body>
+        <div id="app">  
+            <ul>
+                <li v-for="(item,index) in menuItem" 
+                    :key="index"
+                    :class="{active:current===compItem[index]}"
+                    @click="current=compItem[index]"
+                >{{item}}</li>
+            </ul>
+            <div class="tab">            
+                <!-- 失活的组件将会被缓存,is属性，通过变量current动态切换组件-->
+                <!-- keep-allve元素中只能包含一个子元素（增加多一个注释也不可）-->
+                <keep-alive>                 
+                    <component :is="current"></component>
+                </keep-alive>            
+            </div>
+        </div>   
+    </body>
+    <script>    
+        const Allusion = {//创建子组件
+            template:`<div>名城典故内容</div>`
+        }
+        const Poem = {//创建子组件
+            template:`<div>名城诗词内容</div>`
+        }
+        const Info = {//创建子组件
+            template:`<div>旅游信息内容</div>`
+        }
+        const Member = {//创建子组件
+            template:`<div>会员中心内容</div>`
+        } 
+        const RootComp = {//创建根组件
+            data(){
+                return{
+                    current:'Allusion',
+                    menuItem:['名城典故','名城诗词','旅游信息','会员中心'],
+                    compItem:['Allusion','Poem','Info','Member']
+                }
+            },
+            components:{
+                //注册子组件为局部组件
+                Allusion,
+                Poem,
+                Info,
+                Member
+            }
+        }      
+        const appObj = Vue.createApp(RootComp)//创建Vue应用实例     
+        appObj.mount("#app")
+    </script>
+    <style>
+        #app ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;           
+        }
+        #app li{
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            float: left;
+            color:rgb(165, 130, 65);
+            font-weight: bold;
+            background:rgb(218,210,199);
+            cursor: pointer;
+        }        
+        .tab{
+            clear: both;
+            width: 460px;
+            height: 60px;
+            border: solid 1px #d8d7d5;
+            padding: 10px;
+            background: #f5f4f2;;           
+        }
+        .active{
+            background:rgb(182, 168, 149)!important;
+        }
+    </style>
+</html>

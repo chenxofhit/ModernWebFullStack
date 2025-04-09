@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>v-on 应用示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">            
+            <button v-on:click='calc'>求和</button>   
+            <div>{{total}}</div>              
+        </div>    
+    </body>
+    <script type="text/javascript">
+        //创建根组件
+        const RootComponent = {
+            data:function(){
+                return {                    
+                    total: 0
+                }
+            },
+            methods:{                  
+                calc: function(event){ 
+                    this.total = this.total + 10
+                    alert(event.target.tagName + "   "+ event.target.innerHTML )
+                    console.log(event.target) 
+                }
+            }
+        }     
+        //创建Vue应用实例    
+        const vueApp = Vue.createApp(RootComponent) 
+        //挂载处理       
+        vueApp.mount("#app")
+    </script>
+</html>

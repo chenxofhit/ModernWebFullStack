@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />    
+    <title>前端路由实现示例</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>   
+    <div id="app">
+      <!-- 切换组件的超链接 -->
+      <a href="#/home">主页</a>&nbsp;&nbsp; 
+      <a href="#/science">科技</a>&nbsp;&nbsp; 
+      <a href="#/sports">体育</a>     
+
+      <!-- 根据 :is 属性指定的组件名称，把对应的组件渲染到 component 标签所在的位置 -->
+      <!-- 可以把 component 标签当做是【组件的占位符】 -->
+      <component :is="comName"></component>
+    </div>
+  </body>
+    <script>      
+      //主页组件
+      const Home = {
+        template: '<h2>主页信息</h2>'
+      }
+      //科技频道组件
+      const Science = {
+        template: '<h2>科技频道</h2>'
+      }
+      //体育频道组件
+      const Sports = {
+        template: '<h2>体育频道</h2>'
+      } 
+
+      //创建应用实例
+      const appObj = Vue.createApp({        
+          setup(){
+              let comName = Vue.ref('Home')
+              // 监听 window 的 onhashchange 事件，根据获取到的最新的 hash 值，切换要显示的组件的名称
+              window.onhashchange = function() {
+                  // 通过 location.hash 获取到最新的 hash 值
+                  console.log(location.hash);
+                  switch(location.hash.slice(1)){
+                    case '/home':
+                        comName.value = 'Home'
+                        break
+                    case '/science':
+                        comName.value = 'Science'
+                        break
+                    case '/sports':
+                        comName.value = 'Sports'
+                        break                
+                  }
+              }
+
+              return {
+                  comName
+              }                   
+          },
+          //注册局部组件
+          components: {
+            Home,
+            Science,
+            Sports
+          }
+        })
+
+      appObj.mount('#app')
+
+    </script>
+</html>

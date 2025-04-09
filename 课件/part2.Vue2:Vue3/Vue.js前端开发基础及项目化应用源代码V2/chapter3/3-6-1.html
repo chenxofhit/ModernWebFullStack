@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>例3-6-1 Props实现父组件传递数据给子组件,对象默认值的使用</title>
+        <script type="text/javascript" src="vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!--调用PoetryComp组件-->
+            <poetry-comp :poemarr="poemData" :num="poemData.length"></poetry-comp>
+       </div>        
+        <template id="tp_child">
+            <!--PoetryComp组件模板结构-->
+            <div>
+                <h3>诗集中共{{num}}首诗</h3>
+                <h4>{{obj}}</h4>
+                <ul >                
+                    <li v-for="poem in poemarr" :key="poem.id">
+                        {{poem.name}}--{{poem.describe}}
+                    </li>
+                </ul>
+            </div>
+        </template>
+    </body>
+    <script> 
+        const RootComponent = {//创建根组件
+            data(){ 
+                return{
+                    poemData:[
+                        {
+                            id:1,
+                            name:'登鹳雀楼 王之涣',
+                            describe:'白日依山尽，黄河入海流。欲穷千里目，更上一层楼。'
+                        },
+                        {
+                            id:2,
+                            name:'静夜思 李白',
+                            describe:'床前明月光，疑是地上霜。举头望明月，低头思故乡。'
+                        },
+                        {
+                            id:3,
+                            name:'春晓 孟浩然',
+                            describe:' 春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。'
+                        } 
+                    ],
+                    // pobj:{name:'',age:0}           
+                }            
+            }       
+        }
+        const PoetryComp = {//创建组件
+            template:'#tp_child',
+            props:{
+                poemarr:Array,
+                num:{
+                    type: Number,//应用为Number                    
+                    validator(value) {//验证函数，当前数组元素为2个，验证不通过       
+                        return value>0 && value<3
+                    }                    
+                },   
+                obj:{
+                    type: Object,
+                    default: function () {
+                        return {
+                            name:'aaa',
+                            age:10
+                        }
+                    }
+                }                                        
+            }            
+        }    
+        const appObj = Vue.createApp(RootComponent)//创建Vue应用实例
+        //注册Poetry为全局组件
+        appObj.component('PoetryComp',PoetryComp)   
+        appObj.mount("#app")
+    </script>
+    
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="./vue.js"></script>
+    <meta charset="utf-8"> 
+    <title>setup函数执行时机示例</title>
+</head>
+<body>
+    <div id="app">    
+        <div>setup的执行时机</div>
+    </div>     
+</body>
+<script>
+    const appObj = Vue.createApp({
+        data() {
+            console.log("data")
+            return {
+                name: "zhangsan",
+            };
+        },
+        methods: {
+            changeName: () => {
+                console.log("methods: changeName")
+                console.log(this.name)
+            }
+        },
+        computed: {
+            newName() {
+                console.log("computed: newName")
+                console.log(this.name)
+                return "lisi"
+            }
+        },
+        beforeCreate() {
+            console.log("beforeCreate")
+        },
+        created() {
+            console.log("created")
+            this.changeName()
+            console.log(this.newName)
+        },
+        beforeMount() {
+            console.log("beforeMount")
+        },
+        mounted() {
+            console.log("mounted")
+        },
+        setup(context) {
+            console.log("setup")
+            
+            Vue.onMounted(() => {
+                const instance = Vue.getCurrentInstance()
+                console.log('实例', instance.data)
+                console.log("onMounted")
+            })
+        }        
+    })
+    appObj.mount('#app')
+
+</script>
+</html>

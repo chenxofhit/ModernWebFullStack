@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>async/await使用示例</title> 
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="doTask">测试1</button>
+        <button @click="doAsync">测试2</button>
+    </div>    
+</body>
+<script> 
+    const appObj = Vue.createApp({
+        setup(){
+            const doTask = async() => {
+                let rs = await test()
+                console.log(rs)
+                let first = await fn('第一层嵌套')
+                console.log(first)
+                let second = await fn('第二层嵌套')
+                console.log(second)
+                let third = await fn('第三层嵌套')
+                console.log(third)
+                let str= await 'await字符串'
+                console.log(str)
+                return Promise.resolve("async字符串")
+            }
+
+            const test = async() => {
+                return "hello"
+            }
+
+            const doAsync = () => {
+                doTask().then((value) => {
+                    console.log(value)
+                })
+            }
+
+            const fn = (info) => {
+                let promise = new Promise(function(resolve, reject){
+                    //处理异步任务
+                    let flag = true//let flag = false表示异步任务失败
+                    setTimeout(function(){
+                        if(flag){
+                            resolve(info); 
+                        }else{
+                            reject('失败'); 
+                        }
+                    },1000)
+                })
+                return promise
+            }
+
+            return {
+                doAsync,
+                doTask,
+                test,
+                fn
+            }
+        }
+    })
+    appObj.mount('#app')
+</script>
+</html>

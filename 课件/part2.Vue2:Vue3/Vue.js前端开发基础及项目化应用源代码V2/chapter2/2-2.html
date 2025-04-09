@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>插值表达式示例</title>
+        <!--引入vue库-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        </head>
+    <body>
+        <!--挂载节点-->
+        <div id="app">
+            {{student.name}}            
+        </div>
+    </body>
+    <script type="text/javascript"> 
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    student: {
+                        name:'zhangsan',
+                        email:'zs@qq.com'
+                    }
+                }
+            }
+        }
+        //创建Vue应用实例           
+        const vueApp = Vue.createApp(RootComponent)
+        // 挂载vueApp，告诉Vue把数据填充到那个位置，这里通过id选择器进行绑定到那个标签。
+        vueApp.mount("#app")        
+    </script>    
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script> -->
+        <script src="./vue.js"></script>
+        <meta charset="utf-8"> 
+        <title>provide和inject用法示例</title>
+    </head>
+    <body>
+        <div id="app">            
+            父组件：
+            <parent-component></parent-component>
+            <br/>
+        </div>
+        <template id="parent">
+            <div>parent count:{{count}}</div>
+            <button @click="handlePlus">递增</button> 
+            <br/>
+            子组件：
+            <son-component></son-component>            
+        </template>  
+        <template id="son">
+            <div>son count:{{son_count}}</div>             
+            <br/>
+            孙组件：
+            <grandson-component></grandson-component> 
+        </template>
+        <template id="grandson">
+            <div>grandson count:{{grandson_count}}</div> 
+            <button @click="grandsonHandleMinus(num)">递减</button> 
+        </template>      
+    </body>
+    <script> 
+        const GrandsonComponent = {//孙组件
+            template: '#grandson', 
+            setup(props, context){
+                const num = Vue.ref(10)
+                const grandson_count = Vue.inject('count')//注入祖父组件数据 
+                const parentMinus = Vue.inject('handleMinus')//注入祖父组件函数
+                const grandsonHandleMinus = (num) => {                    
+                    parentMinus(num)
+                }
+
+                return {
+                    num,
+                    grandson_count,
+                    grandsonHandleMinus
+                };                                  
+            }
+        }
+        const SonComponent = {//子组件
+            template: '#son', 
+            components:{
+                GrandsonComponent
+            },
+            setup(props, context){
+                const son_count = Vue.inject('count')        
+    
+                return {
+                    son_count
+                }                               
+            }
+        }
+        const ParentComponent = {//父组件
+            template: '#parent',         
+            components:{
+                SonComponent
+            },
+            setup(props, context){
+                const count = Vue.ref(100);                 
+                const handlePlus = () => {//递增处理
+                    count.value = count.value + 10
+                }
+                const handleMinus = (num) => {//递减处理
+                    count.value = count.value - num         
+                }
+                Vue.provide('count', count)
+                Vue.provide('handleMinus', handleMinus)
+                return {
+                    count,                
+                    handlePlus,
+                    handleMinus
+                }                                  
+            }
+        }
+        const appObj = Vue.createApp({
+            components:{
+                ParentComponent
+            }
+        })
+        appObj.mount('#app')    
+    </script>
+</html>
+
+
+

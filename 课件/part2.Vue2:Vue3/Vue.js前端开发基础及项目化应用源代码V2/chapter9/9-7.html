@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>modules应用示例</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vuex"></script>	
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>            
+            <p>数量：{{bookCount}}</p>            
+            <p>出版社：{{publishName}}</p>            
+            <button id="btn_addCount" @click="handleAddCount">增加count</button>
+            <button id="btn_title" @click="handleEditName">编辑name</button>
+        </div>
+    </div>    
+</body>
+<script>
+    //模块moduleBook
+    const moduleBook = {
+        namespaced: true,
+        state () {
+            return {
+                book:{
+                    name:'Vue入门教材',
+                    price:30
+                },
+                count: 100
+            }
+        },
+        getters: {
+            bookCount: state => "共计" + state.count + "本"
+        },
+        mutations: {            
+            addCount(state, num) {
+                state.count += num
+            }
+        }
+    }
+    //模块modulePublish
+    const modulePublish = {
+        namespaced: true,
+        state () {
+            return {
+                name:'xxx出版社'
+            }
+        },        
+        mutations: {            
+            editName(state, name) {
+                state.name = name
+            }
+        }
+    }    
+    //创建Store实例
+    const store =  Vuex.createStore({
+        modules: {
+            moduleBook,
+            modulePublish
+        }
+    })
+    //创建应用实例
+    const appObj = Vue.createApp({
+        computed:{
+            bookCount(){
+                return this.$store.getters['moduleBook/bookCount']
+            },
+            publishName(){
+                return this.$store.state.modulePublish.name 
+            }                 
+        },
+        methods:{
+            handleAddCount(){
+                this.$store.commit('moduleBook/addCount', 5)
+            },
+            handleEditName(){
+                this.$store.commit('modulePublish/editName', 'xxx出版社1')
+            }
+        }
+    })
+    appObj.use(store)
+    appObj.mount('#app')
+</script>
+</html>

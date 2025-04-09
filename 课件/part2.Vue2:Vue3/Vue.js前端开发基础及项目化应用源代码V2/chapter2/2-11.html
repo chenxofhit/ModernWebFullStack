@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>条件渲染示例</title>
+        <!--引入vue库-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <!--挂载点-->
+        <div id="app"> 
+            <div v-show="isSeen">
+                你可以看到消息
+            </div>
+            <div v-show="!isSeen">
+                看不到消息
+            </div>                                  
+        </div>
+    </body>
+    <script type="text/javascript"> 
+        //创建根组件
+        const RootComponent = {
+            data () {
+                return {
+                    isSeen: true           
+                }
+            }
+        }        
+        //创建Vue应用实例           
+        const vueApp = Vue.createApp(RootComponent)
+        //挂载vueApp
+        vueApp.mount("#app")           
+    </script>     
+</html>

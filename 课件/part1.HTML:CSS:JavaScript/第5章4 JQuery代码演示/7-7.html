@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>$.ajaxSetup()方法</title>
+</head>
+<body>
+	<h2>输入姓名和生日</h2>
+	<form>
+		<input type="text" id="firstName" /><br>
+		<input type="text" id="birthday" />
+	</form>
+	<form>
+		<input type="button" value="GET" onclick="doRequestUsingGET();" /><br>
+		<input type="button" value="POST" onclick="doRequestUsingPOST();" />
+	</form>
+	<div id="serverResponse"></div>
+
+	<script src="jquery-3.6.0.min.js"></script>
+	<script>
+		$.ajaxSetup({
+			//全局设定
+			url: "http://demo-api.geekfun.website/jquery/7-5.aspx",
+			success: function(data){
+				$("#serverResponse").html(decodeURI(data));
+			}
+		});
+		function createQueryString(){
+			//必须两次编码才能解决中文问题
+			let firstName = encodeURI(encodeURI($("#firstName").val()));
+			let birthday = encodeURI(encodeURI($("#birthday").val()));
+			//组合成对象的形式
+			let queryString = "firstName="+firstName+"&birthday="+birthday;
+			return queryString;
+		}
+		function doRequestUsingGET(){
+			$.ajax({
+				data: createQueryString(),
+				type: "GET"
+			});
+		}
+		function doRequestUsingPOST(){
+			$.ajax({
+				data: createQueryString(),
+				type: "POST"
+			});
+		}
+	</script>
+</body>
+</html>

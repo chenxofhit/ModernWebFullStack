@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ajax获取数据过程</title>
+</head>
+<body>
+	<input type="button" value="测试异步通讯" onClick="startRequest()">
+	<br><br>
+	<div id="target"></div>
+
+	<script>
+		let xmlHttp;
+		function createXMLHttpRequest(){
+			if(window.ActiveXObject)
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			else if(window.XMLHttpRequest)
+				xmlHttp = new XMLHttpRequest();
+		}
+		function startRequest(){
+			createXMLHttpRequest();
+			xmlHttp.open(
+				"GET",
+				"http://demo-api.geekfun.website/jquery/7-1.aspx",
+				true
+			);
+			xmlHttp.onreadystatechange = function(res){
+				if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					document.getElementById("target").innerHTML = xmlHttp.responseText;
+			}
+			xmlHttp.send(null);
+		}
+	</script>
+</body>
+</html>

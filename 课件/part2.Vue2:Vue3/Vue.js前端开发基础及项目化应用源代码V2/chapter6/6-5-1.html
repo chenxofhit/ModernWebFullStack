@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script>
+        <meta charset="utf-8"> 
+        <title>响应式数据实现示例</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        // 存储副作用的容器
+        const bucket = new Set()
+        // 原始数据
+        const data = { text: 'hello world' }
+        
+        const handler = {
+            get(target, key) {
+                bucket.add(effect)
+                return target[key]
+            },
+            set(target, key, newVal) {
+                target[key] = newVal
+                bucket.forEach(fn => fn())
+                return true
+            }
+        }
+        // 代理原始数据
+        const obj= new Proxy(data, handler)        
+        
+        function effect() {
+            document.body.innerText = obj.text            
+        }
+
+        
+        effect()            
+        setTimeout(() => {
+            obj.text = 'hello Vue.js'                      
+        }, 3000);
+
+    </script>
+    </html>

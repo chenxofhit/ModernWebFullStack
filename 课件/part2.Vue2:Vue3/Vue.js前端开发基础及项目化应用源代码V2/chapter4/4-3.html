@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+        <script type="text/javascript" src="vue.global.js"></script>
+        <title>例4-3 钩子函数：数据更新</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1 v-if="show" ref="content">{{message}}</h1>
+            <button @click="change">切换</button>
+        </div>
+    </body>    
+    <script>
+        const RootComp = {//创建根组件
+            data(){
+                return{
+                    message:"hello!",
+                    show:true
+                }            
+            },
+            beforeUpdate(){
+                console.log('组件虚拟DOM结构更新已完成，但未重新渲染')
+                console.log(this.$refs.content)
+            },
+            updated(){
+                console.log('组件渲染效果更新后')
+                console.log(this.$refs.content)
+            },
+            methods:{
+                change(){
+                   this.show = !this.show                   
+                }
+            }
+        }      
+        const appObj = Vue.createApp(RootComp)//创建Vue应用实例      
+        appObj.mount("#app")
+    </script>
+</html>

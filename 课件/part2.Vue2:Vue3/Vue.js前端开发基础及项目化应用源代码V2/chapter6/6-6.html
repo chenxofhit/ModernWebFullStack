@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script> -->
+        <script src="./vue.js"></script>
+        <meta charset="utf-8"> 
+        <title>ref和reactive使用示例</title>
+    </head>
+    <body>
+        <div id="app">
+            <local-component></local-component>
+        </div>
+        <template id="tmp">
+            <h4>使用ref定义基本类型数据</h4>
+            <p>title:{{title}}</p>            
+            <button @click="toChangeTitle">修改title</button>
+            
+            <h4>使用reactive以对象方式定义基本类型数据</h4>
+            <p>student:{{student.name}}, {{student.major}}</p>
+            <button @click="toChangeStudent">修改student</button>
+            
+            <h4>reactive定义对象数据</h4>
+            <p>product: {{data.product.name}}</p>
+            <button @click="toChangeProduct">修改product</button>
+        </template>        
+    </body>
+    <script>  
+    const LocalComponent= {
+            template: '#tmp',
+            setup(props, context){ 
+                const title = Vue.ref("无标题")//使用ref定义基本类型数据
+
+                let student = Vue.reactive({//使用reactive以对象方式定义基本类型数据
+                    name:'无姓名',
+                    major:'无专业'   
+                })
+
+                const data = Vue.reactive({//使用reactive定义对象数据
+                    product:{
+                        name:'教科书',
+                        price:0
+                    },
+                    total:10
+                })
+                            
+                // 利用toRef抽离响应式对象的某个属性，并返回其ref对象
+                const student_name = Vue.toRef(student, 'name')
+                // 利用toRefs抽离响应式对象的所有属性，并逐个返回其ref对象
+                const student_1 = Vue.toRefs(student)   
+                const toChangeTitle = () => {                   
+                   title.value = "学生信息"                    
+                   console.log(title)        
+                }
+
+                const toChangeStudent = () => {               
+                    student.name = "张三"
+                    student.major = "前端开发"
+                    //student = {name:'lisi',major:'市场营销'}                    
+                    console.log(student)
+
+                } 
+
+                const toChangeProduct =  () => {
+                    console.log(data.product)
+                    data.product.name="技术新书" 
+                }
+                
+                return {
+                    data,//...Vue.toRefs(data),
+                    title,                    
+                    student,                    
+                    toChangeTitle,
+                    toChangeStudent,
+                    toChangeProduct
+                }                                   
+            }
+        } 
+        const appObj = Vue.createApp({
+            components:{
+                LocalComponent
+            }
+        })
+        appObj.mount('#app')              
+    </script>
+    </html>

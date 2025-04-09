@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>例3-2 全局组件注册</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+        </div>
+        <template id="tp_child">
+            <!--ButtonCounter模板结构-->
+            <button @click="count++">单击了{{count}}次</button>
+        </template>
+    </body>
+    <script>
+        const RootComponent = {}//创建根组件构造器对象
+        const ButtonCounter = {//创建组件构造器对象
+            data(){
+                return{
+                    count:0
+                }            
+            },
+            template:'#tp_child'
+        }
+        //创建一个Vue应用
+        const appObj = Vue.createApp(RootComponent)
+        //对ButtonCounter全局注册
+        appObj.component('ButtonCounter', ButtonCounter)   
+        appObj.mount("#app")        
+    </script>
+</html>

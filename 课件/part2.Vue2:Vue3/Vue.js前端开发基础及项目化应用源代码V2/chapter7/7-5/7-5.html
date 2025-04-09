@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>axios处理任何类型请求示例,运行环境live server/tomcat服务器</title> 
+<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+<script src="./../vue.js"></script>
+<script src="./../axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="handleHttp">HTTP请求</button>
+        <p>{{resMsg}}</p>
+    </div>    
+</body>
+<script> 
+    const appObj = Vue.createApp({
+        setup(){
+            const resMsg = Vue.ref('')
+            const handleHttp = () => {                
+                axios({
+                    url: './data.json',
+                    method: 'get',
+                    params: {
+                        userId: '333'
+                    },
+                    headers: { 
+                        token: 'lisi'
+                    }
+                })
+                .then((res) => {
+                    resMsg.value = res.data
+                })
+                .catch((error) => {
+                    console.log(error)
+                })                
+            }
+
+            return {
+                resMsg,
+                handleHttp
+            }
+        }
+    })
+    appObj.mount('#app')
+</script>
+</html>

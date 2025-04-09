@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>transition同类型的多元素过渡效果示例</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+        ul {
+            list-style-type: none;
+            list-style-image: none;
+            margin: 0px; 
+            padding:0px;                               
+        }
+        .fade-enter-from,
+        .fade-leave-to{
+            opacity:0;
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+            transition:opacity 3s;
+        }        
+        </style>        
+    </head>
+<body>
+<div id="app">  
+    <button @click="clear">隐藏城市列表</button>  
+    <button @click="resume">显示城市列表</button><br/>   
+    <transition name="fade">        
+        <ul v-model="citys" v-if="citys.length>0">                      
+            <li v-for="item in citys" >{{item}}</option>
+        </ul>
+        <p v-else>无数据</p>
+    </transition>
+</div>
+</body>
+<script>
+    const appObj = Vue.createApp({
+        data(){
+            return {
+                citys: [
+                    "北京",     
+                    "深圳",
+                    "广州"
+                ],
+                arr:[]
+            }           
+        },
+        methods: {
+            clear() {
+                this.arr = this.citys
+                this.citys = []
+            },
+            resume() {               
+              this.citys = this.arr
+              this.arr = []
+            }
+        }
+    })
+    appObj.mount("#app")
+</script>
+</html>

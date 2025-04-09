@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>第三章 组件应用实践案例</title>    
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app" class="jianjie">              
+            <div class="wrap">                
+                <div class="jianjiebody">  
+                    <h3>{{cityTitle}}</h3>
+					<p>{{cityInfo}}</p>
+                    <button v-on:click="clickButton" class="cBtn">喜欢我就为我点赞吧</button><span>点赞数：{{count}}</span>
+                        
+                    <div class="clear"></div>                    
+                </div>
+            </div>
+        </div>        
+    </body>
+    <script>
+        const RootComp = {//创建根组件
+            data:function(){
+				return {
+						count:0,
+						cityName:"洛阳",
+						cityTitle:'洛阳简介',
+						cityInfo:"洛阳市有5000多年文明史、4000多年城市史、1500多年建都史。洛阳是华夏文明的发祥地之一、丝绸之路的东方起点，隋唐大运河的中心。历史上先后有13个王朝在洛阳建都 。"
+				}
+			},
+			methods:{
+					clickButton(){
+						this.count=this.count+1;
+					}
+			}
+        }            
+        const appObj = Vue.createApp(RootComp)//创建一个Vue应用
+        appObj.mount("#app")
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;            
+        }
+        .clear {
+            clear: both;
+        }
+        .wrap {
+            width: 800px;
+            margin: 0 auto;
+        }
+        .jianjie{
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px 0;            
+        }
+        .jianjiehead{	    
+            border-bottom: #A58241 1px solid;
+        }
+      
+        .jianjiebody {
+            width: 796px;
+            margin: 20px 0;
+            padding: 20px 0 20px 20px; 
+            box-shadow: 0 0 3px #6a3b3b;
+        }    
+        .cBtn{
+				width: 200px;
+				height:30px;
+				line-height:30px;
+		}
+        p{
+            padding: 20px;
+        }	   
+    </style>
+</html>

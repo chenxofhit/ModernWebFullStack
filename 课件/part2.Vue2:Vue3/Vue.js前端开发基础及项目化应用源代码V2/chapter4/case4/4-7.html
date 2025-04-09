@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />   
+    <script type="text/javascript" src="vue.global.js"></script> 
+    <title>第四章 综合案例</title>
+    <style>
+        .modal-mask {
+            position: fixed;
+            z-index: 9998;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: table;
+            transition: opacity 0.3s ease;
+        }
+        .modal {
+            position: fixed;
+            z-index: 999; 
+            top: 25%;
+            left: 40%;
+            width: 500px;
+            margin-left: -150px;  
+            background-color: #fff;   
+            border-radius: 2px;
+            height: auto;    
+        }              
+        form.login{            
+            width:500px ;
+            border:#8E6310 1px solid;
+            height: 250px;
+		}
+        form.login h3{
+            font-family: "黑体";
+            margin: 20px;
+        }
+        form.login>dl{
+            width:400px;
+            margin: auto;
+        }
+        form.login>dl>dt{
+            float: left;
+            padding-right: 20px;
+            width:80px;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            font-size: 0.9em;
+        }
+        form.login>dl>dd{
+            float:left;
+            width:250px;            
+        }
+        form.login>dl>dd input{		
+            width:230px;
+            height: 40px;
+            border:1px solid #666666;
+            border-radius: 5px;
+        }
+        form.login ul{
+            width:350px;
+            float: right;
+            margin: auto;
+            padding: 20px 50px ;
+        }
+        form.login ul li{
+            float: left;
+            margin:0 15px 0 52px;
+        }
+        form.login ul button,form.login ul input[type=button]{
+            width:80px;
+            height: 40px;
+            background-color: #FFFFFF;
+            font-size: 0.9em;
+            outline: none;
+            border:#8E6310 solid 1px;
+            border-radius: 5px;            
+        }
+        form.login ul button:hover,form.login ul input[type=button]:hover{
+            background:#A58241;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!--根组件模板结构-->
+        <div class="top">
+            <div class="wrap">
+                <div>
+                    <img class="magintop_20 floatLeft logo" src="img/logo.png" />
+                </div>
+                <div class="login floatRight magintop_20">
+                    <div class="floatLeft">
+                        <ul>
+                        <li><a href="#">注册</a><span> | </span>
+                        <a href="#" @click="toLogin">登录</a></li>							
+                        </ul>							
+                    </div>						
+                </div>
+                <teleport to="body">
+                    <login-comp :show="open" @close="handler">                       
+                    </login-comp>
+                </teleport>                 
+            </div>
+        </div>
+        <div class="top_bar">
+            <div class="wrap">
+                <div class="floatLeft menu ">
+                    <ul class="nav">
+                        <li>
+                            <a href="#">名城典故</a>
+                        </li>
+                        <li>
+                            <a href="#">名城诗词</a>
+                        </li>
+                        <li>
+                            <a href="#">旅游信息</a>
+                        </li>
+                        <li>
+                            <a href="#">会员中心</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search floatRight">
+                    <input type="text" placeholder="请输入检索关键词" /><input type="button" value="检索" />
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>           
+    </div>    
+    <!--子组件模板结构-->
+    <template id="login"> 
+        <div v-if="show" class="modal-mask">
+            <div class="modal">                
+                <form class="login">
+                    <h3>我的账户</h3>
+                    <dl>
+                        <dt><label>用户名</label></dt>
+                        <dd><input type="text"/></dd>			
+                    </dl>
+                    <div style="clear: both;"></div>
+                    <dl>
+                        <dt><label>密码</label></dt>
+                        <dd><input type="password"/></dd>			
+                    </dl>
+                    <div style="clear: both;"></div>
+                    <ul>
+                        <li><input type="button" value="登录" @click="toClose"></li>
+                        <li><input type="button" value="取消" @click="toClose"></li>                        
+                    </ul>
+                </form>                
+            </div>
+        </div>             
+    </template>  
+</body>
+<script>
+    const RootComp = {//创建根组件
+        data(){
+            return{
+                open:false
+            }
+        },
+        methods:{
+            handler(val){
+                this.open = val
+            },
+            toLogin(){
+                this.open = true
+            }
+        }
+    }    
+    const LoginComp = {//创建登录框组件
+            props:{
+                show:Boolean
+            }, 
+            emits:['close'], 
+            template:'#login',
+            methods:{
+                toClose(){
+                    this.$emit('close', false);
+                }
+            }                    
+    }        
+    const appObj = Vue.createApp(RootComp)
+    appObj.component('LoginComp',LoginComp)//注册LoginComp全局组件
+    appObj.mount("#container")
+</script>
+</html>

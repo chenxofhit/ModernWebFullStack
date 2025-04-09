@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 浮动示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+        
+        .demo-section {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .container {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            overflow: hidden; /* 用于某些示例 */
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .box1 { background-color: #FF6B6B; }
+        .box2 { background-color: #4ECDC4; }
+        .box3 { background-color: #45B7D1; }
+        
+        .tall-box { height: 150px; }
+        
+        .clear-left { clear: left; }
+        .clear-right { clear: right; }
+        .clear-both { clear: both; }
+        
+        .float-left { float: left; }
+        .float-right { float: right; }
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .controls {
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 浮动（Float）示例</h1>
+    
+    <!-- 15-8: 没有浮动的盒子 -->
+    <div class="demo-section">
+        <h2>1. 没有浮动的盒子（15-8）</h2>
+        <div class="container" id="no-float">
+            <div class="box box1">盒子 1</div>
+            <div class="box box2">盒子 2</div>
+            <div class="box box3">盒子 3</div>
+            <p>这是父容器中的一些文本内容。没有应用浮动时，盒子按照正常文档流排列，每个盒子占据一行。</p>
+        </div>
+        <div class="description">
+            默认情况下，块级元素会占据整行，按照从上到下的顺序排列。
+        </div>
+    </div>
+    
+    <!-- 15-9: 向左浮动第一个盒子 -->
+    <div class="demo-section">
+        <h2>2. 向左浮动第一个盒子（15-9）</h2>
+        <div class="container" id="float-left-1">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2">盒子 2</div>
+            <div class="box box3">盒子 3</div>
+            <p>这是父容器中的一些文本内容。当第一个盒子向左浮动时，其他元素会尝试围绕它。</p>
+        </div>
+        <div class="description">
+            当元素浮动时，它会脱离正常文档流，其他元素会围绕它排列。
+        </div>
+    </div>
+    
+    <!-- 向左浮动第二个盒子（效果） -->
+    <div class="demo-section">
+        <h2>3. 向左浮动第一个和第二个盒子（效果）</h2>
+        <div class="controls">
+            <button onclick="toggleFloat('float-left-2', 'box2', 'float-left')">切换第二个盒子浮动</button>
+        </div>
+        <div class="container" id="float-left-2">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2">盒子 2</div>
+            <div class="box box3">盒子 3</div>
+            <p>这是父容器中的一些文本内容。点击按钮查看第二个盒子也浮动时的效果。</p>
+        </div>
+        <div class="description">
+            当多个元素浮动时，它们会尽可能地水平排列在一行。
+        </div>
+    </div>
+    
+    <!-- 向左浮动第三个盒子（效果） -->
+    <div class="demo-section">
+        <h2>4. 向左浮动所有盒子（效果）</h2>
+        <div class="controls">
+            <button onclick="toggleFloat('float-left-3', 'box3', 'float-left')">切换第三个盒子浮动</button>
+        </div>
+        <div class="container" id="float-left-3">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-left">盒子 2</div>
+            <div class="box box3">盒子 3</div>
+            <p>这是父容器中的一些文本内容。点击按钮查看所有盒子都向左浮动时的效果。</p>
+        </div>
+        <div class="description">
+            当所有盒子都浮动时，它们会尽可能地排列在同一行。
+        </div>
+    </div>
+    
+    <!-- 15-10: 向右浮动第三个盒子 -->
+    <div class="demo-section">
+        <h2>5. 向右浮动第三个盒子（15-10）</h2>
+        <div class="container" id="float-right-3">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-left">盒子 2</div>
+            <div class="box box3 float-right">盒子 3</div>
+            <p>这是父容器中的一些文本内容。第三个盒子向右浮动，前两个盒子向左浮动。</p>
+        </div>
+        <div class="description">
+            元素可以向左或向右浮动。向右浮动的元素会靠近父容器的右边缘。
+        </div>
+    </div>
+    
+    <!-- 向右浮动第二个盒子（效果） -->
+    <div class="demo-section">
+        <h2>6. 向右浮动第二个和第三个盒子（效果）</h2>
+        <div class="controls">
+            <button onclick="toggleFloat('float-right-2', 'box2', 'float-right')">切换第二个盒子右浮动</button>
+        </div>
+        <div class="container" id="float-right-2">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-left">盒子 2</div>
+            <div class="box box3 float-right">盒子 3</div>
+            <p>这是父容器中的一些文本内容。点击按钮查看第二个盒子也向右浮动时的效果。</p>
+        </div>
+        <div class="description">
+            向右浮动的元素会从右向左排列。
+        </div>
+    </div>
+    
+    <!-- 增加第三个盒子高度（效果） -->
+    <div class="demo-section">
+        <h2>7. 增加第三个盒子高度（效果）</h2>
+        <div class="controls">
+            <button onclick="toggleHeight('tall-box-demo', 'box3')">切换第三个盒子高度</button>
+        </div>
+        <div class="container" id="tall-box-demo">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-left">盒子 2</div>
+            <div class="box box3 float-right">盒子 3</div>
+            <p>这是父容器中的一些文本内容。点击按钮增加第三个盒子的高度。</p>
+        </div>
+        <div class="description">
+            浮动元素的高度变化会影响周围元素的排列方式。
+        </div>
+    </div>
+    
+    <!-- 15-11: 清除左浮动的影响 -->
+    <div class="demo-section">
+        <h2>8. 清除左浮动的影响（15-11）</h2>
+        <div class="container" id="clear-left-demo">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-left">盒子 2</div>
+            <div class="box box3 clear-left">盒子 3</div>
+            <p>这是父容器中的一些文本内容。第三个盒子使用了 clear: left，所以它会出现在浮动元素下方。</p>
+        </div>
+        <div class="description">
+            clear: left 确保元素出现在所有左浮动元素的下方。
+        </div>
+    </div>
+    
+    <!-- 清除右浮动的影响（效果） -->
+    <div class="demo-section">
+        <h2>9. 清除右浮动的影响（效果）</h2>
+        <div class="controls">
+            <button onclick="toggleClear('clear-right-demo', 'box3', 'clear-right')">切换清除右浮动</button>
+        </div>
+        <div class="container" id="clear-right-demo">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-right">盒子 2</div>
+            <div class="box box3">盒子 3</div>
+            <p>这是父容器中的一些文本内容。点击按钮查看清除右浮动的效果。</p>
+        </div>
+        <div class="description">
+            clear: right 确保元素出现在所有右浮动元素的下方。
+        </div>
+    </div>
+    
+    <!-- 删除父盒子的文字（效果） -->
+    <div class="demo-section">
+        <h2>10. 删除父盒子的文字（效果）</h2>
+        <div class="controls">
+            <button onclick="toggleText('no-text-demo')">切换显示/隐藏文字</button>
+        </div>
+        <div class="container" id="no-text-demo">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-left">盒子 2</div>
+            <div class="box box3 float-right">盒子 3</div>
+            <p>这是父容器中的一些文本内容。点击按钮隐藏这段文字，观察父容器高度的变化。</p>
+        </div>
+        <div class="description">
+            当父容器中只有浮动元素时，父容器可能会出现高度塌陷问题。
+        </div>
+    </div>
+    
+    <!-- 扩展父盒子的高度（效果） -->
+    <div class="demo-section">
+        <h2>11. 扩展父盒子的高度（效果）</h2>
+        <div class="controls">
+            <button onclick="toggleClearfix('clearfix-demo')">切换 clearfix</button>
+        </div>
+        <div class="container" id="clearfix-demo">
+            <div class="box box1 float-left">盒子 1</div>
+            <div class="box box2 float-left">盒子 2</div>
+            <div class="box box3 float-right">盒子 3</div>
+            <!-- 没有文本内容 -->
+        </div>
+        <div class="description">
+            使用 clearfix 技术可以解决浮动导致的父容器高度塌陷问题。
+        </div>
+    </div>
+
+    <script>
+        function toggleFloat(containerId, boxClass, floatClass) {
+            const container = document.getElementById(containerId);
+            const box = container.querySelector('.' + boxClass);
+            box.classList.toggle(floatClass);
+        }
+        
+        function toggleHeight(containerId, boxClass) {
+            const container = document.getElementById(containerId);
+            const box = container.querySelector('.' + boxClass);
+            box.classList.toggle('tall-box');
+        }
+        
+        function toggleClear(containerId, boxClass, clearClass) {
+            const container = document.getElementById(containerId);
+            const box = container.querySelector('.' + boxClass);
+            box.classList.toggle(clearClass);
+        }
+        
+        function toggleText(containerId) {
+            const container = document.getElementById(containerId);
+            const paragraph = container.querySelector('p');
+            if (paragraph.style.display === 'none') {
+                paragraph.style.display = 'block';
+            } else {
+                paragraph.style.display = 'none';
+            }
+        }
+        
+        function toggleClearfix(containerId) {
+            const container = document.getElementById(containerId);
+            container.classList.toggle('clearfix');
+        }
+    </script>
+</body>
+</html> 
