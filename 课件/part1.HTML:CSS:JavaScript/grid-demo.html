@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 网格布局教学</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 { color: #2c3e50; }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .code {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .grid-item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .grid-item:nth-child(even) { background-color: #2ecc71; }
+
+        /* 1. 基本三列等宽 */
+        .grid-basic {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* 2. repeat 语法 */
+        .grid-repeat {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        /* 3. 不等宽列 */
+        .grid-unequal {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 15px;
+        }
+
+        /* 4. 固定+弹性 */
+        .grid-mixed {
+            display: grid;
+            grid-template-columns: 200px 1fr 100px;
+            gap: 15px;
+        }
+
+        /* 5. 整页布局 */
+        .page-layout {
+            display: grid;
+            grid-template-rows: 60px 1fr 40px;
+            grid-template-columns: 200px 1fr;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            gap: 0;
+            min-height: 300px;
+            border: 1px solid #ccc;
+        }
+
+        .page-header {
+            grid-area: header;
+            background-color: #34495e;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        .page-sidebar {
+            grid-area: sidebar;
+            background-color: #ecf0f1;
+            padding: 15px;
+        }
+
+        .page-main {
+            grid-area: main;
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .page-footer {
+            grid-area: footer;
+            background-color: #95a5a6;
+            color: white;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid 网格布局教学</h1>
+    <p>Grid 是二维布局系统，可以同时控制行和列。适合整页布局、复杂网格、响应式设计。</p>
+
+    <!-- 1. 基本三列 -->
+    <div class="section">
+        <h2>1. 基本三列等宽</h2>
+        <p><code>1fr</code> 表示「1 份」剩余空间，三列 <code>1fr 1fr 1fr</code> 即三等分。</p>
+        <div class="code">
+            .grid-basic {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 15px;
+            }
+        </div>
+        <div class="grid-basic">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+        </div>
+    </div>
+
+    <!-- 2. repeat -->
+    <div class="section">
+        <h2>2. repeat() 简化写法</h2>
+        <p><code>repeat(3, 1fr)</code> 等价于 <code>1fr 1fr 1fr</code>。</p>
+        <div class="code">
+            grid-template-columns: repeat(3, 1fr);
+        </div>
+        <div class="grid-repeat">
+            <div class="grid-item">A</div>
+            <div class="grid-item">B</div>
+            <div class="grid-item">C</div>
+        </div>
+    </div>
+
+    <!-- 3. 不等宽 -->
+    <div class="section">
+        <h2>3. 不等宽列</h2>
+        <p><code>1fr 2fr 1fr</code> 表示中间列是两侧的 2 倍宽。</p>
+        <div class="code">
+            grid-template-columns: 1fr 2fr 1fr;
+        </div>
+        <div class="grid-unequal">
+            <div class="grid-item">窄</div>
+            <div class="grid-item">宽（主内容）</div>
+            <div class="grid-item">窄</div>
+        </div>
+    </div>
+
+    <!-- 4. 固定+弹性 -->
+    <div class="section">
+        <h2>4. 固定宽度 + 弹性</h2>
+        <p>侧边栏固定 200px，主区域自适应。</p>
+        <div class="code">
+            grid-template-columns: 200px 1fr 100px;
+        </div>
+        <div class="grid-mixed">
+            <div class="grid-item">200px</div>
+            <div class="grid-item">1fr 自适应</div>
+            <div class="grid-item">100px</div>
+        </div>
+    </div>
+
+    <!-- 5. 整页布局 -->
+    <div class="section">
+        <h2>5. 整页布局（grid-template-areas）</h2>
+        <p>用命名区域定义布局，直观易读。</p>
+        <div class="code">
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        </div>
+        <div class="page-layout">
+            <header class="page-header">Header 顶部导航</header>
+            <aside class="page-sidebar">Sidebar 侧边栏</aside>
+            <main class="page-main">Main 主内容区域</main>
+            <footer class="page-footer">Footer 页脚</footer>
+        </div>
+    </div>
+
+    <h2>Flex vs Grid 选择建议</h2>
+    <ul>
+        <li><strong>一维排列</strong>（横排或竖排）→ 用 Flex</li>
+        <li><strong>二维网格</strong>（行+列同时控制）→ 用 Grid</li>
+        <li><strong>整页布局</strong>（header/sidebar/main/footer）→ 用 Grid</li>
+    </ul>
+</body>
+</html>
